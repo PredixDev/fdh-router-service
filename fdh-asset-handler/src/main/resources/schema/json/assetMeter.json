@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "title": "AssetMeter",
+    "description": "AssetMeter which is the link between Asset and Meter",
+    "type": "object",
+    "required": false,
+    "additionalProperties": false,
+    "properties": {
+        "meterUri": {
+            "description": "Meter uri",
+            "type": "string",
+            "required": false
+        },
+        "sourceTagId": {
+            "description": "Time series tag id",
+            "type": "string",
+            "required": false
+        },
+        "dataSource": {
+            "description": "data source",
+            "type": "string",
+            "required": true,
+            "default": false
+        },
+        "isManual": {
+            "description": "Indicate if data can be manually input",
+            "type": "boolean",
+            "required": true,
+            "default": false
+        }
+    }
+}

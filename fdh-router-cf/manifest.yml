@@ -1,0 +1,17 @@
+---
+applications:
+  - name: dev-fdh-router-cf
+    buildpack: java_buildpack
+    path: target/fdh-router-cf-1.4.0-SNAPSHOT.jar 
+    services:
+      - predix-asset-unittest
+      - predix-timeseries-unittest
+
+env:
+    SPRING_PROFILES_ACTIVE : cloud,clouddev
+    predix_asset_name : predix-asset-unittest
+    predix_timeseries_name : predix-timeseries-unittest
+    predix_userName : rmd_user_1
+    predix_password : rmd_user_1
+    predix_oauthRestHost : 35492c1e-657c-4377-ac51-add963552460.predix-uaa-sysint.grc-apps.svc.ice.ge.com
+    predix_oauthClientId : rmd-unittest:secret

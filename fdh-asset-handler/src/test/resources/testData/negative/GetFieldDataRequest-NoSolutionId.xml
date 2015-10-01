@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns13:getFieldDataRequest
+	xmlns:ns29="http://dsp.ge.com/pm/fielddatahandler/entity/getfields"
+	xmlns:ns25="http://dsp.ge.com/pm/fielddatahandler/entity/fieldvaluecriteria"
+	xmlns:ns26="http://dsp.ge.com/pm/fielddatahandler/entity/getfieldvalues"
+	xmlns:ns27="http://dsp.ge.com/pm/ext/entity/fieldvalues" xmlns:ns28="http://dsp.ge.com/pm/fielddatahandler/entity/fieldcriteria"
+	xmlns:ns21="http://dsp.ge.com/pm/ext/entity/osa/dmIntSeries"
+	xmlns:ns22="http://dsp.ge.com/pm/ext/entity/osa/dmRealSeries"
+	xmlns:ns23="http://dsp.ge.com/pm/ext/entity/solution" xmlns:ns24="http://dsp.ge.com/pm/ext/entity/fieldvalue"
+	xmlns:ns20="http://dsp.ge.com/pm/ext/entity/osa/dmboolseries"
+	xmlns:ns16="http://dsp.ge.com/pm/ext/entity/solution/identifier/solutionidentifier"
+	xmlns:ns17="http://dsp.ge.com/pm/fielddatahandler/entity/assetselectorcriteria"
+	xmlns:ns14="http://dsp.ge.com/pm/ext/entity/util/map" xmlns:ns15="http://dsp.ge.com/pm/ext/entity/osa/selectionfilter"
+	xmlns:ns18="http://dsp.ge.com/pm/fielddatahandler/entity/getassetselector"
+	xmlns:ns19="http://dsp.ge.com/pm/ext/entity/osa/errordataevent"
+	xmlns:ns34="http://dsp.ge.com/pm/fielddatahandler/entity/getassets"
+	xmlns:ns9="http://www.mimosa.org/OSACBMV3.3.1" xmlns:ns35="http://dsp.ge.com/pm/fielddatahandler/entity/putfielddata"
+	xmlns:ns32="http://dsp.ge.com/pm/ext/entity/fielddata"
+	xmlns:ns33="http://dsp.ge.com/pm/fielddatahandler/entity/assetcriteria"
+	xmlns:ns30="http://dsp.ge.com/aaas/entity/message"
+	xmlns:ns12="http://dsp.ge.com/pm/fielddatahandler/entity/fielddatacriteria"
+	xmlns:ns5="http://dsp.ge.com/pm/ext/entity/fieldprojection" xmlns:ns31="http://dsp.ge.com/aaas/entity/resultinfo"
+	xmlns:ns13="http://dsp.ge.com/pm/fielddatahandler/entity/getfielddata"
+	xmlns:ns6="http://dsp.ge.com/aaas/entity/identifier" xmlns:ns10="http://dsp.ge.com/pm/ext/entity/assetselector"
+	xmlns:ns7="http://dsp.ge.com/pm/ext/entity/asset"
+	xmlns:ns11="http://dsp.ge.com/pm/fielddatahandler/entity/fielddatacondition"
+	xmlns:ns8="http://dsp.ge.com/pm/ext/entity/fieldidentifiervalue"
+	xmlns:ns2="http://dsp.ge.com/pm/ext/entity/field/fieldidentifier"
+	xmlns:ns4="http://dsp.ge.com/pm/ext/entity/attribute" xmlns:ns3="http://dsp.ge.com/pm/ext/entity/field">
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/year
+					</ns6:id>
+					<ns6:name>year</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/year
+						</ns6:id>
+						<ns6:name>year</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DMInt</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>1</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/purchase
+						date</ns6:id>
+					<ns6:name>purchase date</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/purchase
+							date</ns6:id>
+						<ns6:name>purchase date</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAString</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>2</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1000000</ns6:id>
+					<ns6:name>bad field 1000000</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1000000</ns6:id>
+						<ns6:name>bad field 1000000</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAString</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>1000000</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/is
+						new</ns6:id>
+					<ns6:name>is new</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/is
+							new</ns6:id>
+						<ns6:name>is new</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DABool</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>3</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/price
+					</ns6:id>
+					<ns6:name>price</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/price
+						</ns6:id>
+						<ns6:name>price</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DMReal</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>4</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/model
+					</ns6:id>
+					<ns6:name>model</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/model
+						</ns6:id>
+						<ns6:name>model</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAString</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>5</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/year
+					</ns6:id>
+					<ns6:name>year</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/year
+						</ns6:id>
+						<ns6:name>year</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAValueDataSeq</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>6</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/purchase
+						date</ns6:id>
+					<ns6:name>purchase date</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/purchase
+							date</ns6:id>
+						<ns6:name>purchase date</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAValueDataSeq</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>7</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/is
+						new</ns6:id>
+					<ns6:name>is new</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/is
+							new</ns6:id>
+						<ns6:name>is new</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAValueDataSeq</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>8</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/price
+					</ns6:id>
+					<ns6:name>price</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/price
+						</ns6:id>
+						<ns6:name>price</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAValueDataSeq</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>9</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2000000</ns6:id>
+					<ns6:name>bad field 2000000</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2000000</ns6:id>
+						<ns6:name>bad field 2000000</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAString</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>2000000</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/model
+					</ns6:id>
+					<ns6:name>model</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/model
+						</ns6:id>
+						<ns6:name>model</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAValueDataSeq</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>10</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/maintenance
+						history</ns6:id>
+					<ns6:name>maintenance history</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/maintenance
+							history</ns6:id>
+						<ns6:name>maintenance history</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAValueDataSeq</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>11</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/price
+						history</ns6:id>
+					<ns6:name>price history</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/price
+							history</ns6:id>
+						<ns6:name>price history</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DADataSeq</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>12</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/owner
+						history</ns6:id>
+					<ns6:name>owner history</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/owner
+							history</ns6:id>
+						<ns6:name>owner history</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAValueDataSeq</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>13</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/maintenance
+						history</ns6:id>
+					<ns6:name>maintenance history</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/maintenance
+							history</ns6:id>
+						<ns6:name>maintenance history</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAString</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>14</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/price
+						history</ns6:id>
+					<ns6:name>price history</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/price
+							history</ns6:id>
+						<ns6:name>price history</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DMReal</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>15</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns12:fielddataCriteria>
+		<ns5:fieldProjection>
+			<ns3:field>
+				<ns2:fieldIdentifier>
+					<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/owner
+						history</ns6:id>
+					<ns6:name>owner history</ns6:name>
+				</ns2:fieldIdentifier>
+				<ns3:fieldType>
+					<ns3:fieldTypeEnum>GENERALFIELD</ns3:fieldTypeEnum>
+				</ns3:fieldType>
+			</ns3:field>
+		</ns5:fieldProjection>
+		<ns11:fieldDataCondition>
+			<ns7:asset>
+				<ns10:assetSelector>
+					<ns8:fieldIdentifierValue>
+						<ns2:fieldIdentifier>
+							<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+								xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/manufacturer
+							</ns6:id>
+						</ns2:fieldIdentifier>
+						<ns8:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Toyota</ns8:value>
+					</ns8:fieldIdentifierValue>
+				</ns10:assetSelector>
+			</ns7:asset>
+				<ns8:fieldIdentifierValue>
+					<ns2:fieldIdentifier>
+						<ns6:id xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/classification/fb6e1554-cb0c-4b24-be43-79135c166f23/owner
+							history</ns6:id>
+						<ns6:name>owner history</ns6:name>
+					</ns2:fieldIdentifier>
+				</ns8:fieldIdentifierValue>
+		</ns11:fieldDataCondition>
+		<ns12:expectedDataType>DAString</ns12:expectedDataType>
+		<ns12:expectedEU>
+			<code>0</code>
+			<dbId>0</dbId>
+			<refUnit>
+				<id>
+					<code>0</code>
+				</id>
+			</refUnit>
+			<site>
+				<category>SITE_SPECIFIC</category>
+			</site>
+		</ns12:expectedEU>
+		<ns12:dataEventResultId>16</ns12:dataEventResultId>
+	</ns12:fielddataCriteria>
+	<ns13:dateTime>2014-07-15T16:45:53.000-07:00</ns13:dateTime>
+	<ns13:correlationId>1008_131</ns13:correlationId>
+	<ns14:externalAttributeMap>
+		<ns14:entry>
+			<ns14:key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SOLUTION_ID</ns14:key>
+			<ns14:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1009</ns14:value>
+		</ns14:entry>
+		<ns14:entry>
+			<ns14:key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">_ORIGINAL_FILENAME</ns14:key>
+			<ns14:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/pmp/resources/reference-app/data/AutoFleetAppData.csv
+			</ns14:value>
+		</ns14:entry>
+		<ns14:entry>
+			<ns14:key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Filename</ns14:key>
+			<ns14:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">/pmp/resources/reference-app/data/testcases/AutoFleetAppData-104.csv
+			</ns14:value>
+		</ns14:entry>
+	</ns14:externalAttributeMap>
+</ns13:getFieldDataRequest>

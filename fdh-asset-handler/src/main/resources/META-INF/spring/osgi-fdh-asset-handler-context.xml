@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd" xmlns:osgi="http://www.springframework.org/schema/osgi">
+
+	<osgi:reference id="dspServiceManagerService" interface="com.ge.dsp.core.spi.IServiceManagerService" />
+
+	<osgi:reference id="propertyConfig" interface="com.ge.dsp.pm.generic.util.property.IPropConfig" />
+
+	<osgi:reference id="errorMessagesWrapper" interface="com.ge.dsp.pm.generic.util.error.IErrorMessages" />
+
+	<osgi:reference id="uomDataExchange" interface="com.ge.dsp.pm.dsppm.util.handler.IUomDataExchange" />
+
+	<osgi:service ref="getFieldDataProcessor" interface="com.ge.fdh.asset.processor.GetFieldDataProcessor" />
+	<osgi:service ref="putFieldDataProcessor" interface="com.ge.fdh.asset.processor.PutFieldDataProcessor" />
+	
+</beans>

@@ -1,0 +1,6438 @@
+[ 
+{
+  "uri" : "/asset/250010",
+  "obsolete" : false,
+  "assetId" : "250010",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.560459661" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.25266907" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-23T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1589.290372" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/115000",
+  "obsolete" : false,
+  "assetId" : "115000",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.701806998" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.73598902" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-23T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "257.6102917" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/70000",
+  "obsolete" : false,
+  "assetId" : "70000",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.28498523" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.67469381" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-27T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "495.9415835" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/53500",
+  "obsolete" : false,
+  "assetId" : "53500",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.743023826" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.84612639" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-29T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "591.1224925" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/52500",
+  "obsolete" : false,
+  "assetId" : "52500",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3.021866935" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.96010521" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-24T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "357.2113438" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "5" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/41727",
+  "obsolete" : false,
+  "assetId" : "41727",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.969720453" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.64159319" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-29T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.667973864" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "556.1953402" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "211.8444683" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/41555",
+  "obsolete" : false,
+  "assetId" : "41555",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.831859095" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.08642283" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-21T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "228.4878508" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "7" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/41330",
+  "obsolete" : false,
+  "assetId" : "41330",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.988799093" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.52379004" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-11T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4.157470418" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1276.072906" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "8" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "152.7034909" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/40715",
+  "obsolete" : false,
+  "assetId" : "40715",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.446093374" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.88829912" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-20T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "137.6236225" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "9" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/40402",
+  "obsolete" : false,
+  "assetId" : "40402",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.208149343" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.48892033" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-23T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "5.337994087" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "195.3744091" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "10" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "113.7964956" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/40391",
+  "obsolete" : false,
+  "assetId" : "40391",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.652092546" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.55181478" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-19T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "8.564288382" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1713.031474" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "11" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "84.69495198" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/40249",
+  "obsolete" : false,
+  "assetId" : "40249",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.971457739" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.72371303" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-01T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "7.589216908" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "702.9233801" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "12" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "247.5879655" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/40000",
+  "obsolete" : false,
+  "assetId" : "40000",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.499402685" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.05692217" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-10T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1118.079938" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "13" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/39433",
+  "obsolete" : false,
+  "assetId" : "39433",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.300696776" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "29.87283307" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-25T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "7.830700687" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "291.5655763" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "14" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "87.75805277" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/39127",
+  "obsolete" : false,
+  "assetId" : "39127",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.06667187" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.74628365" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-24T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4.884678393" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "222.8372456" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "15" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "70.00452099" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/38797",
+  "obsolete" : false,
+  "assetId" : "38797",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.631911801" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.48536996" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-23T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "8.613580512" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1915.42423" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "16" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "206.4089288" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/38105",
+  "obsolete" : false,
+  "assetId" : "38105",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.414738468" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.79009826" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-17T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "5.327360054" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1574.662504" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "17" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "245.107893" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/37380",
+  "obsolete" : false,
+  "assetId" : "37380",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.676204673" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "31.4044822" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-03T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6.961147266" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "806.6613623" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "18" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "163.6205457" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/34000",
+  "obsolete" : false,
+  "assetId" : "34000",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3.015358388" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.92939177" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-03T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "815.5777486" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "19" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/31200",
+  "obsolete" : false,
+  "assetId" : "31200",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.550017564" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.33866958" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-07T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "986.2160551" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "20" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/27301",
+  "obsolete" : false,
+  "assetId" : "27301",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.814190899" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.0386218" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-12T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1191.067941" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "21" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/27300",
+  "obsolete" : false,
+  "assetId" : "27300",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.486533198" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.17625507" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-22T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "240.2504015" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "22" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/27127",
+  "obsolete" : false,
+  "assetId" : "27127",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.480889054" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.99812239" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-28T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "9.888374809" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2224.096649" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "17.70613235" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/27126",
+  "obsolete" : false,
+  "assetId" : "27126",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.735270699" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.82910264" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-04T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3.989602562" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "854.9523886" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "248.6784991" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/26856",
+  "obsolete" : false,
+  "assetId" : "26856",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3.028339094" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.99070381" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-25T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.705095516" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2062.883568" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "211.9497168" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/26855",
+  "obsolete" : false,
+  "assetId" : "26855",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3.003709817" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.87456552" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-27T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6.109361895" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "480.2641848" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "113.981244" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/26300",
+  "obsolete" : false,
+  "assetId" : "26300",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.418412934" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.33665616" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-08T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1059.582617" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25024",
+  "obsolete" : false,
+  "assetId" : "25024",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.029203258" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.06736422" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-06T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2247.996656" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "29" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25023",
+  "obsolete" : false,
+  "assetId" : "25023",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.089917758" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "29.07681525" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-05T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2247.323014" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25022",
+  "obsolete" : false,
+  "assetId" : "25022",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.06796626" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.99634665" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-04T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2186.554861" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "31" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25021",
+  "obsolete" : false,
+  "assetId" : "25021",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.91101572" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.43373062" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-03T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2126.591394" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25020",
+  "obsolete" : false,
+  "assetId" : "25020",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.520583188" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.12450692" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-02T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2072.254088" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "33" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25019",
+  "obsolete" : false,
+  "assetId" : "25019",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.802669479" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.00725612" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-01T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2031.009019" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "34" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25018",
+  "obsolete" : false,
+  "assetId" : "25018",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.494652222" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.04181017" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-31T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2010.936458" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "35" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25017",
+  "obsolete" : false,
+  "assetId" : "25017",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.161077292" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "29.3407664" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-30T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1970.518356" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "36" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25016",
+  "obsolete" : false,
+  "assetId" : "25016",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.590979734" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.35158113" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-29T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1907.110692" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "37" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25015",
+  "obsolete" : false,
+  "assetId" : "25015",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.100299889" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.233027" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-28T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1863.594881" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "38" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25014",
+  "obsolete" : false,
+  "assetId" : "25014",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.741185607" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "31.68561525" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-27T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1861.264611" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "39" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25013",
+  "obsolete" : false,
+  "assetId" : "25013",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.024355151" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.05615361" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-26T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1774.408458" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "40" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25012",
+  "obsolete" : false,
+  "assetId" : "25012",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.962222674" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.68077254" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-25T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1773.846922" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "41" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25011",
+  "obsolete" : false,
+  "assetId" : "25011",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.761578259" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "31.77488246" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-24T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1677.039197" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "42" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25009",
+  "obsolete" : false,
+  "assetId" : "25009",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.44014884" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.86962608" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-22T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1546.763682" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "43" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25008",
+  "obsolete" : false,
+  "assetId" : "25008",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.604265163" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.39486233" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-21T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1508.067421" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "44" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25007",
+  "obsolete" : false,
+  "assetId" : "25007",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.60665677" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "31.10906566" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-20T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1464.118797" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "45" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25006",
+  "obsolete" : false,
+  "assetId" : "25006",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.544101271" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.32344154" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-18T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1339.259931" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "46" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25005",
+  "obsolete" : false,
+  "assetId" : "25005",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.598732382" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.37682103" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-19T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1383.028141" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "47" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25004",
+  "obsolete" : false,
+  "assetId" : "25004",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.696532681" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.7219657" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-17T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1326.025515" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "48" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25003",
+  "obsolete" : false,
+  "assetId" : "25003",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.098682721" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.83887225" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-16T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1308.805858" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "49" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25002",
+  "obsolete" : false,
+  "assetId" : "25002",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.275861448" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.36363449" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-15T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1280.417136" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "50" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25001",
+  "obsolete" : false,
+  "assetId" : "25001",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.885916836" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.23567054" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-14T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1246.780791" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "51" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/25000",
+  "obsolete" : false,
+  "assetId" : "25000",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.266579297" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.3356144" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-13T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1224.424085" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "52" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/24202",
+  "obsolete" : false,
+  "assetId" : "24202",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.50760425" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.22992109" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-30T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "603.4217034" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "53" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/24201",
+  "obsolete" : false,
+  "assetId" : "24201",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.988947997" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.71033666" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-05T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "9.658668861" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2474.461732" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "54" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "205.8811273" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/24200",
+  "obsolete" : false,
+  "assetId" : "24200",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.773096516" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "31.82552535" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-26T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4.47674921" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2151.138821" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "55" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "188.5462829" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/23500",
+  "obsolete" : false,
+  "assetId" : "23500",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.44833938" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.45687718" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-25T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "431.7801156" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "56" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/22700",
+  "obsolete" : false,
+  "assetId" : "22700",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.435291057" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.85438601" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-02T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "716.283831" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "57" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/22100",
+  "obsolete" : false,
+  "assetId" : "22100",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.796391884" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.03644406" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-05T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "895.2499153" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "58" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/22001",
+  "obsolete" : false,
+  "assetId" : "22001",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.522257113" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.7579444" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-06T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "972.8293593" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "59" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/22000",
+  "obsolete" : false,
+  "assetId" : "22000",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.997620993" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.74145298" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-26T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "489.1946454" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "60" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/20100",
+  "obsolete" : false,
+  "assetId" : "20100",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.861339455" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.26017853" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-11T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1170.681723" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "61" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/13609",
+  "obsolete" : false,
+  "assetId" : "13609",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.457497574" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.49385827" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-09T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.152299077" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1172.046994" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "62" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "111.943159" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/13420",
+  "obsolete" : false,
+  "assetId" : "13420",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.442123113" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.43182675" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-01T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "677.7399709" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "63" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/11346",
+  "obsolete" : false,
+  "assetId" : "11346",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.138883589" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.95609733" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-22T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "8.363648125" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1870.57053" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "64" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "118.4814406" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/9261",
+  "obsolete" : false,
+  "assetId" : "9261",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.775745151" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "31.83719357" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-12T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "8.521109828" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1364.444842" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "65" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "164.7612387" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/9201",
+  "obsolete" : false,
+  "assetId" : "9201",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.723116887" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.79280995" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-09T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1077.510716" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "66" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/9200",
+  "obsolete" : false,
+  "assetId" : "9200",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.501295444" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.67196451" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-28T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Cobra" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Ford" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "572.6612286" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "67" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mustang" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/6599",
+  "obsolete" : false,
+  "assetId" : "6599",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.551524289" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.8788011" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-10T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4.561943016" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1250.835005" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "50.72473601" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/3447",
+  "obsolete" : false,
+  "assetId" : "3447",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.500910142" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.67038859" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-20T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "5.590666647" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "132.1204882" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "216.5463795" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/3421",
+  "obsolete" : false,
+  "assetId" : "3421",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.226816615" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "29.58890697" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-16T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4.306531899" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1536.761521" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "152.680211" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/3392",
+  "obsolete" : false,
+  "assetId" : "3392",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.788694416" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.96931601" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-02T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "7.385632934" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "722.6165402" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.666564053" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/3377",
+  "obsolete" : false,
+  "assetId" : "3377",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.240444758" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "29.6408741" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-06T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "9.049697405" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2540.870473" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "205.5674296" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/3302",
+  "obsolete" : false,
+  "assetId" : "3302",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.36045978" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.86005917" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-01T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.995644939" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2333.729139" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "14.02676817" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/3122",
+  "obsolete" : false,
+  "assetId" : "3122",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.650305887" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.59973527" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-30T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "8.627229084" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2311.351208" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "110.2454552" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/3120",
+  "obsolete" : false,
+  "assetId" : "3120",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.992314392" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.72240635" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-05T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.632752674" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "912.1764522" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "230.1017061" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/2529",
+  "obsolete" : false,
+  "assetId" : "2529",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.941604022" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.54166023" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-19T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.597902864" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "55.4166023" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "88.31174577" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/2319",
+  "obsolete" : false,
+  "assetId" : "2319",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.80024369" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.00066222" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-22T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "9.897424107" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "190.4852057" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "96.97962501" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/2272",
+  "obsolete" : false,
+  "assetId" : "2272",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.817460456" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.04753711" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-06T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4.04718363" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "932.6518233" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "74.4375791" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/2260",
+  "obsolete" : false,
+  "assetId" : "2260",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.98106714" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.76851404" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-20T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "5.313660455" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1810.716614" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "42.41677615" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/2259",
+  "obsolete" : false,
+  "assetId" : "2259",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.811443133" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "31.99529533" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-26T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "5.365138394" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "381.5185297" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "243.981656" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/2236",
+  "obsolete" : false,
+  "assetId" : "2236",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.104848172" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.24370601" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-03T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.880404018" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2389.429694" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "157.4897096" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1869",
+  "obsolete" : false,
+  "assetId" : "1869",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.880351526" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.32634944" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-02T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.396549999" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2386.992634" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "247.8280053" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1866",
+  "obsolete" : false,
+  "assetId" : "1866",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3.003602898" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.87406313" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-19T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "98.74063126" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1865",
+  "obsolete" : false,
+  "assetId" : "1865",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.082806025" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.7928672" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2013-01-04T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "7.736067367" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2417.358366" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "173.3503868" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1820",
+  "obsolete" : false,
+  "assetId" : "1820",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.565160806" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.37773398" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-31T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "7.284388893" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2325.128548" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "67.14473564" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1592",
+  "obsolete" : false,
+  "assetId" : "1592",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.770752032" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.94909096" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-30T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "9.074315836" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "605.6862498" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "80.29411241" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1467",
+  "obsolete" : false,
+  "assetId" : "1467",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.875966727" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.28508223" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-18T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.882250417" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1667.513326" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "76.11543562" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1326",
+  "obsolete" : false,
+  "assetId" : "1326",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.289235304" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "29.82842935" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-08T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6.636712647" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1097.108412" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "114.4266281" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1215",
+  "obsolete" : false,
+  "assetId" : "1215",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.036579843" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "25.65984814" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-13T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6.101162943" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1391.043323" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "78.94787838" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/1208",
+  "obsolete" : false,
+  "assetId" : "1208",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.365327859" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.12572063" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-29T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.255813755" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2295.353855" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "165.2093213" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/896",
+  "obsolete" : false,
+  "assetId" : "896",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.253974802" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.29766034" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-27T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4.768465635" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2184.115425" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "232.6520909" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/873",
+  "obsolete" : false,
+  "assetId" : "873",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.163801911" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.02929424" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-21T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3.282129699" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1841.009557" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "217.4495358" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/871",
+  "obsolete" : false,
+  "assetId" : "871",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.71327351" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.75523004" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-24T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.211475473" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1962.97653" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.9926937" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/870",
+  "obsolete" : false,
+  "assetId" : "870",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.429362334" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "26.83580953" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-21T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.21181819" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "170.4785835" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "108.9426368" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/429",
+  "obsolete" : false,
+  "assetId" : "429",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.358153703" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.85435247" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-14T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "8.512477209" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1399.586848" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "41.93408234" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/374",
+  "obsolete" : false,
+  "assetId" : "374",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.782125562" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.95152234" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-28T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.451981714" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "499.7794083" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "44.85709627" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/222",
+  "obsolete" : false,
+  "assetId" : "222",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.366047465" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "30.1285604" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-15T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.17670961" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1470.872452" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "202.471958" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/221",
+  "obsolete" : false,
+  "assetId" : "221",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.948512071" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.61722949" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-07T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6.473157138" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1028.824118" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "57.57041767" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/211",
+  "obsolete" : false,
+  "assetId" : "211",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.948512071" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.61722949" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-07T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6.473157138" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1028.824118" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "57.57041767" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+}, {
+  "uri" : "/asset/201",
+  "obsolete" : false,
+  "assetId" : "201",
+  "specification" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.948512071" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.61722949" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-07T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6.473157138" ]
+    },
+    "Mileage" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1028.824118" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "a" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "57.57041767" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "children" : {
+  },
+  "tags" : [ ]
+} 
+]

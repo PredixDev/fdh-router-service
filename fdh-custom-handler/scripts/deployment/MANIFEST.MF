@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: com.ge.predix.solsvc.fdh.handler.custom;uses:="com.ge.
+ dsp.pm.ext.entity.fielddata,org.mimosa.osacbmv3_3,org.springframework
+ .stereotype,com.ge.dsp.pm.fielddatahandler.entity.getfielddata,com.ge
+ .dsp.pm.ext.entity.model,com.ge.dsp.pm.fielddatahandler.entity.putfie
+ lddata,org.apache.http,com.ge.predix.solsvc.fdh.handler";version="1.4
+ .0.SNAPSHOT"
+Bundle-SymbolicName: com.ge.predix.solsvc.fdh-custom-handler
+Bundle-Version: 1.4.0.SNAPSHOT
+Bundle-Name: fdh-custom-handler
+Bundle-ManifestVersion: 2
+Private-Package: com.ge.predix.solsvc.fdh.handler.custom;-split-packag
+ e:=merge-first,
+Import-Package: com.ge.dsp.pm.ext.entity.fielddata,com.ge.dsp.pm.ext.e
+ ntity.model,com.ge.dsp.pm.fielddatahandler.entity.getfielddata,com.ge
+ .dsp.pm.fielddatahandler.entity.putfielddata,com.ge.predix.solsvc.fdh
+ .handler,org.apache.http,org.mimosa.osacbmv3_3,org.springframework.st
+ ereotype
+Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-1.43.0
+

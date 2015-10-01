@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Export-Package: com.ge.predix.solsvc.fdh.handler;uses:="com.ge.dsp.pm.
+ fielddatahandler.entity.getfielddata,com.ge.dsp.pm.ext.entity.model,o
+ rg.apache.http,com.ge.dsp.pm.fielddatahandler.entity.putfielddata";ve
+ rsion="1.4.0.SNAPSHOT",com.ge.predix.solsvc.fdh.client.config;uses:="
+ org.springframework.context.annotation,org.slf4j,org.springframework.
+ core.env,org.springframework.stereotype,org.springframework.context,o
+ rg.springframework.beans.factory.annotation";version="1.4.0.SNAPSHOT"
+Bundle-SymbolicName: com.ge.predix.solsvc.fdh-bootstrap-client
+Bundle-Version: 1.4.0.SNAPSHOT
+Bundle-Name: fdh-bootstrap-client
+Bundle-ManifestVersion: 2
+Private-Package: com.ge.predix.solsvc.fdh.handler;-split-package:=merg
+ e-first,com.ge.predix.solsvc.fdh.client.config;-split-package:=merge-
+ first,
+Import-Package: com.ge.dsp.pm.ext.entity.model,com.ge.dsp.pm.fielddata
+ handler.entity.getfielddata,com.ge.dsp.pm.fielddatahandler.entity.put
+ fielddata,org.apache.http,org.slf4j,org.springframework.beans.factory
+ .annotation,org.springframework.context,org.springframework.context.a
+ nnotation,org.springframework.core.env,org.springframework.stereotype
+Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-1.43.0
+
