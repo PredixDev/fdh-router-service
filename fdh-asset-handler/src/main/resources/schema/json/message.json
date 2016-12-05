@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "title": "Message",
+    "description": "Error message returned in case of error",
+    "type": "object",
+    "required": false,
+    "additionalProperties": false,
+    "properties": {
+        "message": {
+            "description": "message",
+            "type": "string",
+            "required": true
+        },
+        "errors": {
+            "description": "List of error and reason",
+            "type": "any",
+            "required": true
+        }
+    }
+}

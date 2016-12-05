@@ -1,0 +1,23 @@
+applications:
+  - name: data-exchange-simulator
+    buildpack: java_buildpack
+    memory: 512M
+    timeout: 180
+    path: target/data-exchange-simulator-1.0.1.jar
+    instances : 1
+    services:
+        - turnerdev-asset
+        - turnerdev-uaa
+env:
+    # NOTE: Some values in curly braces are updated by scripts
+    SPRING_PROFILES_ACTIVE : cloud
+    predix_uaa_name: turnerdev-uaa
+    predix_asset_name: turnerdev-asset
+    predix_oauth_clientId : app_client_id:secret
+    predix_fdh_restHost : turnerdev-data-exchange.run.aws-usw02-pr.ice.predix.io
+    predix_fdh_restProtocol : https
+    predix_fdh_restPort: 443
+    #logging - see application-cloud.properties
+    logging_level_root: INFO
+    logging_level_org_springframework: INFO
+    logging_level_com_ge_predix_solsvc: DEBUG

@@ -1,0 +1,33 @@
+[ {
+  "uri" : "/classification/v-eR5zxPS0qiTHzK0R5gKQ",
+  "name" : "AutoFleet",
+  "obsolete" : false,
+  "attributes" : {
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "tags" : [ ]
+} ]

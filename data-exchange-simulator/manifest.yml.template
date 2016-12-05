@@ -1,0 +1,23 @@
+applications:
+  - name: {your-name}-data-exchange-simulator
+    buildpack: java_buildpack
+    memory: 512M
+    timeout: 180
+    path: target/data-exchange-simulator-1.0.1.jar
+    instances : 1
+    services:
+        - {assetService}
+        - {uaaService}
+env:
+    # NOTE: Some values in curly braces are updated by scripts
+    SPRING_PROFILES_ACTIVE : cloud
+    predix_uaa_name: {uaaService}
+    predix_asset_name: {assetService}
+    predix_oauth_clientId : {clientId}:{secret}
+    predix_fdh_restHost : {dxRestHost}
+    predix_fdh_restProtocol : https
+    predix_fdh_restPort: 443
+    #logging - see application-cloud.properties
+    logging_level_root: INFO
+    logging_level_org_springframework: INFO
+    logging_level_com_ge_predix_solsvc: DEBUG

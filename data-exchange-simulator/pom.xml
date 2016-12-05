@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ge.predix.solsvc</groupId>
+	<artifactId>data-exchange-simulator</artifactId>
+	<version>1.0.1</version>
+	<packaging>jar</packaging>
+
+	<name>data-exchange-simulator</name>
+	<description>Data Exchange Simulator</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.3.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>	
+		<asset-bootstrap-client.version>2.0.7</asset-bootstrap-client.version>
+		<ext-model.version>2.0.6</ext-model.version>
+		<ext-interface.version>2.0.6</ext-interface.version>
+		<fdh-bootstrap-client.version>2.0.6</fdh-bootstrap-client.version>
+		<httpcomponents.version>4.5.2</httpcomponents.version>
+		
+		<maven-failsafe-plugin.version>2.17</maven-failsafe-plugin.version>
+		<maven-surefire-plugin.version>2.16</maven-surefire-plugin.version>
+		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
+		<maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpcomponents.version}</version>
+			</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ge.predix.solsvc</groupId>
+			<artifactId>asset-bootstrap-client</artifactId>
+			<version>${asset-bootstrap-client.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-servlet_3.0_spec</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.ge.predix.solsvc</groupId>
+			<artifactId>ext-model</artifactId>
+			<version>${ext-model.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ge.predix.solsvc</groupId>
+			<artifactId>ext-interface</artifactId>
+			<version>${ext-interface.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ge.predix.solsvc</groupId>
+			<artifactId>fdh-bootstrap-client</artifactId>
+			<version>${fdh-bootstrap-client.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.3</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<configuration>
+					<reuseForks>false</reuseForks>
+				</configuration>
+				<executions>
+					<execution>
+						<id>run-tests</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<includes></includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<configuration>
+					<artifactItems>
+						<artifactItem>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>${project.artifactId}</artifactId>
+							<version>${project.version}</version>
+							<overWrite>true</overWrite>
+							<outputDirectory>${project.build.directory}</outputDirectory>
+						</artifactItem>
+					</artifactItems>
+				</configuration>				
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>testharness</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>${maven-surefire-plugin.version}</version>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.maven.surefire</groupId>
+								<artifactId>surefire-junit4</artifactId>
+								<version>${maven-surefire-plugin.version}</version>
+							</dependency>
+						</dependencies>
+						<configuration>
+							<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>${maven-failsafe-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>run-tests</id>
+								<phase>integration-test</phase>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<systemProperties>
+								<!-- <property> <name>server</name> <value>localhost</value> </property> 
+									<property> <name>port</name> <value>5672</value> </property> -->
+							</systemProperties>
+							<includes>
+								<include>**/*TestHarness.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>

@@ -1,0 +1,110 @@
+[{
+    "uri" : "/classification/clazz1",
+    "name" : "clazz1",
+    "obsolete" : false,
+    "attributes" : {
+        "clazz1-A_0" : {
+            "type" : "number"
+        },
+        "clazz1-A_1" : {
+            "type" : "number"
+        },
+        "clazz1-A_2" : {
+            "type" : "number"
+        },
+        "clazz1-A_3" : {
+            "type" : "number"
+        },
+        "clazz1-A_4" : {
+            "type" : "number"
+        }
+    }
+},{
+    "uri" : "/classification/clazz1_1",
+    "name" : "clazz1_1",
+    "obsolete" : false,
+    "parent" : "/classification/clazz1",
+    "attributes" : {
+        "clazz1_1-A_0" : {
+            "type" : "number"
+        },
+        "clazz1_1-A_1" : {
+            "type" : "number"
+        },
+        "clazz1_1-A_2" : {
+            "type" : "number"
+        },
+        "clazz1_1-A_3" : {
+            "type" : "number"
+        },
+        "clazz1_1-A_4" : {
+            "type" : "number"
+        }
+    }
+},{
+    "uri" : "/classification/clazz1_2",
+    "name" : "clazz1_2",
+    "obsolete" : false,
+    "parent" : "/classification/clazz1",
+    "attributes" : {
+        "clazz1_2-A_0" : {
+            "type" : "number"
+        },
+        "clazz1_2-A_1" : {
+            "type" : "number"
+        },
+        "clazz1_2-A_2" : {
+            "type" : "number"
+        },
+        "clazz1_2-A_3" : {
+            "type" : "number"
+        },
+        "clazz1_2-A_4" : {
+            "type" : "number"
+        }
+    }
+},{
+    "uri" : "/classification/clazz1_1_1",
+    "name" : "clazz1_1_1",
+    "obsolete" : false,
+    "parent" : "/classification/clazz1_1",
+    "attributes" : {
+        "clazz1_1_1-A_0" : {
+            "type" : "number"
+        },
+        "clazz1_1_1-A_1" : {
+            "type" : "number"
+        },
+        "clazz1_1_1-A_2" : {
+            "type" : "number"
+        },
+        "clazz1_1_1-A_3" : {
+            "type" : "number"
+        },
+        "clazz1_1_1-A_4" : {
+            "type" : "number"
+        }
+    }
+},{
+    "uri" : "/classification/clazz1_2_1",
+    "name" : "clazz1_2_1",
+    "obsolete" : false,
+    "parent" : "/classification/clazz1_2",
+    "attributes" : {
+        "clazz1_2_1-A_0" : {
+            "type" : "number"
+        },
+        "clazz1_2_1-A_1" : {
+            "type" : "number"
+        },
+        "clazz1_2_1-A_2" : {
+            "type" : "number"
+        },
+        "clazz1_2_1-A_3" : {
+            "type" : "number"
+        },
+        "clazz1_2_1-A_4" : {
+            "type" : "number"
+        }
+    }
+}]

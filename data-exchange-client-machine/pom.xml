@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ge.predix.solsvc</groupId>
+	<artifactId>data-exchange-client-machine</artifactId>
+	<version>1.0.0</version>
+	<packaging>bundle</packaging>
+	<name>data-exchange-client-machine</name>
+	<description>Predix Machine - Create Machine data for Data Exchange</description>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- 3rd Party Compile-Dependency Bundle versions -->
+		<org.osgi.core.version>5.0.0</org.osgi.core.version>
+		<org.osgi.compendium.version>5.0.0</org.osgi.compendium.version>
+		<org.slf4j.version>1.7.12</org.slf4j.version>
+		<!-- Predix Machine project / bundle versions -->
+		<dspmicro.version>16.3.0</dspmicro.version>
+		<dspmicro.parent.project.version>16.3.0</dspmicro.parent.project.version>
+		<dspmicro.river.project.version>${dspmicro.parent.project.version}</dspmicro.river.project.version>
+		<dspmicro.validateroute.project.version>${dspmicro.parent.project.version}</dspmicro.validateroute.project.version>
+		<dspmicro.device-common.project.version>${dspmicro.parent.project.version}</dspmicro.device-common.project.version>
+		<dspmicro.httpriver-send.project.version>${dspmicro.parent.project.version}</dspmicro.httpriver-send.project.version>
+		<dspmicro.websocketriver-send.project.version>${dspmicro.parent.project.version}</dspmicro.websocketriver-send.project.version>
+		<dspmicro.mqtt-client.project.version>${dspmicro.parent.project.version}</dspmicro.mqtt-client.project.version>
+		<dspmicro.mqtt-machineadapter.project.version>${dspmicro.parent.project.version}</dspmicro.mqtt-machineadapter.project.version>
+		<biz.aQute.bndlib.version>3.2.0</biz.aQute.bndlib.version>
+		
+		<!-- org.apache.httpcomponents.httpcore.version is for httpcore-osgi -->
+        <org.apache.httpcomponents.httpcore.version>4.4.4</org.apache.httpcomponents.httpcore.version>
+        <!-- org.apache.httpcomponents.httpclient.version is for httpclient-osgi -->
+        <org.apache.httpcomponents.httpclient.version>4.5.2</org.apache.httpcomponents.httpclient.version>
+
+        <!-- Jackson  -->
+       <jettison.version>1.1</jettison.version>
+       
+		<!-- Ext interface -->
+		<ext.model.version>2.0.6-SNAPSHOT</ext.model.version>
+		<ext-util.version>2.0.6-SNAPSHOT</ext-util.version>
+		<!-- Jackson  -->
+        <jackson.core-asl.version>1.9.13</jackson.core-asl.version>
+        <jackson.jaxrs.version>1.9.13</jackson.jaxrs.version>
+        <jackson.mapper-asl.version>1.9.13</jackson.mapper-asl.version>
+        <jackson-annotations.version>2.4.5</jackson-annotations.version>
+        <jaxb2-basics-runtime.version>0.6.4</jaxb2-basics-runtime.version>
+        
+        <com.scireum.parsii.version>2.3</com.scireum.parsii.version>
+		<!-- 3rd Party package versions -->
+		<import.org.osgi.framework>"[1.7,2)"</import.org.osgi.framework>
+
+		<import.org.osgi.service.cm>"[1.5,2)"</import.org.osgi.service.cm>
+		<import.org.osgi.service.component>"[1.2,2)"</import.org.osgi.service.component>
+		<import.org.osgi.service.condpermadmin>"[1.1,2)"</import.org.osgi.service.condpermadmin>
+		<import.org.osgi.service.http>"[1.2,2)"</import.org.osgi.service.http>
+		<import.org.osgi.service.util>"[1.0,2)"</import.org.osgi.service.util>
+		<import.org.osgi.service.useradmin>"[1.1,2)"</import.org.osgi.service.useradmin>
+		<import.org.osgi.util.tracker>"[1.5,2)"</import.org.osgi.util.tracker>
+
+		<import.aQute.bnd.annotation.metatype>"[1.45,2)"</import.aQute.bnd.annotation.metatype>
+
+		<import.org.slf4j>"[1.7,2)"</import.org.slf4j>
+		<import.com.google.protobuf>"[2.5,3)"</import.com.google.protobuf>
+
+		<import.javax.servlet>"[2.5,3.2)"</import.javax.servlet>
+
+		<import.javax.ws.rs>"[2.0,3)"</import.javax.ws.rs>
+		<import.javax.xml.bind>"[2.2,3)"</import.javax.xml.bind>
+		<import.javax.xml.bind.annotation>"[2.2,3)"</import.javax.xml.bind.annotation>
+		<import.javax.xml.namespace>"[0.0,1)"</import.javax.xml.namespace>
+
+		<import.org.apache.http>"[4.4,4.6)"</import.org.apache.http>
+		<import.org.apache.commons.io>"[1.4,2)"</import.org.apache.commons.io>
+		<import.org.apache.commons.fileupload>"[1.2,1.3)"</import.org.apache.commons.fileupload>
+
+		<import.org.codehaus.jackson>"[1.9,2)"</import.org.codehaus.jackson>
+		<import.org.codehaus.jackson.map>"[1.9,2)"</import.org.codehaus.jackson.map>
+		<import.org.codehaus.jackson.type>"[1.9,2)"</import.org.codehaus.jackson.type>
+		<import.org.codehaus.jackson.map.annotate>"[1.9,2)"</import.org.codehaus.jackson.map.annotate>
+
+		<import.com.prosyst.util.encode>"[2.1,3)"</import.com.prosyst.util.encode>
+		<import.com.prosyst.mbs.services.useradmin>"[3.0,4)"</import.com.prosyst.mbs.services.useradmin>
+
+		<!-- Used for jGit -->
+		<import.org.eclipse.jgit>"[4.0,5.0)"</import.org.eclipse.jgit>
+
+		<!-- Used for rmq -->
+		<import.com.rabbitmq>"[3.0,3.5)"</import.com.rabbitmq>
+
+		<!-- Used for MQTT Client -->
+		<import.org.eclipse.paho.client.mqttv3>"[1.0,2.0)"</import.org.eclipse.paho.client.mqttv3>
+
+		<!-- DSP micro API package versions -->
+		<import.com.ge.dspmicro.security.sslcontext.api>"[1.0,2.0)"</import.com.ge.dspmicro.security.sslcontext.api>
+
+		<import.com.ge.dspmicro.security.admin.api>"[1.1,2.0)"</import.com.ge.dspmicro.security.admin.api>
+
+		<import.com.ge.dspmicro.gitrepository.api>"[1.0,2.0)"</import.com.ge.dspmicro.gitrepository.api>
+
+		<import.com.ge.dspmicro.machinegateway.api>"[1.3,2.0)"</import.com.ge.dspmicro.machinegateway.api>
+
+		<import.com.ge.dspmicro.machinegateway.types>"[1.3,2.0)"</import.com.ge.dspmicro.machinegateway.types>
+
+		<import.com.ge.dspmicro.modelregistry.api>"[1.0,2.0)"</import.com.ge.dspmicro.modelregistry.api>
+		<import.com.ge.dspmicro.modelregistry.api.types>"[1.0,2.0)"</import.com.ge.dspmicro.modelregistry.api.types>
+
+		<import.com.ge.dspmicro.httpclient.api>"[1.1,2.0)"</import.com.ge.dspmicro.httpclient.api>
+
+		<import.com.ge.dspmicro.tcpsocketserver.api>"[1.0,2.0)"</import.com.ge.dspmicro.tcpsocketserver.api>
+
+		<import.com.ge.dspmicro.hoover.api>"[1.1,2.0)"</import.com.ge.dspmicro.hoover.api>
+
+		<import.com.ge.dspmicro.websocketriver.send.api>"[1.0,2.0)"</import.com.ge.dspmicro.websocketriver.send.api>
+
+		<import.com.ge.dspmicro.storeforward.api>"[1.0,2.0)"</import.com.ge.dspmicro.storeforward.api>
+
+		<import.com.ge.dspmicro.validateroute.api>"[1.0,2.0)"</import.com.ge.dspmicro.validateroute.api>
+
+		<import.com.ge.dspmicro.machineadapter.mqtt.api>"[1.0,2.0)"</import.com.ge.dspmicro.machineadapter.mqtt.api>
+
+		<!-- River Services -->
+		<export.com.ge.dspmicro.river.api>1.0.0</export.com.ge.dspmicro.river.api>
+		<import.com.ge.dspmicro.river.api>"[1.0,2.0)"</import.com.ge.dspmicro.river.api>
+
+		<export.com.ge.dspmicro.httpriver.send.api>1.0.0</export.com.ge.dspmicro.httpriver.send.api>
+		<import.com.ge.dspmicro.httpriver.send.api>"[1.0,2.0)"</import.com.ge.dspmicro.httpriver.send.api>
+		<!-- This actually drives the BND used during compile time. The version of this plugin will map to a version of BND -->
+        <org.apache.felix.maven-bundle-plugin.version>3.0.1</org.apache.felix.maven-bundle-plugin.version>
+	</properties>
+	
+    
+	<dependencies>
+		<!-- OSGi -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>${org.osgi.core.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+			<version>${org.osgi.compendium.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- River Dependencies -->
+		<dependency>
+        	<groupId>com.ge.dspmicro</groupId>
+	        <artifactId>river-api</artifactId>
+			<version>${dspmicro.river.project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ge.dspmicro</groupId>
+			<artifactId>websocketriver-send</artifactId>
+			<version>${dspmicro.websocketriver-send.project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<!-- DS Annotation Dependency -->
+        <dependency>
+            <groupId>biz.aQute.bnd</groupId>
+            <artifactId>biz.aQute.bndlib</artifactId>
+            <version>${biz.aQute.bndlib.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        
+
+		<!-- Predix Machine -->
+		<dependency>
+			<groupId>com.ge.dspmicro</groupId>
+			<artifactId>machinegateway-api</artifactId>
+			<version>${dspmicro.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ge.dspmicro</groupId>
+			<artifactId>device-common</artifactId>
+			<version>${dspmicro.device-common.project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Java Websocket API Dependency -->
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
+		
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>${org.apache.felix.maven-bundle-plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<!-- embed any dependencies with artifactId junit and scope runtime -->
+						<Bundle-Classpath>
+							.,parsii-${com.scireum.parsii.version}.jar,
+							ext-model-${ext.model.version}.jar,
+							jackson-core-${jackson-annotations.version}.jar,
+							jackson-core-asl-${jackson.core-asl.version}.jar,
+							jackson-mapper-asl-${jackson.mapper-asl.version}.jar,
+							jaxb2-basics-${jaxb2-basics-runtime.version}.jar,
+							jaxb2-basics-runtime-${jaxb2-basics-runtime.version}.jar,
+							jackson-databind-${jackson-annotations.version}.jar,
+							ext-util-${ext-util.version}.jar,
+							jettison-${jettison.version}.jar,
+						</Bundle-Classpath>
+						<Embed-Dependency>
+                            parsii,ext-model,jackson-core,jackson-core-asl,jackson-mapper-asl,
+                            jaxb2-basics,jaxb2-basics-runtime,jackson-databind,ext-util,jettison
+                       	</Embed-Dependency>
+						<Import-Package>
+							aQute.bnd.annotation.metatype;version=${import.aQute.bnd.annotation.metatype},
+							org.slf4j;version=${import.org.slf4j};provider=paxlogging,
+							org.osgi.service.component;version=${import.org.osgi.service.component},
+							org.osgi.framework;version=${import.org.osgi.framework},
+							org.osgi.service.cm;version=${import.org.osgi.service.cm},
+							org.codehaus.jackson.map;version=${import.org.codehaus.jackson.map},
+							org.codehaus.jackson.type;version=${import.org.codehaus.jackson.type},
+							com.ge.dspmicro.hoover.api.spillway;version=${import.com.ge.dspmicro.hoover.api},
+                            com.ge.dspmicro.hoover.api.processor;version=${import.com.ge.dspmicro.hoover.api},
+                            com.ge.dspmicro.machinegateway.api;version=${import.com.ge.dspmicro.machinegateway.api},
+                            com.ge.dspmicro.machinegateway.api.adapter;version=${import.com.ge.dspmicro.machinegateway.api},
+                            com.ge.dspmicro.machinegateway.types;version=${import.com.ge.dspmicro.machinegateway.api},
+                            com.ge.dspmicro.httpclient.api;version=${import.com.ge.dspmicro.httpclient.api},
+                            org.apache.http;version=${import.org.apache.http},
+                            org.apache.http.client;version=${import.org.apache.http},
+                            org.apache.http.client.protocol;version=${import.org.apache.http},
+                            org.apache.http.client.config;version=${import.org.apache.http},
+							org.apache.http.client.methods;version=${import.org.apache.http},
+							org.apache.http.conn.ssl;version=${import.org.apache.http},
+							org.apache.http.message;version=${import.org.apache.http},
+							org.apache.http.entity;version=${import.org.apache.http},
+							org.apache.http.impl.client;version=${import.org.apache.http},
+							com.ge.dspmicro.river.api;version=${import.com.ge.dspmicro.river.api},
+						    com.ge.dspmicro.websocketriver.send.api;version=${import.com.ge.dspmicro.websocketriver.send.api},
+						    
+						    javax.websocket,
+						</Import-Package>
+						<Service-Component>*</Service-Component>
+						<Export-Package>
+							com.ge.predix.solsvc.dataexchange.api
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

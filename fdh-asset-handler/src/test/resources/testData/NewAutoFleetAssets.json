@@ -1,0 +1,423 @@
+[ 
+{
+  "specification" : "/classification/NewAutoFleetClassification",
+  "obsolete" : false,
+  "assetId" : "a1250010",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.560459661" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "27.25266907" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-12-23T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "value" : [ 1589.290372 ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "tags" : [ ]
+}, {
+  "specification" : "/classification/NewAutoFleetClassification",
+  "obsolete" : false,
+  "assetId" : "a1115000",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.701806998" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.73598902" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-23T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "value" : [ 257.6102917 ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry" ]
+    }
+  },
+  "tags" : [ ]
+}, {
+  "specification" : "/classification/NewAutoFleetClassification",
+  "obsolete" : false,
+  "assetId" : "a170000",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.28498523" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "23.67469381" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-27T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "value" : [ 495.9415835 ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Camry XL" ]
+    }
+  },
+  "tags" : [ ]
+}, {
+  "specification" : "/classification/NewAutoFleetClassification",
+  "obsolete" : false,
+  "assetId" : "a153500",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.743023826" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "24.84612639" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-29T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Honda" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "value" : [ 591.1224925 ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "4" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Accord XL" ]
+    }
+  },
+  "tags" : [ ]
+}, {
+  "specification" : "/classification/NewAutoFleetClassification",
+  "obsolete" : false,
+  "assetId" : "a152500",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "3.021866935" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.96010521" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-24T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "LE" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Honda" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "value" : [ 357.2113438 ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "5" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Accord GL" ]
+    }
+  },
+  "tags" : [ ]
+}, {
+  "specification" : "/classification/NewAutoFleetClassification",
+  "obsolete" : false,
+  "assetId" : "a141727",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "1.969720453" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "28.64159319" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-29T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "0.667973864" ]
+    },
+    "Mileage" : {
+      "value" : [ 556.1953402 ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "6" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "211.8444683" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "tags" : [ ]
+}, {
+  "specification" : "/classification/NewAutoFleetClassification",
+  "obsolete" : false,
+  "assetId" : "a141555",
+  "attributes" : {
+    "Fuel Consumption" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2.831859095" ]
+    },
+    "mpg" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "32.08642283" ]
+    },
+    "DateTime" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "2012-11-21T08:58:33.0" ]
+    },
+    "Style" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Toyota" ]
+    },
+    "Oil debris" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Mileage" : {
+      "value" : [ 228.4878508 ]
+    },
+    "Fleet" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Mass" ]
+    },
+    "Vin" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "7" ]
+    },
+    "Adjusted Temperature" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "NA" ]
+    },
+    "Models" : {
+      "type" : "string",
+      "enumeration" : [ ],
+      "value" : [ "Prius" ]
+    }
+  },
+  "tags" : [ ]
+}
+]

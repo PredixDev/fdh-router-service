@@ -1,0 +1,37 @@
+[
+{
+  "uri" : "/classification/XAutoFleetClassification",
+  "name" : "XAutoFleetClassification",
+  "obsolete" : false,
+  "attributes" : {
+    "vin" : {
+      "type" : "string",
+      "enumeration" : [  "1", "2", "3", "4", "5", "6", "7", "9"],
+      "unique" : true,
+      "required" : false,
+      "value" : []
+    },
+    "manufacturers" : {
+      "type" : "string",
+      "enumeration" : [ "Toyota", "Ford" ],
+      "value" : [ ]
+    },
+    "model" : {
+      "type" : "string",
+      "enumeration" : [ "Camry", "Prius", "Mustang" ],
+      "value" : [ ]
+    },
+    "style" : {
+      "type" : "string",
+      "enumeration" : [ "LE", "Cobra" ],
+      "value" : [ ]
+    },
+    "fleet" : {
+      "type" : "string",
+      "enumeration" : [ "Mass", "a" ],
+      "value" : [ ]
+    }
+  },
+  "tags" : [ ]
+}
+]

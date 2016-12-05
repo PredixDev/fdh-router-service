@@ -1,0 +1,27 @@
+applications:
+  - name: template-data-exchange
+    buildpack: java_buildpack
+    memory: 1GB
+    timeout: 180
+    path: target/data-exchange-2.0.6.jar
+    instances : 2
+    services:
+        - turnerdev-uaa
+        - turnerdev-asset
+        - turnerdev-time-series
+        - turnerdev-rabbitmq
+env:
+    # NOTE: Some values in curly braces are updated by scripts
+    SPRING_PROFILES_ACTIVE : cloud,timeseries
+    predix_uaa_name: turnerdev-uaa
+    predix_asset_name: turnerdev-asset
+    predix_timeseries_name : turnerdev-time-series
+    predix_oauth_clientId : app_client_id:secret
+    fieldChangedEvent_MainQueue: FieldChangedEventMainQueue
+    fieldChangedEvent_ErrorQueue: FieldChangedEventErrorQueue
+    predix_timeseries_wspool_maxIdle : 5
+    predix_timeseries_wspool_maxActive : 5
+    #logging - see application-cloud.properties
+    logging_level_root: INFO
+    logging_level_org_springframework: INFO
+    logging_level_com_ge_predix_solsvc: DEBUG

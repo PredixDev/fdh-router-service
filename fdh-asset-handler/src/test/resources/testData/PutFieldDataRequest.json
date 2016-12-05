@@ -1,0 +1,28 @@
+{
+	"putFieldDataCriteria": [{
+		"namespaces": [],
+		"fieldData": {
+			"field": [{
+				"fieldIdentifier": {
+					"complexType": "FieldIdentifier",
+					"id": "/asset/assetTag/crank-frame-dischargepressure/tagDatasource/tagExtensions/attributes/alertStatus/value",
+					"source": "PREDIX_ASSET"
+				},
+				"parents": []
+			}],
+			"data": {
+				"complexType": "OsaData",
+				"dataEvent": {
+					"complexType": "DMBool",
+					"id": 0,
+					"numAlerts": [],
+					"value": true
+				}
+			}
+		},
+		"filter": {
+			"complexType": "AssetFilter",
+			"uri": "/asset/compressor-2015"
+		}
+	}]
+}

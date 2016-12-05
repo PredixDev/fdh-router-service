@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ge.predix.solsvc</groupId>
+	<artifactId>fdh-router-service</artifactId>
+	<version>2.0.6</version>
+	<packaging>pom</packaging>
+
+	<modules>
+	<module>fdh-asset-handler</module>
+	<module>fdh-timeseries-handler</module>
+	<module>fdh-custom-handler</module>
+	<module>fdh-bootstrap-client</module>
+	<module>data-exchange-client-machine</module>
+	<module>data-exchange-machine</module>
+	<module>fdh-rabbitmq-handler</module>
+	<module>fdh-adapter</module>
+	<module>fdh-websocket-handler</module>
+	<module>data-exchange</module>
+	<module>data-exchange-simulator</module>
+	
+	</modules>
+	<properties>
+
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+                		<groupId>org.codehaus.mojo</groupId>
+                		<artifactId>versions-maven-plugin</artifactId>
+                		<version>2.2</version>
+            		</plugin>
+		</plugins>
+	</build>
+
+</project>
