@@ -1,0 +1,7 @@
+com.ge.predix.solsvc.fdh.handler.asset
+com.ge.predix.solsvc.fdh.handler.asset.common
+com.ge.predix.solsvc.fdh.handler.asset.data
+com.ge.predix.solsvc.fdh.handler.asset.data.updater
+com.ge.predix.solsvc.fdh.handler.asset.helper
+com.ge.predix.solsvc.fdh.handler.asset.utils
+com.ge.predix.solsvc.fdh.handler.asset.validator
