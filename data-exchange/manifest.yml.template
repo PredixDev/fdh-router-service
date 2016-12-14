@@ -1,7 +1,7 @@
 applications:
   - name: {your-name}-data-exchange
     buildpack: java_buildpack
-    memory: 1GB
+    memory: 512M
     timeout: 180
     path: target/data-exchange-2.0.6.jar
     instances : 2
