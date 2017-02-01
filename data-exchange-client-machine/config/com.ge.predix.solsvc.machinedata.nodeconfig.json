@@ -1,0 +1,58 @@
+[
+  {
+    "simulateAlarm": false,
+    "assetId": "Compressor-2015",
+    "nodeName": "CompressionRatio",
+    "dataType": "DOUBLE",
+    "upperThreshold": 3.0,
+    "lowerThreshold": 2.5
+  },
+  {
+    "simulateAlarm": false,
+    "assetId": "Compressor-2015",
+    "nodeName": "DischargePressure",
+    "dataType": "DOUBLE",
+    "upperThreshold": 23.0,
+    "lowerThreshold": 0.0
+  },
+  {
+    "simulateAlarm": false,
+    "assetId": "Compressor-2015",
+    "nodeName": "SuctionPressure",
+    "dataType": "DOUBLE",
+    "upperThreshold": 0.5,
+    "lowerThreshold": 0.0
+  },
+  {
+    "simulateAlarm": false,
+    "assetId": "Compressor-2015",
+    "nodeName": "MaximumPressure",
+    "dataType": "DOUBLE",
+    "upperThreshold": 20.0,
+    "lowerThreshold": 28.0
+  },
+  {
+    "simulateAlarm": false,
+    "assetId": "Compressor-2015",
+    "nodeName": "MinimumPressure",
+    "dataType": "DOUBLE",
+    "upperThreshold": 0.0,
+    "lowerThreshold": 0.0
+  },
+  {
+    "simulateAlarm": false,
+    "assetId": "Compressor-2015",
+    "nodeName": "Temperature",
+    "dataType": "DOUBLE",
+    "upperThreshold": 80,
+    "lowerThreshold": 50
+  },
+  {
+    "simulateAlarm": false,
+    "assetId": "Compressor-2015",
+    "nodeName": "Velocity",
+    "dataType": "DOUBLE",
+    "upperThreshold": 0.1,
+    "lowerThreshold": 0.0
+  }
+]

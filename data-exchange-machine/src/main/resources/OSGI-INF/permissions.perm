@@ -1,0 +1,70 @@
+# At the time of creation of this sample, the security permissions system is down. 
+# Later work will be necessary to add the necessary permissions.  
+# WebSocket River Sample bundle permission resource
+#
+# Allow all imports
+(org.osgi.framework.PackagePermission "*" "import")
+
+
+# Allow bundle to get other services
+(org.osgi.framework.ServicePermission "com.ge.dspnet.datariver.common.api.PingConstants" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.river.api.IRiverSend" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.river.api.IRiverStatusCallback" "get")
+(org.osgi.framework.ServicePermission "org.osgi.service.cm.ConfigurationAdmin" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.websocketriver.send.api.IWebsocketSend" "get")
+(org.osgi.framework.ServicePermission "org.apache.http.osgi.services.ProxyConfiguration" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.machinegateway.api.adapter.ISubscriptionMachineAdapter" "*")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.hoover.api.processor.IProcessor" "*")
+(org.osgi.framework.ServicePermission "com.ge.predix.solsvc.dataexchange.IDataExchangeConnector" "*")
+(org.osgi.framework.ServicePermission "com.ge.predix.solsvc.dataexchange.IDataExchangeConfig" "*")
+
+# List imports as wild card, export services are listed out.
+(org.osgi.framework.PackagePermission "*" "import")
+(org.osgi.framework.PackagePermission "*" "export")
+
+# Registered services
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.sample.httpclient.IHttpClientSampleRestServer" "register")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.httpclient.api.IHttpClient" "register")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.httpclient.api.IHttpClientFactory" "register")
+
+# Get other services.
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.sample.httpclient.IHttpClientSampleRestServer" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.httpclient.api.IHttpClient" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.httpclient.api.IHttpClientFactory" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.security.sslcontext.api.ISSLContextFactoryService" "get")
+(org.osgi.framework.ServicePermission "com.ge.dspmicro.security.admin.api.ISecurityUtils" "get")
+(org.osgi.framework.ServicePermission "org.osgi.service.cm.ConfigurationAdmin" "get")
+
+
+# Bundle Wiring for pax logging.
+(org.osgi.framework.AdaptPermission "(adaptClass=org.osgi.framework.wiring.BundleRevision)" "adapt")
+
+# allow capability access to OSGi
+(org.osgi.framework.CapabilityPermission "osgi.ee" "require")
+
+# Generic stuff
+(java.lang.RuntimePermission "accessDeclaredMembers")
+(java.lang.reflect.ReflectPermission "suppressAccessChecks")
+
+# Allow bundle's authority to configure bundles.
+(org.osgi.service.cm.ConfigurationPermission "*" "configure")
+
+# Allow bundle to publish event on topic within the OSGi EventAdmin service.
+(org.osgi.service.event.TopicPermission "*" "publish")
+
+# Allow reading of system properties
+(java.util.PropertyPermission "*" "read")
+
+# Allow reading of environment variables
+(java.lang.RuntimePermission "getenv.*")
+(java.lang.RuntimePermission "modifyThread")
+
+# Allow retrieval of class loader
+(java.lang.RuntimePermission "getClassLoader")
+(java.lang.RuntimePermission "shutdownHooks")
+(java.lang.reflect.ReflectPermission "newProxyInPackage.*")
+(java.lang.RuntimePermission "setContextClassLoader")
+(java.lang.RuntimePermission "accessDeclaredMembers")
+
+# Allow access to network via sockets 
+(java.net.SocketPermission "*" "accept,connect,listen,resolve")

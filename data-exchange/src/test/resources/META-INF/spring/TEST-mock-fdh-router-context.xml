@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mockito="http://www.mockito.org/spring/mockito"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.mockito.org/spring/mockito http://www.mockito.org/spring/mockito.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<mockito:mock id="assetFactory"
+		class="com.ge.predix.solsvc.bootstrap.ams.factories.AssetFactory" />
+	<mockito:mock id="classificationFactory"
+		class="com.ge.predix.solsvc.bootstrap.ams.factories.ClassificationFactory" />
+	<mockito:mock id="tagFactory"
+		class="com.ge.predix.solsvc.bootstrap.ams.factories.TagFactory" />
+	<mockito:mock id="timeseriesClient"
+		class="com.ge.predix.solsvc.timeseries.bootstrap.client.TimeseriesClient" />
+	<mockito:mock id="restClient"
+		class="com.ge.predix.solsvc.restclient.impl.RestClientImpl" />
+		
+	<!-- real ones -->
+	<bean id="defaultTimeseriesConfig"
+		class="com.ge.predix.solsvc.timeseries.bootstrap.config.DefaultTimeseriesConfig" />
+</beans>
