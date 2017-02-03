@@ -3,7 +3,7 @@ applications:
     buildpack: java_buildpack
     memory: 512M
     timeout: 180
-    path: target/data-exchange-2.0.9.jar
+    path: target/data-exchange-2.0.10.jar
     instances : 2
     services:
         - {uaaService}
