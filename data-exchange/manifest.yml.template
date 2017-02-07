@@ -3,8 +3,8 @@ applications:
     buildpack: java_buildpack
     memory: 512M
     timeout: 180
-    path: target/data-exchange-2.0.10.jar
-    instances : 2
+    path: target/data-exchange-2.0.18.jar
+    instances : 1
     services:
         - {uaaService}
         - {assetService}
@@ -13,7 +13,7 @@ applications:
         #- {blobStoreService}
 env:
     # NOTE: Some values in curly braces are updated by scripts
-    SPRING_PROFILES_ACTIVE : cloud,timeseries
+    SPRING_PROFILES_ACTIVE : cloud,timeseries,websocket
     predix_uaa_name: {uaaService}
     predix_asset_name: {assetService}
     predix_timeseries_name : {timeSeriesService}

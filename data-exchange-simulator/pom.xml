@@ -5,7 +5,7 @@
 
 	<groupId>com.ge.predix.solsvc</groupId>
 	<artifactId>data-exchange-simulator</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.13</version>
 	<packaging>jar</packaging>
 
 	<name>data-exchange-simulator</name>
@@ -23,10 +23,10 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>	
 
-		<asset-bootstrap-client.version>2.0.11</asset-bootstrap-client.version>
-		<ext-model.version>2.0.11</ext-model.version>
-		<ext-interface.version>2.0.11</ext-interface.version>
-		<fdh-bootstrap-client.version>2.0.10</fdh-bootstrap-client.version>
+		<asset-bootstrap-client.version>2.0.18-SNAPSHOT</asset-bootstrap-client.version>
+		<ext-model.version>2.0.17-SNAPSHOT</ext-model.version>
+		<ext-interface.version>2.0.17-SNAPSHOT</ext-interface.version>
+		<fdh-bootstrap-client.version>2.0.18</fdh-bootstrap-client.version>
 		
 		<httpcomponents.version>4.5.3</httpcomponents.version>
 		

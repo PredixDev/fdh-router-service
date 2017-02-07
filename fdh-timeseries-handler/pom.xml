@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ge.predix.solsvc</groupId>
-	<version>2.0.10</version>
+	<version>2.0.18</version>
 	<artifactId>fdh-timeseries-handler</artifactId>
 	<packaging>jar</packaging>
 
 	<properties>
-		<timeseries-bootstrap.version>2.1.11</timeseries-bootstrap.version>
-		<asset-bootstrap-client.version>2.0.11</asset-bootstrap-client.version>
-		<fdh-asset-handler.version>2.0.10</fdh-asset-handler.version>
+		<timeseries-bootstrap.version>2.1.18-SNAPSHOT</timeseries-bootstrap.version>
+		<asset-bootstrap-client.version>2.0.18-SNAPSHOT</asset-bootstrap-client.version>
+		<fdh-asset-handler.version>2.0.18</fdh-asset-handler.version>
 		
 		<httpclient.version>4.5.2</httpclient.version>
 		<spring.version>4.1.6.RELEASE</spring.version>

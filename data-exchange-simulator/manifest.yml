@@ -3,7 +3,7 @@ applications:
     buildpack: java_buildpack
     memory: 512M
     timeout: 180
-    path: target/data-exchange-simulator-1.0.5.jar
+    path: target/data-exchange-simulator-1.0.13.jar
     instances : 1
     services:
         - {assetService}
