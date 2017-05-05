@@ -12,6 +12,8 @@ package com.ge.predix.solsvc.fdh.handler.asset;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -23,15 +25,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ge.predix.entity.assetfilter.AssetFilter;
 import com.ge.predix.entity.fielddata.FieldData;
+import com.ge.predix.entity.fielddata.PredixString;
 import com.ge.predix.entity.fielddatacriteria.FieldDataCriteria;
 import com.ge.predix.entity.fieldselection.FieldSelection;
 import com.ge.predix.entity.getfielddata.GetFieldDataRequest;
 import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.model.Model;
 import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
+import com.ge.predix.solsvc.fdh.adapter.factory.AdapterFactory;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
 import com.ge.predix.solsvc.fdh.handler.asset.common.FieldModel;
@@ -55,13 +62,14 @@ import com.ge.predix.solsvc.fdh.handler.asset.validator.GetFieldDataValidator;
 @ImportResource(
 {
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
-        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
+        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
+        "classpath*:META-INF/spring/fdh-adapter-scan-context.xml"
 })
 public class AssetGetFieldDataHandlerImpl
         implements GetDataHandler
 {
     @SuppressWarnings("unused")
-    private static final Logger     log = LoggerFactory.getLogger(AssetGetFieldDataHandlerImpl.class);
+    private static final Logger     log    = LoggerFactory.getLogger(AssetGetFieldDataHandlerImpl.class);
 
     @Autowired
     private GetFieldDataValidator   getFieldDataValidator;
@@ -71,6 +79,9 @@ public class AssetGetFieldDataHandlerImpl
 
     @Autowired
     private AttributeHandlerFactory attributeHandlerFactory;
+
+    @Autowired
+    private AdapterFactory          adapterFactory;
 
     /*
      * (non-Javadoc)
@@ -97,9 +108,7 @@ public class AssetGetFieldDataHandlerImpl
                 List<Object> models = retrieveModels(criteria, modelLookupMap, headers);
                 if ( models != null )
                 {
-                    FieldData fieldData = processModels(criteria, models, modelLookupMap, headers);
-                    fieldData.setResultId(criteria.getResultId());
-                    result.getFieldData().add(fieldData);
+                    result.getFieldData().addAll(processModels(criteria, models, modelLookupMap, headers));
                 }
             }
 
@@ -120,13 +129,16 @@ public class AssetGetFieldDataHandlerImpl
      * @param httpMethod
      * @param modelLookupMap
      * @return -
+     * @throws JsonProcessingException
      */
+    @SuppressWarnings("unchecked")
     private List<Object> retrieveModels(FieldDataCriteria fieldDataCriteria, Map<Integer, Object> modelLookupMap,
             List<Header> headers)
+            throws JsonProcessingException
     {
         if ( fieldDataCriteria.getFilter() instanceof AssetFilter )
         {
-            return retrieveModels(fieldDataCriteria, headers);
+            return (List<Object>) retrieveModels(fieldDataCriteria, headers);
         }
         throw new UnsupportedOperationException("filter=" + fieldDataCriteria.getFilter() + " not supported");
     }
@@ -137,8 +149,9 @@ public class AssetGetFieldDataHandlerImpl
      * @param headers
      *            -
      * @return -
+     * 
      */
-    protected List<Object> retrieveModels(FieldDataCriteria fieldDataCriteria, List<Header> headers)
+    protected List<?> retrieveModels(FieldDataCriteria fieldDataCriteria, List<Header> headers)
     {
         // keeping it simple, assume the first Selection holds the type of model desired
         this.modelFactory.setZoneIdInHeaders(headers);
@@ -152,11 +165,28 @@ public class AssetGetFieldDataHandlerImpl
 
             AssetFilter assetFilter = (AssetFilter) fieldDataCriteria.getFilter();
 
-            // GET Asset by URI
+            // GET Asset by URIsure
             AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
             assetQueryBuilder.setUri(assetFilter.getUri());
-            List<Object> models = this.modelFactory.getModels(assetQueryBuilder.build(),
-                    fieldModel.getModelForUnMarshal(), headers);
+            if(! StringUtils.isEmpty(assetFilter.getFilterString())){
+                assetQueryBuilder.setUri(assetFilter.getUri()+"?filter="+assetFilter.getFilterString());
+            }
+
+            @SuppressWarnings("rawtypes")
+            List<?> models = new ArrayList();
+            // if the request is for PredixString bypass Transformation
+            
+            log.info("fieldModel.getModelForUnMarshal()" + fieldModel.getModelForUnMarshal());
+            if ( "PredixString".equalsIgnoreCase(fieldModel.getModelForUnMarshal()) )
+            {
+                List<String> modelString = this.modelFactory.getModels(assetQueryBuilder.build(), headers);
+                models = (List<?>) this.adapterFactory.getAdapter("StringList", "PredixStringList").adapt(modelString);
+            }
+            else
+            {
+                models = this.modelFactory.getModels(assetQueryBuilder.build(), fieldModel.getModelForUnMarshal(),
+                        headers);
+            }
 
             return models;
         }
@@ -176,9 +206,10 @@ public class AssetGetFieldDataHandlerImpl
      * @param httpMethod -
      * @return
      */
-    private FieldData processModels(FieldDataCriteria fieldDataCriteria, List<Object> models,
+    private List<FieldData> processModels(FieldDataCriteria fieldDataCriteria, List<Object> models,
             Map<Integer, Object> modelLookupMap, List<Header> headers)
     {
+        List<FieldData> fieldDataList = new ArrayList<FieldData>();
         FieldData fieldData = new FieldData();
         fieldData.setResultId(fieldDataCriteria.getResultId());
         for (Object model : models)
@@ -186,13 +217,17 @@ public class AssetGetFieldDataHandlerImpl
             for (FieldSelection selection : fieldDataCriteria.getFieldSelection())
             {
                 String field = selection.getFieldIdentifier().getId().toString();
-                FieldModel fieldModel = PaUtility.getFieldModel(field);
-                // find the attribute and enrich the fieldData
-                fieldData = processModel(fieldData, fieldDataCriteria, model, fieldModel, modelLookupMap, headers);
+                if ( !StringUtils.isEmpty(field) )
+                {
+                    FieldModel fieldModel = PaUtility.getFieldModel(field);
+                    // find the attribute and enrich the fieldData
+                    fieldData = processModel(fieldData, fieldDataCriteria, model, fieldModel, modelLookupMap, headers);
+                    fieldDataList.add(fieldData); // fix: to add each field data
+                }
             }
         }
 
-        return fieldData;
+        return fieldDataList;
     }
 
     /**
@@ -216,8 +251,8 @@ public class AssetGetFieldDataHandlerImpl
             if ( fieldModel.getChildModels() != null && fieldModel.getChildModels().size() > 0 )
             {
                 int childModelNameIndex = 0;
-                objectContainingAttribute = traverseToChild(fieldData, fieldDataCriteria,
-                        objectContainingAttribute, fieldModel, childModelNameIndex, modelLookupMap, headers);
+                objectContainingAttribute = traverseToChild(fieldData, fieldDataCriteria, objectContainingAttribute,
+                        fieldModel, childModelNameIndex, modelLookupMap, headers);
                 if ( objectContainingAttribute != null )
                     return getAttribute(fieldDataCriteria, objectContainingAttribute, fieldModel, headers);
             }
@@ -300,8 +335,10 @@ public class AssetGetFieldDataHandlerImpl
                         if ( fieldModel.getChildModels().size() < childModelNameIndex + 2 )
                         {
                             // atribute is get/set in the map
-                            if ( fieldModel.getAtrribute() != null && !fieldModel.getAtrribute().equals("*") ) {
-                                objectContainingAttribute = ((Map) objectContainingAttribute).get(fieldModel.getAtrribute());
+                            if ( fieldModel.getAtrribute() != null && !fieldModel.getAtrribute().equals("*") )
+                            {
+                                objectContainingAttribute = ((Map) objectContainingAttribute)
+                                        .get(fieldModel.getAtrribute());
                             }
                         }
                         else
@@ -320,8 +357,9 @@ public class AssetGetFieldDataHandlerImpl
                                             modelLookupMap, headers);
 
                                 }
-                                else if ( fieldModel.getAtrribute().equals("*") ) {
-                                    //just return the map Entry
+                                else if ( fieldModel.getAtrribute().equals("*") )
+                                {
+                                    // just return the map Entry
                                 }
                                 else if ( !PropertyUtils.isReadable(objectContainingAttribute,
                                         fieldModel.getAtrribute()) )

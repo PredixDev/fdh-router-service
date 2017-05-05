@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ge.predix.solsvc</groupId>
 	<artifactId>fdh-rabbitmq-handler</artifactId>
-	<version>2.0.18</version>
+	<version>2.0.19</version>
 	<packaging>jar</packaging>
 
 	<properties>
-		<ext-model.version>2.0.17-SNAPSHOT</ext-model.version>
+		<ext-model.version>2.0.17</ext-model.version>
 		<ext-interface.version>2.0.17-SNAPSHOT</ext-interface.version>
 		
 		<spring.version>4.1.6.RELEASE</spring.version>
@@ -33,11 +33,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.ge.predix.solsvc</groupId>
-			<artifactId>ext-interface</artifactId>
-			<version>${ext-interface.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.ge.predix.solsvc</groupId>
 			<artifactId>ext-model</artifactId>
 			<version>${ext-model.version}</version>
 		</dependency>
@@ -52,11 +47,6 @@
 			<version>${springboot.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-oxm</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>${httpclient.version}</version>
@@ -68,7 +58,12 @@
 			<version>${spring.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>compile</scope>
+		</dependency>
 		<!-- Test Artifacts -->
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -95,12 +90,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<artifactId>logback-classic</artifactId>
 			<groupId>ch.qos.logback</groupId>
 			<version>${logback.version}</version>
@@ -112,7 +101,6 @@
 			<version>${groovy.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>

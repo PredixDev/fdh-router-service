@@ -89,7 +89,7 @@ public class TimeseriesPutDataHandler extends AsyncPutRequestHandler {
 		        List<PutFieldDataCriteria> fieldDataCriteria = request.getPutFieldDataCriteria();
 		        for (PutFieldDataCriteria putFieldDataCriteria : fieldDataCriteria) {
 		            if (putFieldDataCriteria.getFieldData().getData() instanceof DataFile) {
-		                this.timeSeriesPutDataFileExecutor.processDataFile(headers, threadName, uuidId, putFieldDataCriteria);
+		                this.timeSeriesPutDataFileExecutor.processDataFile(headers, threadName, uuidId, putFieldDataCriteria,putFieldDataResult);
 		            } else if (putFieldDataCriteria.getFieldData().getData() instanceof DatapointsIngestion) {
                         processDatapointsIngestion(putFieldDataCriteria);
                     }
@@ -114,7 +114,7 @@ public class TimeseriesPutDataHandler extends AsyncPutRequestHandler {
     private void processDatapointsIngestion(PutFieldDataCriteria putFieldDataCriteria)
     {
         DatapointsIngestion datapointsIngestion = (DatapointsIngestion) putFieldDataCriteria.getFieldData().getData();
-        this.timeseriesClient.createConnectionToTimeseriesWebsocket();
+        this.timeseriesClient.createTimeseriesWebsocketConnectionPool();
         this.timeseriesClient.postDataToTimeseriesWebsocket(datapointsIngestion);
     }
 

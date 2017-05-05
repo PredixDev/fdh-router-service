@@ -10,14 +10,21 @@
 
 package com.ge.predix.solsvc.fdh.asset.processor.it;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.http.Header;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.message.BasicHeader;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -39,13 +46,16 @@ import com.ge.predix.entity.asset.Asset;
 import com.ge.predix.entity.asset.AssetList;
 import com.ge.predix.entity.asset.AssetTag;
 import com.ge.predix.entity.assetfilter.AssetFilter;
+import com.ge.predix.entity.datafile.DataFile;
 import com.ge.predix.entity.field.Field;
 import com.ge.predix.entity.field.fieldidentifier.FieldIdentifier;
 import com.ge.predix.entity.field.fieldidentifier.FieldSourceEnum;
 import com.ge.predix.entity.fielddata.FieldData;
 import com.ge.predix.entity.fielddata.OsaData;
+import com.ge.predix.entity.fielddata.PredixString;
 import com.ge.predix.entity.fielddatacriteria.FieldDataCriteria;
 import com.ge.predix.entity.fieldselection.FieldSelection;
+import com.ge.predix.entity.filter.Filter;
 import com.ge.predix.entity.getfielddata.GetFieldDataRequest;
 import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.model.SampleEngine;
@@ -83,7 +93,7 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml"
 
 })
-public class AssetDataHandlerIT 
+public class AssetDataHandlerIT
 {
 
     private static Logger    logger = LoggerFactory.getLogger(AssetDataHandlerIT.class);
@@ -110,7 +120,7 @@ public class AssetDataHandlerIT
     private ModelFactory     modelFactory;
 
     @Autowired
-    private JsonMapper jsonMapper;
+    private JsonMapper       jsonMapper;
 
     /**
      * @throws java.lang.Exception
@@ -134,7 +144,6 @@ public class AssetDataHandlerIT
         //
     }
 
-    
     /**
      * - Note SampleEngine extends Model extends Data which has a JsonTypeInfo
      * annotation so it gets polymorphically (Animal/Cat/Dog) generated {
@@ -145,7 +154,7 @@ public class AssetDataHandlerIT
      * @throws InterruptedException
      *             -
      */
-    @Test
+   @Test
     public void testWithFilterPuttingAClassThatExtendsModelForPostOnPolymporphicClassThatExists()
             throws InterruptedException
     {
@@ -161,7 +170,7 @@ public class AssetDataHandlerIT
         this.modelFactory.deleteModel(uri, headers);// $NON-NLS-1$
 
         // add it back
-        PutFieldDataRequest putFieldDataRequest = createPutRequest(fieldId, fieldValue, uri);
+        PutFieldDataRequest putFieldDataRequest = createPutRequestUsingDMReal(fieldId, fieldValue, uri);
         java.util.Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
         // this.thrown.expect(RuntimeException.class);
         this.putFieldDataProcessor.putData(putFieldDataRequest, modelLookupMap, headers, HttpPost.METHOD_NAME);
@@ -179,7 +188,7 @@ public class AssetDataHandlerIT
     /**
      * -
      */
-    @Test
+   @Test
     public void testWithFilterNoModelForPostOnClassThatDoesNotExist()
     {
         String model = "DoesNotExist";
@@ -194,7 +203,7 @@ public class AssetDataHandlerIT
         this.modelFactory.deleteModel(uri, headers);// $NON-NLS-1$
 
         // add it back
-        PutFieldDataRequest putFieldDataRequest = createPutRequest(fieldId, fieldValue, uri);
+        PutFieldDataRequest putFieldDataRequest = createPutRequestUsingDMReal(fieldId, fieldValue, uri);
         java.util.Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
         // this.thrown.expect(RuntimeException.class);
         this.putFieldDataProcessor.putData(putFieldDataRequest, modelLookupMap, headers, HttpPost.METHOD_NAME);
@@ -208,13 +217,57 @@ public class AssetDataHandlerIT
         String averageSpeed = (String) ((LinkedHashMapModel) resultingModelList.get(0)).getMap().get("averageSpeed");
         Assert.assertEquals("22.6", averageSpeed);
     }
- 
-    
+
+   
+   /**
+ *  -
+ * @throws JSONException -
+ */
+@Test
+   public void testWithFilterNoModelForPostOnClassThatDoesNotExistUsingPredixString() throws JSONException
+   {
+       String model = "DoesNotExist";
+       String uri = "/" + model + "/engine22PredixString";
+       String fieldId = "/" + model + "/averageSpeed";
+       
+       JSONObject jsonObj = new JSONObject();
+       jsonObj.put("uri", uri);
+       jsonObj.put("description", "test");
+       String fieldValue = jsonObj.toString();
+
+       List<Header> headers = this.restClient.getSecureTokenForClientId();
+       this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
+
+       // get rid of it
+       this.modelFactory.deleteModel(uri, headers);// $NON-NLS-1$
+
+       // add it back
+       PutFieldDataRequest putFieldDataRequest = createPutRequestUsingPredixString(fieldId, fieldValue, uri);
+       java.util.Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
+       // this.thrown.expect(RuntimeException.class);
+       this.putFieldDataProcessor.putData(putFieldDataRequest, modelLookupMap, headers, HttpPost.METHOD_NAME);
+
+       AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
+       assetQueryBuilder.setUri(uri);
+       List<Object> resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(), model, headers);
+
+       Assert.assertNotNull(resultingModelList);
+       Assert.assertTrue(resultingModelList.size() > 0);
+       String description = (String) ((LinkedHashMapModel) resultingModelList.get(0)).getMap().get("description");
+       Assert.assertEquals("test", description);
+       
+       GetFieldDataRequest request = createGetRequest(uri, "/asset", PredixString.class.getSimpleName());
+       GetFieldDataResult getResult = this.getFieldDataProcessor.getData(request, modelLookupMap, headers);
+       Assert.assertNotNull(getResult);
+       
+   }
+
+   
     /**
      * -
      */
     @SuppressWarnings("unchecked")
-    @Test
+   @Test
     public void testNoFilterClassThatExtendsModelGettingAChildEntityForPostOnPolymporphicClassThatExists()
     {
         List<Header> headers = this.restClient.getSecureTokenForClientId();
@@ -279,26 +332,27 @@ public class AssetDataHandlerIT
 
         Assert.assertTrue(((DAString) ((OsaData) getResult.getFieldData().get(0).getData()).getDataEvent()).getValue()
                 .contains("pressure"));
-        logger.info("value = " + ((DAString) ((OsaData) getResult.getFieldData().get(0).getData()).getDataEvent()).getValue());
+        logger.info("value = "
+                + ((DAString) ((OsaData) getResult.getFieldData().get(0).getData()).getDataEvent()).getValue());
 
     }
-  
+
     /**
      * -
      */
     @SuppressWarnings("unchecked")
-    @Test
+   @Test
     public void testClassThatDoesNotExtendModelOnNonPolymporphicClassThatExistsButUnregisteredWithJsonMapper()
     {
         List<Header> headers = this.restClient.getSecureTokenForClientId();
         this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
-    
+
         // get rid of it
         this.modelFactory.deleteModel("/jetEngineNoModel/1", headers);//$NON-NLS-1$
-    
+
         PutFieldDataRequest putFieldDataRequest = new PutFieldDataRequest();
         putFieldDataRequest.setCorrelationId("string");
-    
+
         FieldData fieldData = new FieldData();
         Field field = new Field();
         FieldIdentifier fieldIdentifier = new FieldIdentifier();
@@ -306,11 +360,11 @@ public class AssetDataHandlerIT
         fieldIdentifier.setSource(FieldSourceEnum.PREDIX_ASSET.name());
         field.setFieldIdentifier(fieldIdentifier);
         fieldData.getField().add(field);
-    
+
         PutFieldDataCriteria fieldDataCriteria = new PutFieldDataCriteria();
         fieldDataCriteria.setFieldData(fieldData);
         putFieldDataRequest.getPutFieldDataCriteria().add(fieldDataCriteria);
-    
+
         // create a sample asset with no Filter in the put and the data is a
         // json String, it should simply save it in Predix Asset
         ArrayList<JetEngineNoModel> assets = new ArrayList<JetEngineNoModel>();
@@ -320,8 +374,8 @@ public class AssetDataHandlerIT
         asset.setSerialNo(12345);
         JetEnginePart jetEnginePart = new JetEnginePart();
         jetEnginePart.setsNo(22222);
-        asset.setJetEnginePart(jetEnginePart );
-        
+        asset.setJetEnginePart(jetEnginePart);
+
         String assetJson = this.jsonMapper.toJson(assets);
         List<Object> listNoModel = this.jsonMapper.fromJsonArray(assetJson, Object.class);
         DataMap data = new DataMap();
@@ -335,26 +389,26 @@ public class AssetDataHandlerIT
         fieldData.setData(data);
         @SuppressWarnings("unused")
         String json = this.jsonMapper.toJson(putFieldDataRequest);
-    
+
         // add it back
         java.util.Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
         PutFieldDataResult result = this.putFieldDataProcessor.putData(putFieldDataRequest, modelLookupMap, headers,
                 HttpPost.METHOD_NAME);
         Assert.assertNotNull(result);
         Assert.assertTrue(result.getErrorEvent().size() == 0);
-        
-        
+
         AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
         assetQueryBuilder.setUri("/jetEngineNoModel/1");
         List<Object> resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(),
                 "com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel", headers);
-    
+
         Assert.assertNotNull(resultingModelList);
         Assert.assertTrue(resultingModelList.size() > 0);
-        Assert.assertEquals(new Integer(12345), ((LinkedHashMapModel) resultingModelList.get(0)).getMap().get("serialNo"));
-    
+        Assert.assertEquals(new Integer(12345),
+                ((LinkedHashMapModel) resultingModelList.get(0)).getMap().get("serialNo"));
+
         this.jsonMapper.resetSubtypes();
-        
+
         String filterFieldValue = "/jetEngineNoModel/1";
         String selection = "/jetEngineNoModel/map/jetEnginePart/*";
         GetFieldDataRequest request = createGetRequest(filterFieldValue, selection, OsacbmDataType.DA_STRING.value());
@@ -362,20 +416,20 @@ public class AssetDataHandlerIT
         logger.debug(this.jsonMapper.toJson(getResult));
         boolean value = ((DAString) ((OsaData) getResult.getFieldData().get(0).getData()).getDataEvent()).getValue()
                 .contains("22222");
-    
+
         Assert.assertTrue(value);
-        logger.info("value = " + ((DAString) ((OsaData) getResult.getFieldData().get(0).getData()).getDataEvent()).getValue());
+        logger.info("value = "
+                + ((DAString) ((OsaData) getResult.getFieldData().get(0).getData()).getDataEvent()).getValue());
     }
 
- 
     /**
      */
-    @Test
+   @Test
     public void testAssetCriteriaForRootofAsset()
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2015";
+        String assetUri = "/asset/compressor-2017";
         String assetAttribute = "/asset/*";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
@@ -398,20 +452,19 @@ public class AssetDataHandlerIT
         Assert.assertTrue(response.getFieldData().get(0).getData() instanceof OsaData);
         OsaData osaData = (OsaData) response.getFieldData().get(0).getData();
         Assert.assertTrue(((DAString) osaData.getDataEvent()).getValue().length() > 0);
-        
+
         logger.info("value = " + ((DAString) osaData.getDataEvent()).getValue());
 
     }
-    
-    
+
     /**
      */
-    @Test
+   @Test
     public void testAssetCriteriaForRootAssetAttribute()
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2015";
+        String assetUri = "/asset/compressor-2017";
         String assetAttribute = "/description";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
@@ -434,19 +487,19 @@ public class AssetDataHandlerIT
         Assert.assertTrue(response.getFieldData().get(0).getData() instanceof OsaData);
         OsaData osaData = (OsaData) response.getFieldData().get(0).getData();
         Assert.assertTrue(((DAString) osaData.getDataEvent()).getValue().length() > 0);
-        
+
         logger.info("value = " + ((DAString) osaData.getDataEvent()).getValue());
 
     }
-    
+
     /**
      */
-    @Test
+   @Test
     public void testAssetCriteriaForRootofMap()
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2015";
+        String assetUri = "/asset/compressor-2017";
         String assetAttribute = "/asset/assetTag/*";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
@@ -469,19 +522,19 @@ public class AssetDataHandlerIT
         Assert.assertTrue(response.getFieldData().get(0).getData() instanceof OsaData);
         OsaData osaData = (OsaData) response.getFieldData().get(0).getData();
         Assert.assertTrue(((DAString) osaData.getDataEvent()).getValue().length() > 0);
-        
+
         logger.info("value = " + ((DAString) osaData.getDataEvent()).getValue());
 
     }
 
     /**
      */
-    @Test
+   @Test
     public void testAssetCriteriaForRootofMapItem()
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2015";
+        String assetUri = "/asset/compressor-2017";
         String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/*";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
@@ -504,21 +557,21 @@ public class AssetDataHandlerIT
         Assert.assertTrue(response.getFieldData().get(0).getData() instanceof OsaData);
         OsaData osaData = (OsaData) response.getFieldData().get(0).getData();
         Assert.assertTrue(((DAString) osaData.getDataEvent()).getValue().length() > 0);
-        
+
         logger.info("value = " + ((DAString) osaData.getDataEvent()).getValue());
 
     }
-    
+
     /**
      */
-    @Test
+   @Test
     public void testAssetCriteriaForMapItemAttribute()
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2015";
-        //String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/sourceTagId";
-        String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/tagDatasource/*";
+        String assetUri = "/asset/compressor-2017";
+        // String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/timeseriesDatasource/tag";
+        String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/timeseriesDatasource/tag*";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
         GetFieldDataRequest request = createGetRequest(assetUri, assetAttribute, assetExpectedDataType);
@@ -540,11 +593,11 @@ public class AssetDataHandlerIT
         Assert.assertTrue(response.getFieldData().get(0).getData() instanceof OsaData);
         OsaData osaData = (OsaData) response.getFieldData().get(0).getData();
         Assert.assertTrue(((DAString) osaData.getDataEvent()).getValue().length() > 0);
-        
+
         logger.info("value = " + ((DAString) osaData.getDataEvent()).getValue());
 
     }
-    
+
     /**
      * -
      * 
@@ -581,6 +634,8 @@ public class AssetDataHandlerIT
         getFieldDataRequest.getFieldDataCriteria().add(fieldDataCriteria);
         return getFieldDataRequest;
     }
+    
+    
 
     /**
      * @param fieldId
@@ -589,7 +644,7 @@ public class AssetDataHandlerIT
      * @param filterFieldValue
      * @return -
      */
-    private PutFieldDataRequest createPutRequest(String fieldId, Double fieldValue, String uri)
+    private PutFieldDataRequest createPutRequestUsingDMReal(String fieldId, Double fieldValue, String uri)
     {
 
         FieldData fieldData = new FieldData();
@@ -624,6 +679,44 @@ public class AssetDataHandlerIT
     /**
      * @param fieldId
      * @param fieldValue
+     * @param filterFieldId
+     * @param filterFieldValue
+     * @return -
+     */
+    private PutFieldDataRequest createPutRequestUsingPredixString(String fieldId, String fieldValue, String uri)
+    {
+
+        FieldData fieldData = new FieldData();
+        Field field = new Field();
+        FieldIdentifier fieldIdentifier = new FieldIdentifier();
+        fieldIdentifier.setId(fieldId);
+        field.setFieldIdentifier(fieldIdentifier);
+        fieldData.getField().add(field);
+
+        PredixString predixString = new PredixString();
+        predixString.setString(fieldValue);
+        fieldData.setData(predixString);
+
+        // Criteria
+        PutFieldDataCriteria fieldDataCriteria = new PutFieldDataCriteria();
+        fieldDataCriteria.setFieldData(fieldData);
+
+        // Asset filter
+        AssetFilter assetFilter = createAssetFilter(uri);
+        fieldDataCriteria.setFilter(assetFilter);
+
+        // Request
+        PutFieldDataRequest putFieldDataRequest = new PutFieldDataRequest();
+        putFieldDataRequest.setCorrelationId("string");
+        putFieldDataRequest.getPutFieldDataCriteria().add(fieldDataCriteria);
+
+        return putFieldDataRequest;
+    }
+
+    
+    /**
+     * @param fieldId
+     * @param fieldValue
      * @return -
      */
     private AssetFilter createAssetFilter(String uri)
@@ -631,6 +724,68 @@ public class AssetDataHandlerIT
         AssetFilter assetFilter = new AssetFilter();
         assetFilter.setUri(uri);
         return assetFilter;
+    }
+
+    @SuppressWarnings({
+            "resource", "javadoc"
+    })
+    @Test
+    public void testWithFileUpload() throws IOException
+    {
+
+        String putFieldDataString = "{\"putFieldDataCriteria\":[{\"namespaces\":[],\"fieldData\":{\"field\":[{\"fieldIdentifier\":{\"complexType\":\"FieldIdentifier\",\"source\":\"PREDIX_ASSET\"},\"parents\":[]}],\"data\":{\"complexType\":\"DataFile\",\"source\":\"PREDIX_ASSET\"}}}]}";
+        List<Header> headers = this.restClient.getSecureTokenForClientId();
+        this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
+        headers.add(new BasicHeader("Content-type", "application/json"));
+        // get rid of it
+        this.modelFactory.deleteModel("/classification/Locomotive-Test", headers);//$NON-NLS-1$
+
+        PutFieldDataRequest putFieldDataRequest = this.jsonMapper.fromJson(putFieldDataString,
+                PutFieldDataRequest.class);
+        File initialFile = new File("src/test/resources/testFiles/CarAndLocomotives.json");
+        InputStream targetStream;
+
+        targetStream = FileUtils.openInputStream(initialFile);
+        updatePutRequest(initialFile.getName(), targetStream, putFieldDataRequest);
+        // add it back
+        java.util.Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
+        PutFieldDataResult result = this.putFieldDataProcessor.putData(putFieldDataRequest, modelLookupMap, headers,
+                HttpPost.METHOD_NAME);
+        Assert.assertNotNull(result);
+        Assert.assertTrue(result.getErrorEvent() != null);
+    
+
+    }
+
+    private void updatePutRequest(String filename, InputStream file, PutFieldDataRequest putFieldDataRequest)
+    {
+
+        if ( putFieldDataRequest == null ) throw new RuntimeException("PutFieldDataRequest is missing "); //$NON-NLS-1$
+
+        PutFieldDataCriteria fieldDataCriteria = null;
+        if ( putFieldDataRequest != null && (putFieldDataRequest.getPutFieldDataCriteria() == null
+                || putFieldDataRequest.getPutFieldDataCriteria().size() == 0) )
+        {
+            fieldDataCriteria = new PutFieldDataCriteria();
+            Filter selectionFilter = new Filter();
+            fieldDataCriteria.setFilter(selectionFilter);
+            putFieldDataRequest.getPutFieldDataCriteria().add(fieldDataCriteria);
+        }
+        fieldDataCriteria = putFieldDataRequest.getPutFieldDataCriteria().get(0);
+        FieldData fieldData = fieldDataCriteria.getFieldData();
+
+        DataFile datafile = new DataFile();
+        datafile.setName(filename);
+        try
+        {
+            datafile.setFile(IOUtils.toByteArray(file));
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+        fieldData.setData(datafile);
+        fieldDataCriteria.setFieldData(fieldData);
     }
 
 }

@@ -1,0 +1,19 @@
+Url:e.g. https://xxx-data-exchange.run.aws-usw02-pr.ice.predix.io/services/fdhrouter/fielddatahandler/getfielddata
+Body:
+{
+	"fieldDataCriteria": [{
+		"namespaces": [],
+		"fieldSelection": [{
+			"fieldIdentifier": {
+				"complexType": "FieldIdentifier",
+				"id": "/timeseries/tag",
+				"source": "PREDIX_ASSET"
+			},
+			"expectedDataType": "PredixString"
+		}],
+		"filter": {
+				"complexType": "AssetFilter",
+				"uri": "/asset/compressor-2017"
+		}
+	}]
+}

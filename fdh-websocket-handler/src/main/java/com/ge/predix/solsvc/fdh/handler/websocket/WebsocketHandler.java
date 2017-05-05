@@ -7,49 +7,37 @@
  * with the terms and conditions stipulated in the agreement/contract
  * under which the software has been supplied.
  */
-package com.ge.predix.solsvc.fdh.handler.websocket; 
-
+package com.ge.predix.solsvc.fdh.handler.websocket;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-import org.apache.commons.io.IOUtils;
 import org.apache.http.Header;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
-import com.ge.predix.entity.datafile.DataFile;
 import com.ge.predix.entity.fielddata.FieldData;
 import com.ge.predix.entity.getfielddata.GetFieldDataRequest;
 import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
-import com.ge.predix.entity.timeseries.datapoints.ingestionrequest.Body;
 import com.ge.predix.entity.timeseries.datapoints.ingestionrequest.DatapointsIngestion;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 import com.ge.predix.solsvc.restclient.impl.RestClient;
 import com.ge.predix.solsvc.websocket.client.WebSocketClient;
+import com.ge.predix.solsvc.websocket.client.WebSocketClientImpl;
 import com.neovisionaries.ws.client.WebSocket;
 import com.neovisionaries.ws.client.WebSocketAdapter;
 import com.neovisionaries.ws.client.WebSocketException;
@@ -62,76 +50,95 @@ import com.neovisionaries.ws.client.WebSocketException;
 @ImportResource(
 {
         "classpath*:META-INF/spring/fdh-websocket-handler-scan-context.xml"
-        
+
 })
 @Profile("websocket")
-public class WebsocketHandler implements GetDataHandler, PutDataHandler
+public class WebsocketHandler
+        implements GetDataHandler, PutDataHandler
 {
-	private static final Logger log = LoggerFactory.getLogger(WebsocketHandler.class);
-			
-	@Autowired
-	private WebSocketClientConfig webSocketClientConfig;
+    private static final Logger log = LoggerFactory.getLogger(WebsocketHandler.class);
+
+    @Autowired
+    @Qualifier("customWebSocketClientConfig")
+	private WebSocketClientConfig customWebSocketClientConfig;
 	
-	@Autowired
-	private WebSocketClient webSocketClient;
-	
-	@Autowired
+    @Autowired
 	private JsonMapper mapper;
-	
-	@Autowired
-	private RestClient restClient;
-	
-	/**
-	 * 
-	 */
-	private WebSocketAdapter messageListener = new WebSocketAdapter() {
-		@SuppressWarnings("nls")
-		@Override
-		public void onTextMessage(WebSocket wsocket, String message) {
-			log.info("Websocket Client Handler : Recieved success message from " + wsocket.getURI() + " : " + message);
-		}
-	};
-	
-	/**
-	 *  -
-	 */
-	@PostConstruct
-	public void init() {
-		//List<Header> headers = restClient.getSecureTokenForClientId();
-		this.webSocketClient.overrideWebSocketConfig(this.webSocketClientConfig);
-		this.webSocketClient.init(this.restClient, new ArrayList<Header>(), this.messageListener);
-	}
-    /* (non-Javadoc)
+
+    @Autowired
+    private RestClient restClient2;
+    
+    //@Autowired
+	//private WebSocketClient client2;
+		
+    private WebSocketClient client2 = new WebSocketClientImpl();
+    /**
+     * 
+     */
+    private WebSocketAdapter messageListener = new WebSocketAdapter()
+                                             {
+                                                 @SuppressWarnings("nls")
+                                                 @Override
+                                                 public void onTextMessage(WebSocket wsocket, String message)
+                                                 {
+                                                     log.debug("RECEIVED....from "+wsocket.getURI().toString() + message);                                           // $$
+                                                 }
+
+                                                 @SuppressWarnings("nls")
+                                                 @Override
+                                                 public void onBinaryMessage(WebSocket wsocket, byte[] binary)
+                                                 {
+                                                     String str = new String(binary, StandardCharsets.UTF_8);
+                                                     log.debug("RECEIVED....from "+wsocket.getURI().toString() + str);                                                      // $$
+                                                 }
+                                             };
+    /**
+     * -
+     */
+    @PostConstruct
+    public void init()
+    {
+    	this.restClient2.overrideRestConfig(customWebSocketClientConfig);
+		this.client2.overrideWebSocketConfig(this.customWebSocketClientConfig);
+		this.client2.init(this.restClient2, this.restClient2.getSecureTokenForClientId(), messageListener);
+    }
+
+    /*
+     * (non-Javadoc)
      * @see com.ge.predix.solsvc.fdhcontentbasedrouter.GetFieldDataInterface#getFieldData(java.util.List, com.ge.predix.entity.getfielddata.GetFieldDataRequest)
      */
     @SuppressWarnings("nls")
     @Override
-    public GetFieldDataResult getData(GetFieldDataRequest request,Map<Integer, Object> modelLookupMap, List<Header> headers)
-    {        
-    	throw new UnsupportedOperationException("unimplemented");
+    public GetFieldDataResult getData(GetFieldDataRequest request, Map<Integer, Object> modelLookupMap,
+            List<Header> headers)
+    {
+        throw new UnsupportedOperationException("unimplemented");
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see com.ge.predix.solsvc.fdh.handler.PutFieldDataInterface#processRequest(com.ge.predix.entity.putfielddata.PutFieldDataRequest, java.util.List)
      */
-    @SuppressWarnings("nls")
-    @Override
-    public PutFieldDataResult putData(PutFieldDataRequest request, Map<Integer, Object> modelLookupMap, List<Header> headers, String httpMethod)
+    @SuppressWarnings(
     {
-        validate();
+            "nls", "unchecked", "resource"
+    })
+    @Override
+    public PutFieldDataResult putData(PutFieldDataRequest request, Map<Integer, Object> modelLookupMap,
+            List<Header> headers, String httpMethod)
+    {
+    	validate();
+    	
         for (PutFieldDataCriteria criteria:request.getPutFieldDataCriteria()) {
         	FieldData fieldData = criteria.getFieldData();
         	DatapointsIngestion dpIngestion = null;
-        	if (fieldData.getData() instanceof DataFile) {
-        		DataFile datafile = (DataFile) criteria.getFieldData().getData();
-        		InputStream file = IOUtils.toInputStream(new String((byte[])datafile.getFile()));
-        		processUploadCsv(headers, file, UUID.randomUUID().toString());
-        	}else if (fieldData.getData() instanceof DatapointsIngestion) {
+        	if (fieldData.getData() instanceof DatapointsIngestion) {
         		dpIngestion = (DatapointsIngestion)fieldData.getData();
         		String payload = this.mapper.toJson(dpIngestion);
             	log.info("Payload : "+payload);
             	try {
-    				this.webSocketClient.postTextWSData(payload);
+            		log.info("Websocket Client : "+this.customWebSocketClientConfig.getWsUri());
+            		this.client2.postTextWSData(payload);
     			} catch (IOException|WebSocketException e) {
     				throw new RuntimeException("Exception when posting data to websocket",e);
     			}
@@ -143,73 +150,11 @@ public class WebsocketHandler implements GetDataHandler, PutDataHandler
     }
 
     /**
-     *  -
+     * -
      */
     private void validate()
     {
         // TODO Auto-generated method stub
-        
-    }
-    
-    @SuppressWarnings("nls")
-    private void processUploadCsv(List<Header> headers, InputStream file, String uuid) {
 
-    	DatapointsIngestion dpIngestion = new DatapointsIngestion();
-		dpIngestion.setMessageId(UUID.randomUUID().toString());
-		List<Body> bodies = new ArrayList<Body>();
-		SimpleDateFormat df = null;
-
-		try (CSVParser csvFileParser = CSVFormat.EXCEL.withHeader().parse(new InputStreamReader(file))){
-			
-			List<CSVRecord> csvRecords = csvFileParser.getRecords();
-			Map<String, Integer> headerMap = csvFileParser.getHeaderMap();
-			for (CSVRecord csvRecord : csvRecords) {
-				long epoch = 0;
-				int quality = 3;
-				for (String name : headerMap.keySet()) {
-					List<Object> datapoint = new ArrayList<Object>();
-					String key = name.toString();
-					String value = csvRecord.get(key);
-					if (StringUtils.startsWithIgnoreCase(key, "Date")) {
-						String dataFormattedString = StringUtils.replace(key, "Date(", ""); //$NON-NLS-1$//$NON-NLS-2$
-						String dataformat = StringUtils.replace(dataFormattedString, ")", ""); //$NON-NLS-1$//$NON-NLS-2$
-						df = new SimpleDateFormat(dataformat);
-						Date date = df.parse(value);
-						epoch = date.getTime();
-					}else if (StringUtils.endsWithIgnoreCase(key, "Quality")) {
-						switch (value) {
-						case "BAD":
-							quality = 0;break;
-						case "UNCERTAIN":
-							quality = 1;break;
-						case "NA":
-							quality = 2;break;
-						default :
-							quality = 3;break;						
-						}
-					}else {
-						Body body = new Body();
-						String tagName = StringUtils.replace(StringUtils.replace(StringUtils.replace(StringUtils.replace(StringUtils.replace(StringUtils.replace(key," ", ""),"(",""),")",""),"/",""),":",""),"-","").trim();
-						body.setName(tagName);
-						datapoint.add(epoch);
-						datapoint.add(new Double(value));
-						datapoint.add(quality);
-						body.setDatapoints(datapoint);
-						bodies.add(body);
-					}
-					
-				}
-			} // record close
-			dpIngestion.setBody(bodies);
-			log.trace("UUID :" + uuid + " injection" + dpIngestion.toString()); //$NON-NLS-1$ //$NON-NLS-2$
-			log.info(this.mapper.toPrettyJson(dpIngestion));
-			log.info("WS URL : "+this.webSocketClientConfig.getWsUri());
-			this.webSocketClient.postTextWSData(this.mapper.toJson(dpIngestion));
-			log.info("UUID :" + uuid + " # records are " + csvRecords.size()); //$NON-NLS-1$ //$NON-NLS-2$
-
-		} catch (IOException | ParseException | WebSocketException e) {
-		    log.error("UUID :" + uuid + " Error processing upload response ", e); //$NON-NLS-1$ //$NON-NLS-2$
-		    throw new RuntimeException("UUID :" + uuid + " Error processing upload response ", e);
-		} 
     }
 }

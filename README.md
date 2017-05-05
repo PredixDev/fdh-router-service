@@ -171,6 +171,53 @@ Here is another example of a Get Handler, this time for Predix Timeseries.  In t
 	}]
 }
 ```
+##GetFieldData - AssetCriteriaAwareTimeseriesFilter Example
+```json
+{
+	"fieldDataCriteria": [{
+		"namespaces": [],
+		"fieldSelection": [{
+			"fieldIdentifier": {
+				"complexType": "FieldIdentifier",
+				"id": "/timeseries/tag",
+				"source": "PREDIX_TIMESERIES"
+			},
+			"expectedDataType": "DatapointsResponse"
+		}],
+		"filter": {
+			"complexType": "AssetCriteriaAwareTimeseriesFilter",
+			"assetFieldDataCriteria": {
+				"namespaces": [],
+				"resultId": "sourceTagId",
+				"fieldSelection": [{
+					"fieldIdentifier": {
+						"complexType": "FieldIdentifier",
+						"id": "/asset/assetTag/crank-frame-dischargepressure/sourceTagId",
+						"source": "PREDIX_ASSET"
+					},
+					"expectedDataType": "DAString"
+				}],
+				"filter": {
+					"complexType": "AssetFilter",
+					"uri": "/asset/compressor-2015"
+				}
+			},
+			"timeseriesFilter": {
+				"complexType": "TimeseriesFilter",
+				"datapointsQuery": {
+					"start": "1d-ago",
+					"tags": [{
+						"name": "{{sourceTagId}}",
+						"limit": 0,
+						"aggregations": [],
+						"groups": []
+					}]
+				}
+			}
+		}
+	}]
+}
+```
 
 ##PutFieldData
 

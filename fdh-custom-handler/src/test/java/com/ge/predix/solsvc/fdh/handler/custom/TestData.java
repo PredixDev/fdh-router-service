@@ -49,7 +49,7 @@ public class TestData {
         assetIdFieldIdentifier.setId("/asset/assetId");
         //assetIdFieldIdentifier.setSource(FieldSourceEnum.PREDIX_ASSET.name());
         fieldIdentifierValue.setFieldIdentifier(assetIdFieldIdentifier );
-        fieldIdentifierValue.setValue("/asset/compressor-2015");
+        fieldIdentifierValue.setValue("/asset/compressor-2017");
         fieldFilter.getFieldIdentifierValue().add(fieldIdentifierValue );
         
         //add FieldIdValue pair for time        
@@ -88,7 +88,7 @@ public class TestData {
         FieldIdentifier assetIdFieldIdentifier = new FieldIdentifier();
         assetIdFieldIdentifier.setId("assetId");
         fieldIdentifierValue.setFieldIdentifier(assetIdFieldIdentifier );
-        fieldIdentifierValue.setValue("/asset/compressor-2015");
+        fieldIdentifierValue.setValue("/asset/compressor-2017");
         
         fieldFilter.getFieldIdentifierValue().add(fieldIdentifierValue);
 
@@ -99,8 +99,7 @@ public class TestData {
         FieldData fieldData = new FieldData();
         com.ge.predix.entity.field.Field field = new com.ge.predix.entity.field.Field();
         FieldIdentifier fieldIdentifier = new FieldIdentifier();
-       // fieldIdentifier.setId("/asset/tag/tagattribute/crank-frame-dischargepressure/outputMinimum");
-        fieldIdentifier.setId("/asset/tag/tagattribute/crank-frame-velocity/outputMinimum");        
+        fieldIdentifier.setId("/asset/tag/tagattribute/crank-frame-velocity/loAlarmThreshold");        
         fieldIdentifier.setSource("PredixAsset"  );
         field.setFieldIdentifier(fieldIdentifier );
         

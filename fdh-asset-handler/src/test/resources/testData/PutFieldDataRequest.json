@@ -5,7 +5,7 @@
 			"field": [{
 				"fieldIdentifier": {
 					"complexType": "FieldIdentifier",
-					"id": "/asset/assetTag/crank-frame-dischargepressure/tagDatasource/tagExtensions/attributes/alertStatus/value",
+					"id": "/asset/assetTag/crank-frame-dischargepressure/alertStatusUri/attributes/alertStatus/value",
 					"source": "PREDIX_ASSET"
 				},
 				"parents": []
@@ -22,7 +22,7 @@
 		},
 		"filter": {
 			"complexType": "AssetFilter",
-			"uri": "/asset/compressor-2015"
+			"uri": "/asset/compressor-2017"
 		}
 	}]
 }

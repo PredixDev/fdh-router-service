@@ -16,6 +16,7 @@ import org.apache.http.Header;
 import org.mimosa.osacbmv3_3.DataEvent;
 
 import com.ge.predix.entity.engunit.EngUnit;
+import com.ge.predix.entity.fielddata.PredixString;
 import com.ge.predix.solsvc.fdh.handler.asset.common.FieldModel;
 import com.ge.predix.solsvc.fdh.handler.asset.data.AttributeHandlerInterface;
 
@@ -37,6 +38,14 @@ public interface AttributeUpdaterInterface extends AttributeHandlerInterface
      */
     public void storeOsaData(Object model, FieldModel fieldModel, DataEvent dataEvent, EngUnit engUnit, List<Header> headers);
 
+    /**
+     * @param model -
+     * @param fieldModel -
+     * @param predixString -
+     * @param engUnit -
+     * @param headers -
+     */
+    public void storePredixStringData(Object model, FieldModel fieldModel, PredixString predixString, EngUnit engUnit, List<Header> headers);
 
 
 }
