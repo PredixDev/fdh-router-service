@@ -89,7 +89,7 @@ This nice thing to notice here is that Configuring this GET request ahead of tim
 ## GetFieldData - RelationalDBHandler - POST
 (future)Seemlessly mapping these Rest semantics to SQL semantics has been done in the past but is not ported to the cloud.  This allows the traversal of any Object/Relational Graph relative to an 'id', such as an assetId.  
 
-## GetFieldData - PredixAssetHandler - POST
+##GetFieldData - PredixAssetHandler - POST
 The GetFieldData api has a simple List of Criteria, shown below.  Each criteria has a FieldIdentifier and a Filter.  In this example we are retreiving the outputMaximum attribute on an Asset.AssetTag("crank-frame-dischargepressure") where /asset/assetId = "/asset/compressor-2015".  AssetTag is a map.  
 
 Notice the use of the FieldIdentifier object, you'll see this alot and the id and source is how the api handles Federated datasources.  Also note the FieldIdentifier is typed.  Identifier (CustomerIdentifier, TurbineIdentifier, AddressIdentier, etc) has polymorphic semantics so you can have a list of varying ids, very helpful in a SOA.
