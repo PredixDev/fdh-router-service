@@ -1,0 +1,44 @@
+{
+	"fieldDataCriteria": [{
+		"namespaces": [],
+		"fieldSelection": [{
+			"fieldIdentifier": {
+				"complexType": "FieldIdentifier",
+				"id": "/timeseries/tag",
+				"source": "PREDIX_TIMESERIES"
+			},
+			"expectedDataType": "DatapointsResponse"
+		}],
+		"filter": {
+			"complexType": "AssetCriteriaAwareTimeseriesFilter",
+			"assetFieldDataCriteria": {
+				"namespaces": [],
+				"resultId": "tag",
+				"fieldSelection": [{
+					"fieldIdentifier": {
+						"complexType": "FieldIdentifier",
+						"id": "/asset/assetTag/crank-frame-dischargepressure/timeseriesDatasource/tag",
+						"source": "PREDIX_ASSET"
+					},
+					"expectedDataType": "DAString"
+				}],
+				"filter": {
+					"complexType": "AssetFilter",
+					"uri": "/asset/compressor-2017"
+				}
+			},
+			"timeseriesFilter": {
+				"complexType": "TimeseriesFilter",
+				"datapointsQuery": {
+					"start": "1d-ago",
+					"tags": [{
+						"name": "{{tag}}",
+						"limit": 0,
+						"aggregations": [],
+						"groups": []
+					}]
+				}
+			}
+		}
+	}]
+}

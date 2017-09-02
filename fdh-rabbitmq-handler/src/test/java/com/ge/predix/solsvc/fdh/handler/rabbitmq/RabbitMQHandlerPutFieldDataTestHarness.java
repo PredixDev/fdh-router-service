@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.cxf.helpers.IOUtils;
 import org.apache.http.Header;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -21,20 +22,26 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ge.predix.entity.model.Model;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
+import com.ge.predix.solsvc.ext.util.JsonMapper;
 
 /**
  * 
  * @author predix
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:META-INF/spring/TEST-fdh-rabbitmq-handler-scan-context.xml" })
+@ContextConfiguration(locations = {
+		"classpath*:META-INF/spring/TEST-fdh-rabbitmq-handler-scan-context.xml",
+		"classpath:/META-INF/spring/ext-util-scan-context.xml" })
 @ActiveProfiles({ "rabbitmq" })
 public class RabbitMQHandlerPutFieldDataTestHarness {
 
-	private static final Logger log = LoggerFactory.getLogger(RabbitMQHandlerPutFieldDataTestHarness.class);
+	private static final Logger log = LoggerFactory
+			.getLogger(RabbitMQHandlerPutFieldDataTestHarness.class);
+
+	@Autowired
+	private JsonMapper jsonMapper;
 
 	/**
 	 * @throws Exception
@@ -86,14 +93,36 @@ public class RabbitMQHandlerPutFieldDataTestHarness {
 	@Test
 	public void testPutFieldData() throws IllegalStateException, IOException {
 		log.debug("================================");
-		
-		PutFieldDataRequest request = TestData.putFieldDataRequest();
+
+		PutFieldDataRequest request = this.jsonMapper.fromJson(createFieldChangedEventStr(), PutFieldDataRequest.class);
+
+		log.debug("================================"
+				+ this.jsonMapper.toJson(request));
+
 		List<Header> headers = new ArrayList<Header>();
 		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
-		PutFieldDataResult result = this.rabbitMqHandler.putData(request, modelLookupMap, headers, null);
+		PutFieldDataResult result = this.rabbitMqHandler.putData(request,
+				modelLookupMap, headers, null);
 		Assert.assertNotNull(result);
-		Assert.assertTrue(result.getErrorEvent().get(0).contains("SampleHandler"));
+		Assert.assertTrue(result.getErrorEvent().get(0)
+				.contains("SampleHandler"));
 
+	}
+
+	@SuppressWarnings("nls")
+	private String createFieldChangedEventStr() {
+		String fieldChangedEventJsonString = null;
+
+		try {
+			fieldChangedEventJsonString = IOUtils.toString(getClass()
+					.getClassLoader().getResourceAsStream(
+							"PutFieldDataWithFieldChangedEvent.json"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return fieldChangedEventJsonString;
 	}
 
 }

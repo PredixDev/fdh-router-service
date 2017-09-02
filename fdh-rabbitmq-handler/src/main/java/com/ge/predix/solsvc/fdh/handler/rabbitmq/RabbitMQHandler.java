@@ -39,12 +39,13 @@ import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
  * @author predix -
  */
 @Component(value = "rabbitMQPutFieldDataHandler")
-@ImportResource(
+@Profile("rabbitmq")
+@ImportResource( 
 {
         "classpath*:META-INF/spring/fdh-rabbitmq-handler-scan-context.xml"
         
 })
-@Profile("rabbitmq")
+
 public class RabbitMQHandler implements GetDataHandler, PutDataHandler
 {
 
@@ -80,14 +81,14 @@ public class RabbitMQHandler implements GetDataHandler, PutDataHandler
         	FieldData fieldData = criteria.getFieldData();
         	PredixString data = (PredixString) fieldData.getData();
         	MessageProperties prop = new MessageProperties();
-        	prop.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN);
         	
-            Message msg = messageConverter.toMessage(data.toString(), prop);           
+            Message msg = messageConverter.toMessage(data.getString(), prop);   
+        	prop.setContentType(MessageProperties.CONTENT_TYPE_JSON);
+
             this.eventTemplate.convertAndSend(mainQ, msg);
         }
 
         PutFieldDataResult result = new PutFieldDataResult();
-        result.getErrorEvent().add("SampleHandler - put your code here");
         return result;
     }
 

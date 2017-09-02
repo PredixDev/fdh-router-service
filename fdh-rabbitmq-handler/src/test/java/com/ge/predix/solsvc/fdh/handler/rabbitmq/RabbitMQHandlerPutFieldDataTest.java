@@ -29,7 +29,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ge.predix.entity.model.Model;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.rabbitmq.client.Channel;
@@ -115,13 +114,11 @@ public class RabbitMQHandlerPutFieldDataTest {
 
 		when(mockChannel.isOpen()).thenReturn(true);
 
-		PutFieldDataRequest request = TestData.putFieldDataRequest();
+		PutFieldDataRequest request = TestData.putFieldDataRequest(null);
 		List<Header> headers = new ArrayList<Header>();
 		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
 		PutFieldDataResult result = this.rabbitMqHandler.putData(request, modelLookupMap, headers, null);
 		Assert.assertNotNull(result);
-		Assert.assertTrue(result.getErrorEvent().get(0).contains("SampleHandler"));
-
 	}
 
 }

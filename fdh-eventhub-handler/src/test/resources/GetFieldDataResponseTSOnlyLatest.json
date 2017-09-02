@@ -1,0 +1,29 @@
+{
+	"fieldData": [{
+		"field": [{
+			"fieldIdentifier": {
+				"complexType": "FieldIdentifier",
+				"id": "/tags/datapoints/latest",
+				"source": "PREDIX_TIMESERIES"
+			},
+			"parents": []
+		}],
+		"data": {
+			"complexType": "DatapointsResponse",
+			"tags": [{
+				"name": "Compressor-2015:DischargePressure",
+				"results": [{
+					"groups": [],
+					"attributes": {},
+					"values": [
+						[1485308082842, 22, 3]
+					]
+				}],
+				"stats": {
+					"rawCount": 1
+				}
+			}]
+		}
+	}],
+	"errorEvent": []
+}

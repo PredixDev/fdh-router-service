@@ -91,7 +91,6 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
         "classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml"
-
 })
 public class AssetDataHandlerIT
 {
