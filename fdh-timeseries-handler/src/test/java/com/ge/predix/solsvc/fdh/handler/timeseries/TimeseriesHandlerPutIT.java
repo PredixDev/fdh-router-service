@@ -1,9 +1,11 @@
 package com.ge.predix.solsvc.fdh.handler.timeseries;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.cxf.helpers.IOUtils;
 import org.apache.http.Header;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,9 +18,9 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ge.predix.entity.model.Model;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
+import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.restclient.impl.RestClient;
 import com.ge.predix.solsvc.timeseries.bootstrap.config.DefaultTimeseriesConfig;
 
@@ -55,13 +57,19 @@ public class TimeseriesHandlerPutIT {
 	@Autowired
 	@Qualifier("defaultTimeseriesConfig")
 	private DefaultTimeseriesConfig timseriesConfig;
+	
+    @Autowired
+    private JsonMapper               mapper;
 
 	/**
 	 * 
 	 */
 	@Test
 	public void testInjection() {
-		PutFieldDataRequest request = TestData.getPutFieldDataRequest();
+		PutFieldDataRequest request = this.mapper.fromJson(createTestData(), PutFieldDataRequest.class);
+
+		
+		log.debug("request=" + this.mapper.toJson(request));
 
 		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
 		List<Header> headers = this.restClient.getSecureTokenForClientId();
@@ -71,6 +79,22 @@ public class TimeseriesHandlerPutIT {
 		
 		Assert.assertNotNull(result);
 		Assert.assertTrue(result.getErrorEvent().size()==0);
+	}
+	
+	@SuppressWarnings("nls")
+	private String createTestData() {
+		String testdataStr = null;
+
+		try {
+			testdataStr = IOUtils.toString(getClass()
+					.getClassLoader().getResourceAsStream(
+							"PutFieldDataTS.json"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return testdataStr;
 	}
 
 }
