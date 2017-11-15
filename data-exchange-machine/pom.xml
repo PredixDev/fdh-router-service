@@ -37,8 +37,8 @@
 		<jettison.version>1.1</jettison.version>
 
 		<!-- Ext interface -->
-		<ext.model.version>2.3.4</ext.model.version>
-		<ext-util.version>2.3.4</ext-util.version>
+		<ext.model.version>2.3.5</ext.model.version>
+		<ext-util.version>2.3.5</ext-util.version>
 		<!-- Jackson -->
 		<jackson.core-asl.version>1.9.13</jackson.core-asl.version>
 		<jackson.jaxrs.version>1.9.13</jackson.jaxrs.version>

@@ -50,6 +50,7 @@ import com.ge.predix.entity.util.map.DataMap;
 import com.ge.predix.solsvc.bootstrap.ams.common.AssetConfig;
 import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
 import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
+import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEnginePart;
@@ -99,8 +100,10 @@ public class AssetDataHandlerWithExtraJsonMapperRegistrationIT
     public ExpectedException thrown = ExpectedException.none();
     @Autowired
     private AssetConfig      assetConfig;
+    
     @Autowired
-    private ModelFactory     modelFactory;
+    @Qualifier("ModelFactory")
+    private ModelFactoryImpl              modelFactory;
 
     @Autowired
     private JsonMapper jsonMapper;

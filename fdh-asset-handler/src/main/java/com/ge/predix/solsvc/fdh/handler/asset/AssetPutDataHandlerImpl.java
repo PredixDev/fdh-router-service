@@ -27,6 +27,7 @@ import org.mimosa.osacbmv3_3.DataEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -52,6 +53,7 @@ import com.ge.predix.entity.util.map.DataMap;
 import com.ge.predix.entity.util.map.Entry;
 import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
 import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
+import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
@@ -88,7 +90,8 @@ public class AssetPutDataHandlerImpl
     private PutFieldDataCriteriaValidator putFieldDataCriteriaValidator;
 
     @Autowired
-    private ModelFactory                  modelFactory;
+	@Qualifier("ModelFactory")
+	private ModelFactoryImpl modelFactory;
 
     @Autowired
     private JsonMapper                    jsonMapper;

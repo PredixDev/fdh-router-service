@@ -57,6 +57,7 @@ import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
+import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
@@ -101,7 +102,8 @@ public class GetAndPutFieldDataHandlerTest
     @Rule
     public ExpectedException          thrown = ExpectedException.none();
     @Autowired
-    private ModelFactory              modelFactory;
+    @Qualifier("ModelFactory")
+    private ModelFactoryImpl              modelFactory;
     @Autowired
     private JsonMapper jsonMapper;
     

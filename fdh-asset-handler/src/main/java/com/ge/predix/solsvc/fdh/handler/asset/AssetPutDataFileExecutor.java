@@ -27,6 +27,7 @@ import org.codehaus.jettison.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -40,6 +41,7 @@ import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.AttributeMap;
 import com.ge.predix.entity.util.map.Entry;
 import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
+import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
 
 /**
  * PutFieldDataProcessor processes PutFieldDataRequest - Stores Asset Model from File
@@ -51,8 +53,9 @@ public class AssetPutDataFileExecutor  {
 	private static final Logger log = LoggerFactory.getLogger(AssetPutDataFileExecutor.class);
 
 	
-    @Autowired
-    private ModelFactory modelFactory;
+	@Autowired
+	@Qualifier("ModelFactory")
+	private ModelFactoryImpl modelFactory;
 	
     
     /**
