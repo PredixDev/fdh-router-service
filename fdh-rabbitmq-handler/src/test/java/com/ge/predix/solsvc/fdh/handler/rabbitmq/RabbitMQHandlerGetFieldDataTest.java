@@ -32,7 +32,8 @@ import com.ge.predix.entity.getfielddata.GetFieldDataResult;
  * @author predix
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:META-INF/spring/TEST-fdh-rabbitmq-handler-scan-context.xml" })
+@ContextConfiguration(locations = { "classpath*:META-INF/spring/TEST-fdh-rabbitmq-handler-scan-context.xml",
+"classpath:/META-INF/spring/ext-util-scan-context.xml" })
 @ActiveProfiles({"rabbitmq"})
 public class RabbitMQHandlerGetFieldDataTest {
 

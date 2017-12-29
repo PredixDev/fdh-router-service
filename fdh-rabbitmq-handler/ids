@@ -1,0 +1,60 @@
+{
+  "id": "79a5aa7c-eb87-4c7a-aa00-ee8c98edcd99",
+  "name": "Demo Adder timeseries Java",
+  "author": "Sankar Ranga",
+  "description": "This analytic does simple math",
+  "version": "v1",
+  "supportedLanguage": "Java",
+  "customMetadata": "{\"assetid\":\"abc\"}",
+  "taxonomyLocation": "/uncategorized",
+  "state": null,
+  "access": "FULL",
+  "createdTimestamp": "2017-09-05T21:14:42+00:00",
+  "updatedTimestamp": "2017-09-05T21:14:42+00:00"
+}
+
+
+{
+  "id": "913f6d86-5980-45ff-a056-d48b67e58cab",
+  "filename": "demo-timeseries-adder-java-1.0.0.jar",
+  "type": "Executable",
+  "description": "Sankar Test Analytic",
+  "createdTimestamp": "2017-09-05T21:18:12+00:00",
+  "updatedTimestamp": "2017-09-05T21:18:12+00:00"
+}
+
+
+{
+  "id": "ccbd721c-34d2-4143-9b61-22e68bed71e8",
+  "filename": "demo-timeseries-adder-template.json",
+  "type": "template",
+  "description": "",
+  "createdTimestamp": "2017-09-05T21:34:20+00:00",
+  "updatedTimestamp": "2017-09-05T21:34:20+00:00"
+}
+
+
+{
+  "analyticId": "79a5aa7c-eb87-4c7a-aa00-ee8c98edcd99",
+  "validationRequestId": "fea375dd-8f07-4b07-8581-5efc65b15dfc",
+  "status": "QUEUED",
+  "message": "Analytic validation request successfully queued - reference request id is fea375dd-8f07-4b07-8581-5efc65b15dfc for catalog entry id 79a5aa7c-eb87-4c7a-aa00-ee8c98edcd99",
+  "inputData": "{\"data\":{\"time_series\":{\"numberArray1\":[1,2,3,4,5,6,7,8,9,10],\"numberArray2\":[100,200,300,400,500,600,700,800,900,1000],\"time_stamp\":[\"1455733669601\",\"1455733669602\",\"1455733669603\",\"1455733669604\",\"1455733669605\",\"1455733669606\",\"1455733669607\",\"1455733669608\",\"1455733669609\",\"1455733669610\"]}}}",
+  "result": null,
+  "createdTimestamp": "2017-09-05T21:41:10+00:00",
+  "updatedTimestamp": "2017-09-05T21:41:10+00:00"
+}
+
+
+
+
+
+
+{
+  "id": "fa97aa74-6a9a-4c86-ad90-8d968927a773",
+  "filename": "miners-rule-2.0.jar",
+  "type": "Executable",
+  "description": "Miners Desc",
+  "createdTimestamp": "2017-09-05T21:56:00+00:00",
+  "updatedTimestamp": "2017-09-05T21:56:00+00:00"
+}

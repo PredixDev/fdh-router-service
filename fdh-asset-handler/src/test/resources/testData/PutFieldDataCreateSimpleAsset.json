@@ -1,0 +1,22 @@
+{
+  "putFieldDataCriteria": [
+    {
+      "namespaces": [],
+      "fieldData": {
+        "field": [
+          {
+            "fieldIdentifier": {
+              "complexType": "FieldIdentifier",
+              "source": "PREDIX_ASSET"
+            },
+            "parents": []
+          }
+        ],
+        "data": {
+          "complexType": "PredixString",
+          "string": "[\n\t{\"complexType\": \"Asset\",\"uri\": \"/asset/1123\",\"assetTag\": {\"pressure\":{\"complexType\": \"AssetTag\"}}}]"
+        }
+      }
+    }
+  ]
+}

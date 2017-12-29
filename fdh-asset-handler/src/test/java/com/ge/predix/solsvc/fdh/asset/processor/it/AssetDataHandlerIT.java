@@ -66,8 +66,8 @@ import com.ge.predix.entity.util.map.DataMap;
 import com.ge.predix.entity.util.map.Map;
 import com.ge.predix.solsvc.bootstrap.ams.common.AssetConfig;
 import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEnginePart;
@@ -118,8 +118,8 @@ public class AssetDataHandlerIT
     private AssetConfig      assetConfig;
     
     @Autowired
-    @Qualifier("ModelFactory")
-    private ModelFactoryImpl              modelFactory;
+    @Qualifier("AssetClient")
+    private AssetClientImpl              assetClient;
 
     @Autowired
     private JsonMapper       jsonMapper;
@@ -169,7 +169,7 @@ public class AssetDataHandlerIT
         this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
 
         // get rid of it
-        this.modelFactory.deleteModel(uri, headers);// $NON-NLS-1$
+        this.assetClient.deleteModel(uri, headers);// $NON-NLS-1$
 
         // add it back
         PutFieldDataRequest putFieldDataRequest = createPutRequestUsingDMReal(fieldId, fieldValue, uri);
@@ -179,7 +179,7 @@ public class AssetDataHandlerIT
 
         AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
         assetQueryBuilder.setUri(uri);
-        List<Object> resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(), model, headers);
+        List<Object> resultingModelList = this.assetClient.getModels(assetQueryBuilder.build(), model, headers);
 
         Assert.assertNotNull(resultingModelList);
         Assert.assertTrue(resultingModelList.size() > 0);
@@ -202,7 +202,7 @@ public class AssetDataHandlerIT
         this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
 
         // get rid of it
-        this.modelFactory.deleteModel(uri, headers);// $NON-NLS-1$
+        this.assetClient.deleteModel(uri, headers);// $NON-NLS-1$
 
         // add it back
         PutFieldDataRequest putFieldDataRequest = createPutRequestUsingDMReal(fieldId, fieldValue, uri);
@@ -212,7 +212,7 @@ public class AssetDataHandlerIT
 
         AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
         assetQueryBuilder.setUri(uri);
-        List<Object> resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(), model, headers);
+        List<Object> resultingModelList = this.assetClient.getModels(assetQueryBuilder.build(), model, headers);
 
         Assert.assertNotNull(resultingModelList);
         Assert.assertTrue(resultingModelList.size() > 0);
@@ -231,7 +231,20 @@ public class AssetDataHandlerIT
        String model = "DoesNotExist";
        String uri = "/" + model + "/engine22PredixString";
        String fieldId = "/" + model + "/averageSpeed";
-       
+       /**
+        * This exists in the Asset UAA URI for the query:https://predix-asset.run.aws-usw02-pr.ice.predix.io/DoesNotExist
+        * [
+			  {
+			    "complexType": "Model",
+			    "uri": "/DoesNotExist/engine22",
+			    "averageSpeed": "22.6"
+			  },
+			  {
+			    "uri": "/DoesNotExist/engine22PredixString",
+			    "description": "test"
+			  }
+		]
+        */
        JSONObject jsonObj = new JSONObject();
        jsonObj.put("uri", uri);
        jsonObj.put("description", "test");
@@ -241,7 +254,7 @@ public class AssetDataHandlerIT
        this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
 
        // get rid of it
-       this.modelFactory.deleteModel(uri, headers);// $NON-NLS-1$
+       this.assetClient.deleteModel(uri, headers);// $NON-NLS-1$
 
        // add it back
        PutFieldDataRequest putFieldDataRequest = createPutRequestUsingPredixString(fieldId, fieldValue, uri);
@@ -251,7 +264,7 @@ public class AssetDataHandlerIT
 
        AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
        assetQueryBuilder.setUri(uri);
-       List<Object> resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(), model, headers);
+       List<Object> resultingModelList = this.assetClient.getModels(assetQueryBuilder.build(), model, headers);
 
        Assert.assertNotNull(resultingModelList);
        Assert.assertTrue(resultingModelList.size() > 0);
@@ -276,7 +289,7 @@ public class AssetDataHandlerIT
         this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
 
         // get rid of it
-        this.modelFactory.deleteModel("/asset/1", headers);//$NON-NLS-1$
+        this.assetClient.deleteModel("/asset/1", headers);//$NON-NLS-1$
 
         PutFieldDataRequest putFieldDataRequest = new PutFieldDataRequest();
         putFieldDataRequest.setCorrelationId("string");
@@ -317,7 +330,7 @@ public class AssetDataHandlerIT
 
         AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
         assetQueryBuilder.setUri("/asset/1");
-        List<Object> resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(), "Asset", headers);
+        List<Object> resultingModelList = this.assetClient.getModels(assetQueryBuilder.build(), "Asset", headers);
 
         Assert.assertNotNull(resultingModelList);
         Assert.assertTrue(resultingModelList.size() > 0);
@@ -350,7 +363,7 @@ public class AssetDataHandlerIT
         this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
 
         // get rid of it
-        this.modelFactory.deleteModel("/jetEngineNoModel/1", headers);//$NON-NLS-1$
+        this.assetClient.deleteModel("/jetEngineNoModel/1", headers);//$NON-NLS-1$
 
         PutFieldDataRequest putFieldDataRequest = new PutFieldDataRequest();
         putFieldDataRequest.setCorrelationId("string");
@@ -401,7 +414,7 @@ public class AssetDataHandlerIT
 
         AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
         assetQueryBuilder.setUri("/jetEngineNoModel/1");
-        List<Object> resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(),
+        List<Object> resultingModelList = this.assetClient.getModels(assetQueryBuilder.build(),
                 "com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel", headers);
 
         Assert.assertNotNull(resultingModelList);
@@ -740,7 +753,7 @@ public class AssetDataHandlerIT
         this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
         headers.add(new BasicHeader("Content-type", "application/json"));
         // get rid of it
-        this.modelFactory.deleteModel("/classification/Locomotive-Test", headers);//$NON-NLS-1$
+        this.assetClient.deleteModel("/classification/Locomotive-Test", headers);//$NON-NLS-1$
 
         PutFieldDataRequest putFieldDataRequest = this.jsonMapper.fromJson(putFieldDataString,
                 PutFieldDataRequest.class);

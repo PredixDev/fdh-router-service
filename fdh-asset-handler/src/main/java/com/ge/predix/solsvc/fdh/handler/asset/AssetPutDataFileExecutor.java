@@ -40,8 +40,8 @@ import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.AttributeMap;
 import com.ge.predix.entity.util.map.Entry;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 
 /**
  * PutFieldDataProcessor processes PutFieldDataRequest - Stores Asset Model from File
@@ -54,8 +54,8 @@ public class AssetPutDataFileExecutor  {
 
 	
 	@Autowired
-	@Qualifier("ModelFactory")
-	private ModelFactoryImpl modelFactory;
+	@Qualifier("AssetClient")
+	private AssetClientImpl assetClient;
 	
     
     /**
@@ -173,7 +173,7 @@ public class AssetPutDataFileExecutor  {
                     log.info("jsonObject adding json "+resource +" With payload"+newary.toString());
 
                     
-                    this.modelFactory.createFromJson(resource,newary.toString(), headers);
+                    this.assetClient.createFromJson(resource,newary.toString(), headers);
               
             }
           

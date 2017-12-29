@@ -18,7 +18,6 @@ import java.util.UUID;
 import org.apache.http.Header;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -52,11 +51,8 @@ import com.ge.predix.solsvc.fdh.handler.AsyncPutRequestHandler;
 public class EventHubPutDataHandler extends AsyncPutRequestHandler {
 	private static final Logger log = LoggerFactory.getLogger(EventHubPutDataHandler.class);
 
-	static Client synchClient;
-	
-	@Autowired
-	private DefaultEventHubConfiguration eventHubConfig;
-	
+	private Client synchClient;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -85,7 +81,7 @@ public class EventHubPutDataHandler extends AsyncPutRequestHandler {
 			List<PutFieldDataCriteria> fieldDataCriteria = request.getPutFieldDataCriteria();
 			for (PutFieldDataCriteria putFieldDataCriteria : fieldDataCriteria) {
 				if (putFieldDataCriteria.getFieldData().getData() instanceof PredixString) {
-					createClient();
+					createClient(request.getExternalAttributeMap());
 					if (synchClient != null) {
 						String body = ((PredixString)putFieldDataCriteria.getFieldData().getData()).getString();
 						synchClient.addMessage(uuidId, body, null);
@@ -128,15 +124,42 @@ public class EventHubPutDataHandler extends AsyncPutRequestHandler {
 		return putFieldDataResult;
 	}
 	
-	public void createClient() throws UnsupportedEncodingException {
+	public void createClient(AttributeMap attributeMap) throws UnsupportedEncodingException {
 	    // make the async and sync clients
 	    try {
-	    	String[] client = eventHubConfig.getOauthClientId().split(":");
+	    	String[] client = null;
+	    	String eventHubServiceName = "";
+	    	String eventHubUAAServiceName = "";
+	    	String eventHubUAAURL = "";
+	    	String eventHubZoneId = "";
+	    	String eventHubHostName = "";
+	    	for (Entry entry : attributeMap.getEntry()) {
+	    		if ("CLIENT_ID".equalsIgnoreCase(entry.getKey().toString())) {
+	    			client = entry.getValue().toString().split(":");
+	    		}
+	    		if ("EVENTHUB_SERVICE_NAME".equalsIgnoreCase(entry.getKey().toString())) {
+	    			eventHubServiceName = entry.getValue().toString();
+	    		}
+	    		if ("EVENTHUB_UAA_SERVICE_NAME".equalsIgnoreCase(entry.getKey().toString())) {
+	    			eventHubUAAServiceName = entry.getValue().toString();
+	    		}
+	    		if ("EVENTHUB_HOST_NAME".equalsIgnoreCase(entry.getKey().toString())) {
+	    			eventHubHostName = entry.getValue().toString();
+	    		}
+	    		
+	    		if ("EVENTHUB_ZONE_ID".equalsIgnoreCase(entry.getKey().toString())) {
+	    			eventHubZoneId = entry.getValue().toString();
+	    		}
+	    		
+	    		if ("EVENTHUB_UAA_URL".equalsIgnoreCase(entry.getKey().toString())) {
+	    			eventHubUAAURL = entry.getValue().toString();
+	    		}
+	    	}
 	    	EventHubConfiguration eventHubConfiguration = null;
-	    	if ((eventHubConfig.getEventHubServiceName() != null && !"".equals(eventHubConfig.getEventHubServiceName()) || 
-	    			(eventHubConfig.getEventHubUAAServiceName() != null && !"".equals(eventHubConfig.getEventHubUAAServiceName())))) {
+	    	if ((eventHubServiceName != null && !"".equals(eventHubServiceName) || 
+	    			(eventHubUAAServiceName != null && !"".equals(eventHubUAAServiceName)))) {
 	    		eventHubConfiguration = new EventHubConfiguration.Builder()
-	    		    .fromEnvironmentVariables(eventHubConfig.getEventHubServiceName(), eventHubConfig.getEventHubUAAServiceName())
+	    		    .fromEnvironmentVariables(eventHubServiceName, eventHubUAAServiceName)
 	    		    .clientID(client[0])
 	    		    .clientSecret(client[1])
 	    		    .publishConfiguration(new PublishSyncConfiguration.Builder().build())
@@ -144,11 +167,11 @@ public class EventHubPutDataHandler extends AsyncPutRequestHandler {
 	    		    .build();
 	    	}else {
 	    		eventHubConfiguration = new EventHubConfiguration.Builder()
-	    		    .host(eventHubConfig.getEventHubHostName())
+	    		    .host(eventHubHostName)
 	    		    .clientID(client[0])
 	    		    .clientSecret(client[1])
-	    		    .zoneID(eventHubConfig.getEventHubZoneId())
-	    		    .authURL(eventHubConfig.getOauthIssuerId())
+	    		    .zoneID(eventHubZoneId)
+	    		    .authURL(eventHubUAAURL)
 	    		    .publishConfiguration(new PublishSyncConfiguration.Builder().build())
 	    		    .automaticTokenRenew(true)
 	    		    .build();

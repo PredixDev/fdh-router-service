@@ -31,6 +31,7 @@ import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
+import com.ge.predix.entity.util.map.DataMap;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 
@@ -79,13 +80,23 @@ public class RabbitMQHandler implements GetDataHandler, PutDataHandler
         validate();
         for (PutFieldDataCriteria criteria:request.getPutFieldDataCriteria()) {
         	FieldData fieldData = criteria.getFieldData();
-        	PredixString data = (PredixString) fieldData.getData();
         	MessageProperties prop = new MessageProperties();
-        	
-            Message msg = messageConverter.toMessage(data.getString(), prop);   
         	prop.setContentType(MessageProperties.CONTENT_TYPE_JSON);
+        	//TODO convert DataMap to DataMapList, create a DataMap (no list), utimately support both.
+        	if ( fieldData.getData() instanceof DataMap ) {
+            	DataMap data = (DataMap) fieldData.getData();
+                Message msg = this.messageConverter.toMessage(data.getMap().toString(), prop);   
+                this.eventTemplate.convertAndSend(this.mainQ, msg);
 
-            this.eventTemplate.convertAndSend(mainQ, msg);
+        	}
+        	else if ( fieldData.getData() instanceof PredixString ) {
+            	PredixString data = (PredixString) fieldData.getData();
+                Message msg = this.messageConverter.toMessage(data.getString(), prop);   
+                this.eventTemplate.convertAndSend(this.mainQ, msg);
+
+        	}
+        	else
+        		throw new UnsupportedOperationException("data of type=" + fieldData.getData() + " not supported");
         }
 
         PutFieldDataResult result = new PutFieldDataResult();
@@ -101,18 +112,30 @@ public class RabbitMQHandler implements GetDataHandler, PutDataHandler
         
     }
 
+    /**
+     * @return -
+     */
     public MessageConverter getMessageConverter() {
-		return messageConverter;
+		return this.messageConverter;
 	}
 
+	/**
+	 * @param messageConverter -
+	 */
 	public void setMessageConverter(MessageConverter messageConverter) {
 		this.messageConverter = messageConverter;
 	}
 
+	/**
+	 * @return -
+	 */
 	public RabbitTemplate getEventTemplate() {
-		return eventTemplate;
+		return this.eventTemplate;
 	}
 
+	/**
+	 * @param eventTemplate -
+	 */
 	public void setEventTemplate(RabbitTemplate eventTemplate) {
 		this.eventTemplate = eventTemplate;
 	}

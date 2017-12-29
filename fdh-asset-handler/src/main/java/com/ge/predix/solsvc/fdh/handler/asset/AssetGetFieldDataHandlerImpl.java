@@ -38,8 +38,8 @@ import com.ge.predix.entity.fieldselection.FieldSelection;
 import com.ge.predix.entity.getfielddata.GetFieldDataRequest;
 import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.model.Model;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.fdh.adapter.factory.AdapterFactory;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
@@ -77,8 +77,8 @@ public class AssetGetFieldDataHandlerImpl
     private GetFieldDataValidator   getFieldDataValidator;
 
     @Autowired
-	@Qualifier("ModelFactory")
-	private ModelFactoryImpl modelFactory;
+	@Qualifier("AssetClient")
+	private AssetClientImpl assetClient;
 
     @Autowired
     private AttributeHandlerFactory attributeHandlerFactory;
@@ -157,7 +157,7 @@ public class AssetGetFieldDataHandlerImpl
     protected List<?> retrieveModels(FieldDataCriteria fieldDataCriteria, List<Header> headers)
     {
         // keeping it simple, assume the first Selection holds the type of model desired
-        this.modelFactory.setZoneIdInHeaders(headers);
+        this.assetClient.setZoneIdInHeaders(headers);
         List<FieldSelection> selections = fieldDataCriteria.getFieldSelection();
         FieldSelection firstSelection = selections.get(0);
         String field = firstSelection.getFieldIdentifier().getId().toString();
@@ -182,12 +182,12 @@ public class AssetGetFieldDataHandlerImpl
             log.info("fieldModel.getModelForUnMarshal()" + fieldModel.getModelForUnMarshal());
             if ( "PredixString".equalsIgnoreCase(fieldModel.getModelForUnMarshal()) )
             {
-                List<String> modelString = this.modelFactory.getModels(assetQueryBuilder.build(), headers);
+                List<String> modelString = this.assetClient.getModels(assetQueryBuilder.build(), headers);
                 models = (List<?>) this.adapterFactory.getAdapter("StringList", "PredixStringList").adapt(modelString);
             }
             else
             {
-                models = this.modelFactory.getModels(assetQueryBuilder.build(), fieldModel.getModelForUnMarshal(),
+                models = this.assetClient.getModels(assetQueryBuilder.build(), fieldModel.getModelForUnMarshal(),
                         headers);
             }
 
@@ -449,7 +449,7 @@ public class AssetGetFieldDataHandlerImpl
         AssetQueryBuilder query = new AssetQueryBuilder();
         query.setModel(fieldModel.getModel());
         query.setUri(childUriValue);
-        List<Object> models = this.modelFactory.getModels(query.build(), childFieldModel.getModelForUnMarshal(),
+        List<Object> models = this.assetClient.getModels(query.build(), childFieldModel.getModelForUnMarshal(),
                 headers);
         if ( models == null || (models != null && models.size() != 1) )
         {

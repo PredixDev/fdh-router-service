@@ -25,6 +25,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -40,11 +41,15 @@ import com.rabbitmq.client.ConnectionFactory;
  * @author predix
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:META-INF/spring/TEST-fdh-rabbitmq-handler-scan-context.xml" })
+@ContextConfiguration(locations = { "classpath*:META-INF/spring/TEST-fdh-rabbitmq-handler-scan-context.xml",
+"classpath:/META-INF/spring/ext-util-scan-context.xml" })
 @ActiveProfiles({ "rabbitmq" })
 public class RabbitMQHandlerPutFieldDataTest {
 
 	private static final Logger log = LoggerFactory.getLogger(RabbitMQHandlerPutFieldDataTest.class);
+	
+	@Autowired
+	TestData testData;
 
 	/**
 	 * @throws Exception
@@ -95,6 +100,7 @@ public class RabbitMQHandlerPutFieldDataTest {
 	}
 
 	/**
+	 * This is the best practice, use a DataMap
 	 * @throws IOException
 	 *             -
 	 * @throws IllegalStateException
@@ -102,7 +108,7 @@ public class RabbitMQHandlerPutFieldDataTest {
 	 */
 	@SuppressWarnings("nls")
 	@Test
-	public void testPutFieldData() throws IllegalStateException, IOException {
+	public void testPutFieldDataUsingDataMapList() throws IllegalStateException, IOException {
 		log.debug("================================");
 		ConnectionFactory mockConnectionFactory = mock(ConnectionFactory.class);
 		Connection mockConnection = mock(Connection.class);
@@ -114,7 +120,35 @@ public class RabbitMQHandlerPutFieldDataTest {
 
 		when(mockChannel.isOpen()).thenReturn(true);
 
-		PutFieldDataRequest request = TestData.putFieldDataRequest(null);
+		PutFieldDataRequest request = this.testData.putFieldDataRequestUsingDataMapList();
+		List<Header> headers = new ArrayList<Header>();
+		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
+		PutFieldDataResult result = this.rabbitMqHandler.putData(request, modelLookupMap, headers, null);
+		Assert.assertNotNull(result);
+	}
+	
+	/**
+	 * PredixString is NOT the best practice, use a DataMap instead
+	 * @throws IOException
+	 *             -
+	 * @throws IllegalStateException
+	 *             -
+	 */
+	@SuppressWarnings("nls")
+	@Test
+	public void testPutFieldDataUsingPredixString() throws IllegalStateException, IOException {
+		log.debug("================================");
+		ConnectionFactory mockConnectionFactory = mock(ConnectionFactory.class);
+		Connection mockConnection = mock(Connection.class);
+		Channel mockChannel = mock(Channel.class);
+
+		when(mockConnectionFactory.newConnection((ExecutorService) null)).thenReturn(mockConnection);
+		when(mockConnection.isOpen()).thenReturn(true);
+		when(mockConnection.createChannel()).thenReturn(mockChannel);
+
+		when(mockChannel.isOpen()).thenReturn(true);
+
+		PutFieldDataRequest request = TestData.putFieldDataRequestUsingPredixString(null);
 		List<Header> headers = new ArrayList<Header>();
 		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
 		PutFieldDataResult result = this.rabbitMqHandler.putData(request, modelLookupMap, headers, null);

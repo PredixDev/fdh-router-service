@@ -31,14 +31,12 @@ import com.ge.predix.solsvc.ext.util.JsonMapper;
  * @author predix
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {
-		"classpath*:META-INF/spring/TEST-fdh-rabbitmq-handler-scan-context.xml",
+@ContextConfiguration(locations = { "classpath*:META-INF/spring/TEST-fdh-rabbitmq-handler-scan-context.xml",
 		"classpath:/META-INF/spring/ext-util-scan-context.xml" })
 @ActiveProfiles({ "rabbitmq" })
 public class RabbitMQHandlerPutFieldDataTestHarness {
 
-	private static final Logger log = LoggerFactory
-			.getLogger(RabbitMQHandlerPutFieldDataTestHarness.class);
+	private static final Logger log = LoggerFactory.getLogger(RabbitMQHandlerPutFieldDataTestHarness.class);
 
 	@Autowired
 	private JsonMapper jsonMapper;
@@ -84,6 +82,8 @@ public class RabbitMQHandlerPutFieldDataTestHarness {
 	}
 
 	/**
+	 * This is the preferred way of using this. Use a DataMap, it looks nicer.
+	 * 
 	 * @throws IOException
 	 *             -
 	 * @throws IllegalStateException
@@ -91,32 +91,71 @@ public class RabbitMQHandlerPutFieldDataTestHarness {
 	 */
 	@SuppressWarnings("nls")
 	@Test
-	public void testPutFieldData() throws IllegalStateException, IOException {
+	public void testPutFieldDataAsDataMapList() throws IllegalStateException, IOException {
 		log.debug("================================");
 
-		PutFieldDataRequest request = this.jsonMapper.fromJson(createFieldChangedEventStr(), PutFieldDataRequest.class);
+		PutFieldDataRequest request = this.jsonMapper.fromJson(createFieldChangedEventAsDataMapList(),
+				PutFieldDataRequest.class);
 
-		log.debug("================================"
-				+ this.jsonMapper.toJson(request));
+		log.debug("================================" + this.jsonMapper.toJson(request));
 
 		List<Header> headers = new ArrayList<Header>();
 		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
-		PutFieldDataResult result = this.rabbitMqHandler.putData(request,
-				modelLookupMap, headers, null);
+		PutFieldDataResult result = this.rabbitMqHandler.putData(request, modelLookupMap, headers, null);
 		Assert.assertNotNull(result);
-		Assert.assertTrue(result.getErrorEvent().get(0)
-				.contains("SampleHandler"));
+		//Assert.assertTrue(result.getErrorEvent().get(0).contains("SampleHandler"));
+
+	}
+
+	/**
+	 * This is NOT the preferred way of using this. Use a DataMap instead, it
+	 * looks nicer.
+	 * 
+	 * @throws IOException
+	 *             -
+	 * @throws IllegalStateException
+	 *             -
+	 */
+	@SuppressWarnings("nls")
+	@Test
+	public void testPutFieldDataAsPredixString() throws IllegalStateException, IOException {
+		log.debug("================================");
+
+		PutFieldDataRequest request = this.jsonMapper.fromJson(createFieldChangedEventAsPredixString(),
+				PutFieldDataRequest.class);
+
+		log.debug("================================" + this.jsonMapper.toJson(request));
+
+		List<Header> headers = new ArrayList<Header>();
+		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
+		PutFieldDataResult result = this.rabbitMqHandler.putData(request, modelLookupMap, headers, null);
+		Assert.assertNotNull(result);
+		//Assert.assertTrue(result.getErrorEvent().get(0).contains("SampleHandler"));
 
 	}
 
 	@SuppressWarnings("nls")
-	private String createFieldChangedEventStr() {
+	private String createFieldChangedEventAsPredixString() {
 		String fieldChangedEventJsonString = null;
 
 		try {
-			fieldChangedEventJsonString = IOUtils.toString(getClass()
-					.getClassLoader().getResourceAsStream(
-							"PutFieldDataWithFieldChangedEvent.json"));
+			fieldChangedEventJsonString = IOUtils.toString(getClass().getClassLoader()
+					.getResourceAsStream("PutFieldDataWithFieldChangedEventAsPredixString.json"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return fieldChangedEventJsonString;
+	}
+
+	@SuppressWarnings("nls")
+	private String createFieldChangedEventAsDataMapList() {
+		String fieldChangedEventJsonString = null;
+
+		try {
+			fieldChangedEventJsonString = IOUtils.toString(getClass().getClassLoader()
+					.getResourceAsStream("PutFieldDataWithFieldChangedEventAsDataMapList.json"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

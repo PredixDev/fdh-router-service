@@ -1,8 +1,12 @@
 package com.ge.predix.solsvc.fdh.handler.rabbitmq;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 
-import org.apache.cxf.helpers.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.ge.predix.entity.field.fieldidentifier.FieldIdentifier;
 import com.ge.predix.entity.field.fieldidentifier.FieldSourceEnum;
@@ -15,12 +19,19 @@ import com.ge.predix.entity.filter.FieldFilter;
 import com.ge.predix.entity.getfielddata.GetFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
+import com.ge.predix.entity.util.map.DataMap;
+import com.ge.predix.entity.util.map.Map;
+import com.ge.predix.solsvc.ext.util.JsonMapper;
 
 /**
  * 
  * @author predix
  */
+@Component
 public class TestData {
+
+	@Autowired
+	private JsonMapper jsonMapper;
 
 	/**
 	 * @return -
@@ -75,8 +86,36 @@ public class TestData {
 	/**
 	 * @return -
 	 */
-	@SuppressWarnings("nls")
-	public static PutFieldDataRequest putFieldDataRequest(String fStr) {
+	public PutFieldDataRequest putFieldDataRequestUsingDataMapList() {
+		PutFieldDataRequest putFieldDataRequest = new PutFieldDataRequest();
+
+		FieldData fieldData = new FieldData();
+		com.ge.predix.entity.field.Field field = new com.ge.predix.entity.field.Field();
+		FieldIdentifier fieldIdentifier = new FieldIdentifier();
+
+		fieldIdentifier.setSource(FieldSourceEnum.RABBITMQ_QUEUE.name());
+		field.setFieldIdentifier(fieldIdentifier);
+		fieldData.getField().add(field);
+
+		String testMessage1 = "{\"messageId\": \"1453338376222\",\"body\": [{\"name\": \"Compressor-2015:CompressionRatio\",\"datapoints\": [[1453338376222,10,3],[1453338376222,10,1]],\"attributes\": {\"host\": \"server1\",\"customer\": \"Acme1\"}}]}"; // $$ //$NON-NLS-1$
+		DataMap data = new DataMap();
+		List<Map> maps = new ArrayList<Map>();
+		Map map = this.jsonMapper.fromJson(testMessage1,Map.class);
+		maps.add(map);
+		data.setMap(maps );
+		fieldData.setData(data);
+
+		PutFieldDataCriteria putFieldDataCriteria = new PutFieldDataCriteria();
+		putFieldDataCriteria.setFieldData(fieldData);
+		putFieldDataRequest.getPutFieldDataCriteria().add(putFieldDataCriteria);
+
+		return putFieldDataRequest;
+	}
+	
+	/**
+	 * @return -
+	 */
+	public static PutFieldDataRequest putFieldDataRequestUsingPredixString(String fStr) {
 		PutFieldDataRequest putFieldDataRequest = new PutFieldDataRequest();
 
 		FieldData fieldData = new FieldData();

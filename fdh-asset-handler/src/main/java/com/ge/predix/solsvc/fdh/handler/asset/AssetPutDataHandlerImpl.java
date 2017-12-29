@@ -52,8 +52,8 @@ import com.ge.predix.entity.util.map.AttributeMap;
 import com.ge.predix.entity.util.map.DataMap;
 import com.ge.predix.entity.util.map.Entry;
 import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
@@ -90,8 +90,8 @@ public class AssetPutDataHandlerImpl
     private PutFieldDataCriteriaValidator putFieldDataCriteriaValidator;
 
     @Autowired
-	@Qualifier("ModelFactory")
-	private ModelFactoryImpl modelFactory;
+	@Qualifier("AssetClient")
+	private AssetClientImpl assetClient;
 
     @Autowired
     private JsonMapper                    jsonMapper;
@@ -118,7 +118,7 @@ public class AssetPutDataHandlerImpl
 
             if ( !this.putFieldDataRequestValidator.validate(request, putFieldDataResult) ) return putFieldDataResult;
 
-            this.modelFactory.setZoneIdInHeaders(headers);
+            this.assetClient.setZoneIdInHeaders(headers);
 
             putFieldDataProcessor(request, putFieldDataResult, modelLookupMap, headers, httpMethod);
             return putFieldDataResult;
@@ -174,7 +174,7 @@ public class AssetPutDataHandlerImpl
                         // HashMaps, just like Jackson creates, wrapped in
                         // somethng that extends Data.
                         String jsonString = this.jsonMapper.toJson(((DataMap) data).getMap());
-                        this.modelFactory.createModelFromJson(jsonString, headers);
+                        this.assetClient.createModelFromJson(jsonString, headers);
 
                     }
                     else if ( data instanceof Model )
@@ -182,17 +182,17 @@ public class AssetPutDataHandlerImpl
                         // a single Model - uri and attribute map
                         ArrayList<Model> models = new ArrayList<>();
                         models.add((Model) data);
-                        this.modelFactory.createModel(models, headers);
+                        this.assetClient.createModel(models, headers);
                     }
                     else if ( data instanceof ModelList )
                     {
                         // uris and attribute maps
-                        this.modelFactory.createModel(((ModelList) data).getModel(), headers);
+                        this.assetClient.createModel(((ModelList) data).getModel(), headers);
                     }
                     else if ( data instanceof AssetList )
                     {
                         // reference app asset model
-                        this.modelFactory.createModel(((AssetList) data).getAsset(), headers);
+                        this.assetClient.createModel(((AssetList) data).getAsset(), headers);
                     }
                     else if ( data instanceof PredixString )
                     {
@@ -200,7 +200,7 @@ public class AssetPutDataHandlerImpl
                         // escaped, must be an
                         // array, each object needs a uri
                         String jsonString = ((PredixString) data).getString();
-                        this.modelFactory.createModelFromJson(jsonString, headers);
+                        this.assetClient.createModelFromJson(jsonString, headers);
                     }
                     else if ( data instanceof DataFile )
                     {
@@ -262,7 +262,7 @@ public class AssetPutDataHandlerImpl
             }
             metadatas.add(metaDataModel);
             // String jsonString = this.jsonMapper.toJson(metadata);
-            this.modelFactory.createModel(metadatas, headers);
+            this.assetClient.createModel(metadatas, headers);
             Entry entry = new Entry();
             entry.setKey("metadata_uri");
             entry.setValue(((MetaData) metaData).getUri());
@@ -293,7 +293,7 @@ public class AssetPutDataHandlerImpl
         AssetQueryBuilder assetQueryBuilder = new AssetQueryBuilder();
         assetQueryBuilder.setUri(assetFilter.getUri());
 
-        List<Object> resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(),
+        List<Object> resultingModelList = this.assetClient.getModels(assetQueryBuilder.build(),
                 fieldModel.getModelForUnMarshal(), headers);
 
         if ( HttpPost.METHOD_NAME.equals(httpMethod) )
@@ -301,7 +301,7 @@ public class AssetPutDataHandlerImpl
             if ( resultingModelList == null || resultingModelList.size() == 0 )
             {
                 createModel(fieldDataCriteria, fieldModel, headers);
-                resultingModelList = this.modelFactory.getModels(assetQueryBuilder.build(), fieldModel.getModel(),
+                resultingModelList = this.assetClient.getModels(assetQueryBuilder.build(), fieldModel.getModel(),
                         headers);
                 if ( resultingModelList == null ) throw new RuntimeException(
                         "Returned from a successful createModel and then when we queried it back we didn't get it! criteria="
@@ -326,7 +326,7 @@ public class AssetPutDataHandlerImpl
         if ( data.getClass().getSimpleName().equals(modelName) )
         {
             models.add(data);
-            this.modelFactory.updateModel(data, modelName, headers);
+            this.assetClient.updateModel(data, modelName, headers);
         }
         else
         {
@@ -343,7 +343,7 @@ public class AssetPutDataHandlerImpl
             {
                 AssetFilter assetFilter = (AssetFilter) fieldDataCriteria.getFilter();
                 model.setUri(assetFilter.getUri());
-                this.modelFactory.updateModel(model, modelName, headers);
+                this.assetClient.updateModel(model, modelName, headers);
                 models.add(model);
             }
             else if ( data instanceof PredixString )
@@ -351,7 +351,7 @@ public class AssetPutDataHandlerImpl
                 AssetFilter assetFilter = (AssetFilter) fieldDataCriteria.getFilter();
                 model.setUri(assetFilter.getUri());
                 String dataAsString = ((PredixString) data).getString();
-                this.modelFactory.updateModel(dataAsString, modelName, headers);
+                this.assetClient.updateModel(dataAsString, modelName, headers);
                 models.add(dataAsString);
             }
             else
@@ -412,10 +412,10 @@ public class AssetPutDataHandlerImpl
             if ( model instanceof LinkedHashMapModel )
             {
                 LinkedHashMap<String, Object> map = ((LinkedHashMapModel) model).getMap();
-                this.modelFactory.updateModel(map, fieldModel.getModelForUnMarshal(), headers);
+                this.assetClient.updateModel(map, fieldModel.getModelForUnMarshal(), headers);
             }
             else
-                this.modelFactory.updateModel(model, fieldModel.getModelForUnMarshal(), headers);
+                this.assetClient.updateModel(model, fieldModel.getModelForUnMarshal(), headers);
         }
         else if ( data instanceof PredixString )
         {
@@ -615,7 +615,7 @@ public class AssetPutDataHandlerImpl
         AssetQueryBuilder query = new AssetQueryBuilder();
         query.setModel(fieldModel.getModel());
         query.setUri(childUriValue);
-        List<Object> models = this.modelFactory.getModels(query.build(), childFieldModel.getModelForUnMarshal(),
+        List<Object> models = this.assetClient.getModels(query.build(), childFieldModel.getModelForUnMarshal(),
                 headers);
         if ( models == null || (models != null && models.size() != 1) )
         {

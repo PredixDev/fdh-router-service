@@ -47,114 +47,107 @@ import com.neovisionaries.ws.client.WebSocketException;
  * @author predix -
  */
 @Component(value = "webSocketHandler")
-@ImportResource(
-{
-        "classpath*:META-INF/spring/fdh-websocket-handler-scan-context.xml"
+@ImportResource({ "classpath*:META-INF/spring/fdh-websocket-handler-scan-context.xml"
 
 })
 @Profile("websocket")
-public class WebsocketHandler
-        implements GetDataHandler, PutDataHandler
-{
-    private static final Logger log = LoggerFactory.getLogger(WebsocketHandler.class);
+public class WebsocketHandler implements GetDataHandler, PutDataHandler {
+	private static final Logger log = LoggerFactory.getLogger(WebsocketHandler.class);
 
-    @Autowired
-    @Qualifier("customWebSocketClientConfig")
-	private WebSocketClientConfig customWebSocketClientConfig;
-	
-    @Autowired
+	@Autowired
+	@Qualifier("webSocketClientConfig")
+	private WebSocketClientConfig webSocketClientConfig;
+
+	@Autowired
 	private JsonMapper mapper;
 
-    @Autowired
-    private RestClient restClient2;
-    
-    //@Autowired
-	//private WebSocketClient client2;
-		
-    private WebSocketClient client2 = new WebSocketClientImpl();
-    /**
-     * 
-     */
-    private WebSocketAdapter messageListener = new WebSocketAdapter()
-                                             {
-                                                 @SuppressWarnings("nls")
-                                                 @Override
-                                                 public void onTextMessage(WebSocket wsocket, String message)
-                                                 {
-                                                     log.debug("RECEIVED....from "+wsocket.getURI().toString() + message);                                           // $$
-                                                 }
+	@Autowired
+	private RestClient restClient2;
 
-                                                 @SuppressWarnings("nls")
-                                                 @Override
-                                                 public void onBinaryMessage(WebSocket wsocket, byte[] binary)
-                                                 {
-                                                     String str = new String(binary, StandardCharsets.UTF_8);
-                                                     log.debug("RECEIVED....from "+wsocket.getURI().toString() + str);                                                      // $$
-                                                 }
-                                             };
-    /**
-     * -
-     */
-    @PostConstruct
-    public void init()
-    {
-    	this.restClient2.overrideRestConfig(customWebSocketClientConfig);
-		this.client2.overrideWebSocketConfig(this.customWebSocketClientConfig);
+	//@Autowired
+	private WebSocketClient client2 = new WebSocketClientImpl();
+
+	// private WebSocketClient client2 = new WebSocketClientImpl();
+	/**
+	 * 
+	 */
+	private WebSocketAdapter messageListener = new WebSocketAdapter() {
+		@SuppressWarnings("nls")
+		@Override
+		public void onTextMessage(WebSocket wsocket, String message) {
+			log.info("RECEIVED....from " + wsocket.getURI().toString() + message); // $$
+		}
+
+		@SuppressWarnings("nls")
+		@Override
+		public void onBinaryMessage(WebSocket wsocket, byte[] binary) {
+			String str = new String(binary, StandardCharsets.UTF_8);
+			log.info("RECEIVED....from " + wsocket.getURI().toString() + str); // $$
+		}
+	};
+
+	/**
+	 * -
+	 */
+	@PostConstruct
+	public void init() {
+		this.restClient2.overrideRestConfig(webSocketClientConfig);
+		this.client2.overrideWebSocketConfig(this.webSocketClientConfig);
 		this.client2.init(this.restClient2, this.restClient2.getSecureTokenForClientId(), messageListener);
-    }
+	}
 
-    /*
-     * (non-Javadoc)
-     * @see com.ge.predix.solsvc.fdhcontentbasedrouter.GetFieldDataInterface#getFieldData(java.util.List, com.ge.predix.entity.getfielddata.GetFieldDataRequest)
-     */
-    @SuppressWarnings("nls")
-    @Override
-    public GetFieldDataResult getData(GetFieldDataRequest request, Map<Integer, Object> modelLookupMap,
-            List<Header> headers)
-    {
-        throw new UnsupportedOperationException("unimplemented");
-    }
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.ge.predix.solsvc.fdhcontentbasedrouter.GetFieldDataInterface#
+	 * getFieldData(java.util.List,
+	 * com.ge.predix.entity.getfielddata.GetFieldDataRequest)
+	 */
+	@SuppressWarnings("nls")
+	@Override
+	public GetFieldDataResult getData(GetFieldDataRequest request, Map<Integer, Object> modelLookupMap,
+			List<Header> headers) {
+		throw new UnsupportedOperationException("unimplemented");
+	}
 
-    /*
-     * (non-Javadoc)
-     * @see com.ge.predix.solsvc.fdh.handler.PutFieldDataInterface#processRequest(com.ge.predix.entity.putfielddata.PutFieldDataRequest, java.util.List)
-     */
-    @SuppressWarnings(
-    {
-            "nls", "unchecked", "resource"
-    })
-    @Override
-    public PutFieldDataResult putData(PutFieldDataRequest request, Map<Integer, Object> modelLookupMap,
-            List<Header> headers, String httpMethod)
-    {
-    	validate();
-    	
-        for (PutFieldDataCriteria criteria:request.getPutFieldDataCriteria()) {
-        	FieldData fieldData = criteria.getFieldData();
-        	DatapointsIngestion dpIngestion = null;
-        	if (fieldData.getData() instanceof DatapointsIngestion) {
-        		dpIngestion = (DatapointsIngestion)fieldData.getData();
-        		String payload = this.mapper.toJson(dpIngestion);
-            	log.info("Payload : "+payload);
-            	try {
-            		log.info("Websocket Client : "+this.customWebSocketClientConfig.getWsUri());
-            		this.client2.postTextWSData(payload);
-    			} catch (IOException|WebSocketException e) {
-    				throw new RuntimeException("Exception when posting data to websocket",e);
-    			}
-        	}
-        }
-        PutFieldDataResult result = new PutFieldDataResult();
-        result.getErrorEvent().add("Data Sent to Websocket Server");
-        return result;
-    }
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.ge.predix.solsvc.fdh.handler.PutFieldDataInterface#processRequest(com
+	 * .ge.predix.entity.putfielddata.PutFieldDataRequest, java.util.List)
+	 */
+	@SuppressWarnings({ "nls" })
+	@Override
+	public PutFieldDataResult putData(PutFieldDataRequest request, Map<Integer, Object> modelLookupMap,
+			List<Header> headers, String httpMethod) {
+		validate();
 
-    /**
-     * -
-     */
-    private void validate()
-    {
-        // TODO Auto-generated method stub
+		for (PutFieldDataCriteria criteria : request.getPutFieldDataCriteria()) {
+			FieldData fieldData = criteria.getFieldData();
+			DatapointsIngestion dpIngestion = null;
+			if (fieldData.getData() instanceof DatapointsIngestion) {
+				dpIngestion = (DatapointsIngestion) fieldData.getData();
+				String payload = this.mapper.toJson(dpIngestion);
+				log.info("Payload : " + payload);
+				try {
+					log.info("Websocket Client : " + this.webSocketClientConfig.getWsUri());
+					this.client2.postTextWSData(payload);
+				} catch (IOException | WebSocketException e) {
+					throw new RuntimeException("Exception when posting data to websocket", e);
+				}
+			}
+		}
+		PutFieldDataResult result = new PutFieldDataResult();
+		result.getErrorEvent().add("Data Sent to Websocket Server");
+		return result;
+	}
 
-    }
+	/**
+	 * -
+	 */
+	private void validate() {
+		// TODO Auto-generated method stub
+
+	}
 }

@@ -10,6 +10,10 @@
 	<description>Predix Machine - Create Machine data for Data Exchange</description>
 
 	<properties>
+		<!-- Ext interface -->
+		<ext.model.version>2.3.7</ext.model.version>
+		<ext-util.version>2.3.7</ext-util.version>
+		
 		<java.version>1.8</java.version>
 		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
 		<!-- 3rd Party Compile-Dependency Bundle versions -->
@@ -36,9 +40,6 @@
 		<!-- Jackson -->
 		<jettison.version>1.1</jettison.version>
 
-		<!-- Ext interface -->
-		<ext.model.version>2.3.5</ext.model.version>
-		<ext-util.version>2.3.5</ext-util.version>
 		<!-- Jackson -->
 		<jackson.core-asl.version>1.9.13</jackson.core-asl.version>
 		<jackson.jaxrs.version>1.9.13</jackson.jaxrs.version>

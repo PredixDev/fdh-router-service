@@ -56,8 +56,8 @@ import com.ge.predix.entity.model.SampleEngine;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactory;
-import com.ge.predix.solsvc.bootstrap.ams.factories.ModelFactoryImpl;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
+import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
@@ -102,8 +102,8 @@ public class GetAndPutFieldDataHandlerTest
     @Rule
     public ExpectedException          thrown = ExpectedException.none();
     @Autowired
-    @Qualifier("ModelFactory")
-    private ModelFactoryImpl              modelFactory;
+    @Qualifier("AssetClient")
+    private AssetClientImpl              assetClient;
     @Autowired
     private JsonMapper jsonMapper;
     
@@ -226,7 +226,7 @@ public class GetAndPutFieldDataHandlerTest
         List<Header> headers = this.restClient.getSecureTokenForClientId();
 
         // get rid of it
-        this.modelFactory.deleteModel(uri, headers);//$NON-NLS-1$
+        this.assetClient.deleteModel(uri, headers);//$NON-NLS-1$
 
         // add it back
         String filterFieldId = uriField;
@@ -324,7 +324,7 @@ public class GetAndPutFieldDataHandlerTest
         List<Header> headers = this.restClient.getSecureTokenForClientId();
 
         // get rid of it
-        this.modelFactory.deleteModel(uri, headers);//$NON-NLS-1$
+        this.assetClient.deleteModel(uri, headers);//$NON-NLS-1$
 
         // add it back
         String filterFieldId = uriField;
@@ -429,7 +429,7 @@ public class GetAndPutFieldDataHandlerTest
         Mockito.when(responseDelete.getStatusLine()).thenReturn(new BasicStatusLine(new ProtocolVersion("HTTP", 1, 1), HttpStatus.SC_NO_CONTENT, "test reason!"));
       
         // get rid of it
-        this.modelFactory.deleteModel(filterFieldId, headers);//$NON-NLS-1$
+        this.assetClient.deleteModel(filterFieldId, headers);//$NON-NLS-1$
         
         PutFieldDataRequest putFieldDataRequest = createPutRequest(fieldId, fieldValue, uri);
         Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();

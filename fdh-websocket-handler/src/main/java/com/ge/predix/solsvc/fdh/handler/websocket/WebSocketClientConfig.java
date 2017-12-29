@@ -4,11 +4,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import com.ge.predix.solsvc.websocket.config.DefaultWebSocketConfigForTimeseries;
+import com.ge.predix.solsvc.restclient.config.DefaultOauthRestConfig;
+import com.ge.predix.solsvc.websocket.config.IWebSocketConfig;
 
-@Component("customWebSocketClientConfig")
+@Component("webSocketClientConfig")
 @Profile("websocket")
-public class WebSocketClientConfig extends DefaultWebSocketConfigForTimeseries
+public class WebSocketClientConfig extends DefaultOauthRestConfig implements IWebSocketConfig
 {
 	@Value("${predix.websocket.uri}")
     private String             wsUri;
@@ -40,5 +41,21 @@ public class WebSocketClientConfig extends DefaultWebSocketConfigForTimeseries
 	@Override
 	public int getWsMaxWait() {
 		return this.wsMaxWait;
+	}
+
+	@Override
+	public void setWsUri(String wsUri) {
+		this.wsUri = wsUri;
+	}
+
+	@Override
+	public String getZoneId() {
+		return null;
+	}
+
+	@Override
+	public String getZoneIdHeader() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

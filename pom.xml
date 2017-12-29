@@ -5,14 +5,14 @@
 
 	<groupId>com.ge.predix.solsvc</groupId>
 	<artifactId>fdh-router-service</artifactId>
-	<version>2.0.32</version>
+	<version>2.0.33</version>
 	<packaging>pom</packaging>
 
 	<modules>
 	<module>fdh-adapter</module>
 	<module>fdh-asset-handler</module>
-	<module>fdh-timeseries-handler</module>
 	<!--<module>fdh-eventhub-handler</module>-->
+	<module>fdh-timeseries-handler</module>
 	<module>fdh-custom-handler</module>
 	<module>fdh-bootstrap-client</module>
 	<module>fdh-rabbitmq-handler</module>
