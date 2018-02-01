@@ -10,7 +10,7 @@
 				"parents": []
 			}],
 			"data": {
-				"complexType": "DataMap",
+				"complexType": "DataMapList",
 				"map": [{
 					"fieldChangedList": {
 						"fieldChanged": [{

@@ -77,7 +77,7 @@ public class BlobstorePutDataHandler extends AsyncPutRequestHandler {
 	        for (PutFieldDataCriteria putFieldDataCriteria : fieldDataCriteria) {
 	        	if (putFieldDataCriteria.getFieldData().getData() instanceof DataFile) {
 	        		DataFile file = (DataFile)putFieldDataCriteria.getFieldData().getData();
-	        		String uploadId = blobstoreClient.saveBlob(file,null);
+	        		String uploadId = this.blobstoreClient.saveBlob(null);
 	        		Entry uploadIdEntry = new Entry();
 	        		uploadIdEntry.setKey("uploadId:"+file.getName());
 	        		uploadIdEntry.setValue(uploadId);

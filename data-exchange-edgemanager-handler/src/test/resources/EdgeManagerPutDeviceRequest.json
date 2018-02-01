@@ -1,0 +1,26 @@
+{
+	"correlationId": "correlationId",
+	"putFieldDataCriteria": [{
+		"namespaces": [],
+		"fieldData": {
+			"field": [],
+			"data": {
+				"complexType":"Device",
+				"description": "Intel NUC @Susheel's desk",
+				"deviceId": "wr-idp-b2c6-1",
+				"dockerEnabled": "false",
+				"location": {
+					"city": "San Ramon",
+					"country": "USA",
+					"description": "Intel NUC @Susheel's desk",
+					"state": "California",
+					"timezone": "America/Los_Angeles"
+				},
+				"modelId": "PredixDeveloperKit",
+				"name": "WR-IDP-B2C6-1",
+				"sharedSecret":"test1234",
+				"syncInterval": 300
+			}
+		}
+	}]
+}

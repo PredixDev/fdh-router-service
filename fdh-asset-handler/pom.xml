@@ -4,15 +4,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ge.predix.solsvc</groupId>
 	<artifactId>fdh-asset-handler</artifactId>
-	<version>2.0.33</version>
+	<version>2.0.35</version>
 	<packaging>jar</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<fdh-adapter.version>2.0.33</fdh-adapter.version>
-		<asset-bootstrap-client.version>2.0.33</asset-bootstrap-client.version>
-		<ext-model.version>2.3.7</ext-model.version>
-		<ext-util.version>2.3.7</ext-util.version>
+		<fdh-adapter.version>2.0.35</fdh-adapter.version>
+		<asset-bootstrap-client.version>2.0.35</asset-bootstrap-client.version>
+		<ext-model.version>2.3.8</ext-model.version>
+		<ext-util.version>2.3.8</ext-util.version>
 
 		<spring.version>4.1.6.RELEASE</spring.version>
 		<httpclient.version>4.5.2</httpclient.version>
@@ -45,7 +45,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.ge.predix.solsvc</groupId>
-			<artifactId>fdh-bootstrap-client</artifactId>
+			<artifactId>data-exchange-client</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

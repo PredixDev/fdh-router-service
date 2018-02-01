@@ -11,8 +11,8 @@
 
 	<properties>
 		<!-- Ext interface -->
-		<ext.model.version>2.3.7</ext.model.version>
-		<ext-util.version>2.3.7</ext-util.version>
+		<ext.model.version>2.3.8</ext.model.version>
+		<ext-util.version>2.3.8</ext-util.version>
 		
 		<java.version>1.8</java.version>
 		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>

@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.apache.http.Header;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -50,6 +51,7 @@ import com.ge.predix.solsvc.ext.util.JsonMapper;
 		"classpath*:META-INF/SPRING/TEST-fdh-blobstore-handler-properties-context.xml"
 })
 @ActiveProfiles({"local","blobstore"})
+@Ignore
 public class BlobstorePutHandlerTestHarness {
 
 	private static final String TEST_FILE = "src/test/resources/sample-test.csv"; //$NON-NLS-1$

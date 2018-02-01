@@ -24,9 +24,8 @@ public interface ICryptoProvider {
      * @param plainText
      *            Plain text input to be encrypted
      * @return encrypted string
-     * @throws Exception -if the text could not be encrypted
      */
-    String mangle(String plainText) throws Exception;
+    String mangle(String plainText);
 
     /**
      *
@@ -34,7 +33,6 @@ public interface ICryptoProvider {
      * @param mangleText
      *            Encrypted text input to be decrypted
      * @return Plain text string
-     * @throws Exception if the text could not be decrypted
      */
-    String unmangle(String mangleText) throws Exception;
+    String unmangle(String mangleText);
 }

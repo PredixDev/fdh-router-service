@@ -5,7 +5,7 @@ Data Exchange<br>
 <a href="http://predixdev.github.io/fdh-router-service/javadocs/fdh-asset-handler/index.html" target="_blank" >
 	<img height="50px" width="100px" src="images/javadoc.png" alt="view javadoc"></a>
 <br>FDH Bootstrap Client<br>
-<a href="http://predixdev.github.io/fdh-router-service/javadocs/fdh-bootstrap-client/index.html" target="_blank" >
+<a href="http://predixdev.github.io/fdh-router-service/javadocs/data-exchange-client/index.html" target="_blank" >
 	<img height="50px" width="100px" src="images/javadoc.png" alt="view javadoc"></a>
 <br>FDH Custom Handler<br>
 <a href="http://predixdev.github.io/fdh-router-service/javadocs/fdh-custom-handler/index.html" target="_blank" >

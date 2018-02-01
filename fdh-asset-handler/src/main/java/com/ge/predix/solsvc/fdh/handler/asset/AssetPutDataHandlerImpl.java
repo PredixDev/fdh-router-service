@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -49,11 +50,10 @@ import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.AttributeMap;
-import com.ge.predix.entity.util.map.DataMap;
+import com.ge.predix.entity.util.map.DataMapList;
 import com.ge.predix.entity.util.map.Entry;
-import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
 import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
+import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
@@ -78,6 +78,7 @@ import com.ge.predix.solsvc.fdh.handler.asset.validator.PutFieldDataRequestValid
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 })
+@Profile("asset")
 public class AssetPutDataHandlerImpl
         implements PutDataHandler
 {
@@ -168,12 +169,12 @@ public class AssetPutDataHandlerImpl
                     Data data = fieldDataCriteria.getFieldData().getData();
                     // handle meta-data request first
 
-                    if ( data instanceof DataMap )
+                    if ( data instanceof DataMapList )
                     {
                         // recommended structure - most flexible - a List of
                         // HashMaps, just like Jackson creates, wrapped in
                         // somethng that extends Data.
-                        String jsonString = this.jsonMapper.toJson(((DataMap) data).getMap());
+                        String jsonString = this.jsonMapper.toJson(((DataMapList) data).getMap());
                         this.assetClient.createModelFromJson(jsonString, headers);
 
                     }

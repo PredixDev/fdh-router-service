@@ -30,6 +30,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -45,18 +46,14 @@ import com.ge.predix.entity.getfielddata.GetFieldDataRequest;
 import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
-import com.ge.predix.entity.putfielddata.PutFieldDataResult;
-import com.ge.predix.entity.util.map.DataMap;
+import com.ge.predix.entity.util.map.DataMapList;
 import com.ge.predix.solsvc.bootstrap.ams.common.AssetConfig;
-import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
 import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEnginePart;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
-import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
 import com.ge.predix.solsvc.restclient.impl.RestClient;
 
 /**
@@ -77,6 +74,7 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml"
 
 })
+@ActiveProfiles({"asset"})
 public class AssetDataHandlerWithExtraJsonMapperRegistrationIT
 {
 
@@ -114,7 +112,6 @@ public class AssetDataHandlerWithExtraJsonMapperRegistrationIT
      */
     @Before
     public void setUp()
-            throws Exception
     {
         //
     }
@@ -125,7 +122,6 @@ public class AssetDataHandlerWithExtraJsonMapperRegistrationIT
      */
     @After
     public void tearDown()
-            throws Exception
     {
         //
     }
@@ -172,7 +168,7 @@ public class AssetDataHandlerWithExtraJsonMapperRegistrationIT
         
         String assetJson = this.jsonMapper.toJson(assets);
         List<Object> listNoModel = this.jsonMapper.fromJsonArray(assetJson, Object.class);
-        DataMap data = new DataMap();
+        DataMapList data = new DataMapList();
         for (Object item : listNoModel)
         {
             LinkedHashMap<?, ?> linkedMap = (LinkedHashMap<?, ?>) item;

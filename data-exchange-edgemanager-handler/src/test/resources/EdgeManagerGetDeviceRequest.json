@@ -1,0 +1,13 @@
+{
+	"fieldDataCriteria": [{
+		"namespaces": [],
+		"fieldSelection": [{
+			"fieldIdentifier": {
+				"complexType": "FieldIdentifier",
+				"id": "wr-idp-b2c6-1",
+				"source": "PREDIX_EDGEMANAGER"
+			},
+			"expectedDataType": "Device"
+		}]
+	}]
+}

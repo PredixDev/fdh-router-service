@@ -57,8 +57,9 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
 })
 @ActiveProfiles(
 {
-        "timeseries"
+        "asset","timeseries"
 })
+
 public class TimeseriesHandlerGetIT
 {
 

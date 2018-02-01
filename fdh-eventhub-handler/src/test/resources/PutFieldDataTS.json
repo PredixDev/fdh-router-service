@@ -1,0 +1,24 @@
+{
+	"correlationId": "correlationId",
+	"putFieldDataCriteria": [{
+		"namespaces": [],
+		"fieldData": {
+			"field": [],
+			"data": {
+				"complexType": "DatapointsIngestion",
+				"messageId": "1505426896439",
+				"body": [{
+					"name": "RMD_metric2",
+					"datapoints": [
+						[1505426896441, 10, 3],
+						[1505426896441, 10, 1]
+					],
+					"attributes": {
+						"host": "server1",
+						"customer": "Acme"
+					}
+				}]
+			}
+		}
+	}]
+}

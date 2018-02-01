@@ -76,6 +76,7 @@ public class TimeSeriesPutDataFileExecutor {
      * @param threadName -
      * @param uuidId -
      * @param putFieldDataCriteria -
+     * @param putFieldDataResult -
      */
     void processDataFile(List<Header> headers, String threadName, String uuidId,
             PutFieldDataCriteria putFieldDataCriteria,PutFieldDataResult putFieldDataResult)
@@ -94,7 +95,7 @@ public class TimeSeriesPutDataFileExecutor {
 
             this.timeseriesClient.createTimeseriesWebsocketConnectionPool();
             if (!StringUtils.isEmpty(datafile.getName())
-                    && (datafile.getName().toLowerCase().endsWith("csv") || datafile.getName().toLowerCase().endsWith("xls"))) { //$NON-NLS-1$
+                    && (datafile.getName().toLowerCase().endsWith("csv") || datafile.getName().toLowerCase().endsWith("xls"))) { //$NON-NLS-1$ //$NON-NLS-2$
                 // process csv file
                 processUploadCsv(headers, file, uuidId,putFieldDataResult);
             }else {
@@ -141,6 +142,7 @@ public class TimeSeriesPutDataFileExecutor {
 			for (CSVRecord csvRecord : csvRecords) {
 				long epoch = 0;
 				int quality = 3;
+				@SuppressWarnings("rawtypes")
 				Map attributes = null ;
 				for (String name : headerMap.keySet()) {
 					String key = name.toString();
@@ -234,7 +236,6 @@ public class TimeSeriesPutDataFileExecutor {
 	         }
 	         
 	         // uploadedIds: updated here on the putFieldDataResultrequest
-	         Set<String> set = new HashSet<String>();
 	         putFieldDataResult.getExternalAttributeMap().setEntry(entryList);
 	            
 			log.info("UUID :" + uuid + " # records are " + csvRecords.size()); //$NON-NLS-1$ //$NON-NLS-2$

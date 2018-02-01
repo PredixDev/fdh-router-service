@@ -40,7 +40,6 @@ import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.AttributeMap;
 import com.ge.predix.entity.util.map.Entry;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
 import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 
 /**

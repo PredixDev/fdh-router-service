@@ -57,7 +57,6 @@ public abstract class ServiceTestBase extends AbstractJUnit4SpringContextTests
      */
     @Before
     public void setUp()
-            throws Exception
     {
         // make sure the correct RestClient is wired to serviceBase
         // It gets changed by mock testing PredixAssetClient

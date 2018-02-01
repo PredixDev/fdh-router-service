@@ -42,10 +42,9 @@ import com.ge.predix.solsvc.timeseries.bootstrap.config.DefaultTimeseriesConfig;
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
         "classpath*:META-INF/spring/TEST-fdh-timeseries-handler-properties-context.xml"
 })
-@ActiveProfiles({"timeseries"})
+@ActiveProfiles({"asset", "timeseries"})
 public class TimeseriesHandlerPutIT {
 
-	@SuppressWarnings("unused")
 	private static Logger log = LoggerFactory.getLogger(TimeseriesHandlerPutIT.class);
 
 	@Autowired
@@ -69,7 +68,7 @@ public class TimeseriesHandlerPutIT {
 		PutFieldDataRequest request = this.mapper.fromJson(createTestData(), PutFieldDataRequest.class);
 
 		
-		log.debug("request=" + this.mapper.toJson(request));
+		log.debug("request=" + this.mapper.toJson(request)); //$NON-NLS-1$
 
 		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
 		List<Header> headers = this.restClient.getSecureTokenForClientId();

@@ -40,6 +40,7 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -56,7 +57,6 @@ import com.ge.predix.entity.model.SampleEngine;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
 import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
@@ -82,6 +82,7 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 
 })
+@ActiveProfiles({"asset"})
 public class GetAndPutFieldDataHandlerTest 
 {
 
@@ -114,7 +115,6 @@ public class GetAndPutFieldDataHandlerTest
      */
     @Before
     public void setUp()
-            throws Exception
     {
     	this.response = Mockito.mock(CloseableHttpResponse.class);
         HttpEntity entity = Mockito.mock(HttpEntity.class);
@@ -127,7 +127,6 @@ public class GetAndPutFieldDataHandlerTest
      */
     @After
     public void tearDown()
-            throws Exception
     {
         //
     }

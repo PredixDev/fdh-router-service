@@ -1,0 +1,13 @@
+{
+	"correlationId": "correlationId",
+	"putFieldDataCriteria": [{
+		"namespaces": [],
+		"fieldData": {
+			"field": [],
+			"data": {
+				"complexType":"Device",
+				"deviceId": "wr-idp-b2c6-1"
+			}
+		}
+	}]
+}

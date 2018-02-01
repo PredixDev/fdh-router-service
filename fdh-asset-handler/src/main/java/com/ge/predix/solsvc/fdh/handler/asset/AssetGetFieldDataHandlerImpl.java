@@ -13,7 +13,6 @@ package com.ge.predix.solsvc.fdh.handler.asset;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -25,20 +24,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ge.predix.entity.assetfilter.AssetFilter;
 import com.ge.predix.entity.fielddata.FieldData;
-import com.ge.predix.entity.fielddata.PredixString;
 import com.ge.predix.entity.fielddatacriteria.FieldDataCriteria;
 import com.ge.predix.entity.fieldselection.FieldSelection;
 import com.ge.predix.entity.getfielddata.GetFieldDataRequest;
 import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.model.Model;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClient;
 import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.fdh.adapter.factory.AdapterFactory;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
@@ -67,10 +64,10 @@ import com.ge.predix.solsvc.fdh.handler.asset.validator.GetFieldDataValidator;
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
         "classpath*:META-INF/spring/fdh-adapter-scan-context.xml"
 })
+@Profile("asset")
 public class AssetGetFieldDataHandlerImpl
         implements GetDataHandler
 {
-    @SuppressWarnings("unused")
     private static final Logger     log    = LoggerFactory.getLogger(AssetGetFieldDataHandlerImpl.class);
 
     @Autowired

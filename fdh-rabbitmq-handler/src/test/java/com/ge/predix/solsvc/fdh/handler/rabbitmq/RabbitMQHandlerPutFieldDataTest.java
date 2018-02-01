@@ -70,6 +70,7 @@ public class RabbitMQHandlerPutFieldDataTest {
 	}
 
 	@InjectMocks
+	@Autowired
 	private RabbitMQHandler rabbitMqHandler;
 
 	@Mock
@@ -99,6 +100,34 @@ public class RabbitMQHandlerPutFieldDataTest {
 		//
 	}
 
+	/**
+	 * This is the best practice, use a DataMap
+	 * @throws IOException
+	 *             -
+	 * @throws IllegalStateException
+	 *             -
+	 */
+	@SuppressWarnings("nls")
+	@Test
+	public void testPutFieldDataUsingDataMap() throws IllegalStateException, IOException {
+		log.debug("================================");
+		ConnectionFactory mockConnectionFactory = mock(ConnectionFactory.class);
+		Connection mockConnection = mock(Connection.class);
+		Channel mockChannel = mock(Channel.class);
+
+		when(mockConnectionFactory.newConnection((ExecutorService) null)).thenReturn(mockConnection);
+		when(mockConnection.isOpen()).thenReturn(true);
+		when(mockConnection.createChannel()).thenReturn(mockChannel);
+
+		when(mockChannel.isOpen()).thenReturn(true);
+
+		PutFieldDataRequest request = this.testData.putFieldDataRequestUsingDataMap();
+		List<Header> headers = new ArrayList<Header>();
+		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
+		PutFieldDataResult result = this.rabbitMqHandler.putData(request, modelLookupMap, headers, null);
+		Assert.assertNotNull(result);
+	}
+	
 	/**
 	 * This is the best practice, use a DataMap
 	 * @throws IOException

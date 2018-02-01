@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.http.Header;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -32,6 +34,8 @@ import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.DataMap;
+import com.ge.predix.entity.util.map.DataMapList;
+import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 
@@ -43,12 +47,12 @@ import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 @Profile("rabbitmq")
 @ImportResource( 
 {
-        "classpath*:META-INF/spring/fdh-rabbitmq-handler-scan-context.xml"
-        
+    "classpath:META-INF/spring/fdh-rabbitmq-handler-scan-context.xml",
+    "classpath:/META-INF/spring/ext-util-scan-context.xml"
 })
-
 public class RabbitMQHandler implements GetDataHandler, PutDataHandler
 {
+	private static final Logger log = LoggerFactory.getLogger(RabbitMQHandler.class);
 
 	@Autowired
     private RabbitTemplate eventTemplate;
@@ -56,6 +60,8 @@ public class RabbitMQHandler implements GetDataHandler, PutDataHandler
     @Autowired
     private MessageConverter messageConverter;
     
+    @Autowired
+	private JsonMapper jsonMapper;
     
 	@Value("${fieldChangedEvent.MainQueue}")
     private String mainQ;
@@ -82,15 +88,25 @@ public class RabbitMQHandler implements GetDataHandler, PutDataHandler
         	FieldData fieldData = criteria.getFieldData();
         	MessageProperties prop = new MessageProperties();
         	prop.setContentType(MessageProperties.CONTENT_TYPE_JSON);
-        	//TODO convert DataMap to DataMapList, create a DataMap (no list), utimately support both.
         	if ( fieldData.getData() instanceof DataMap ) {
             	DataMap data = (DataMap) fieldData.getData();
-                Message msg = this.messageConverter.toMessage(data.getMap().toString(), prop);   
+                String payload = this.jsonMapper.toJson(data.getMap());
+                log.debug("RabbitMQ DataMap payload=" + payload);
+                Message msg = this.messageConverter.toMessage(payload, prop);   
+                this.eventTemplate.convertAndSend(this.mainQ, msg);
+
+        	}
+        	else if ( fieldData.getData() instanceof DataMapList ) {
+            	DataMapList data = (DataMapList) fieldData.getData();
+                String payload = this.jsonMapper.toJson(data.getMap());
+                log.debug("RabbitMQ DataMapList payload=" + payload);
+                Message msg = this.messageConverter.toMessage(payload, prop);   
                 this.eventTemplate.convertAndSend(this.mainQ, msg);
 
         	}
         	else if ( fieldData.getData() instanceof PredixString ) {
-            	PredixString data = (PredixString) fieldData.getData();
+            	PredixString data = (PredixString) fieldData.getData();                
+            	log.debug("RabbitMQ PredixString payload=" + data.getString());
                 Message msg = this.messageConverter.toMessage(data.getString(), prop);   
                 this.eventTemplate.convertAndSend(this.mainQ, msg);
 

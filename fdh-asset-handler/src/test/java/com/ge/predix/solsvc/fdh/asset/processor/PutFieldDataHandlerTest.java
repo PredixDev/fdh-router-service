@@ -32,6 +32,7 @@ import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -46,7 +47,7 @@ import com.ge.predix.entity.model.ModelList;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
-import com.ge.predix.entity.util.map.DataMap;
+import com.ge.predix.entity.util.map.DataMapList;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel;
 import com.ge.predix.solsvc.fdh.handler.asset.AssetPutDataHandlerImpl;
@@ -72,6 +73,7 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 
 })
+@ActiveProfiles({"asset"})
 public class PutFieldDataHandlerTest 
 {
 
@@ -98,7 +100,6 @@ public class PutFieldDataHandlerTest
      */
     @Before
     public void setUp()
-            throws Exception
     {
         @SuppressWarnings("rawtypes")
         Class[] classes = new Class[2];
@@ -114,7 +115,6 @@ public class PutFieldDataHandlerTest
      */
     @After
     public void tearDown()
-            throws Exception
     {
         //
     }
@@ -122,7 +122,6 @@ public class PutFieldDataHandlerTest
     /**
      *  -
      */
-    @SuppressWarnings("unused")
 	@Test
     public void testPutFieldDataProcessorOfSomethingThatExtendsModel()
     {
@@ -223,7 +222,7 @@ public class PutFieldDataHandlerTest
 		List<Object> listNoModel = (List<Object>) this.jsonMapper.fromJsonArray(assetJson, Object.class);
 		
 		//put it in a DataMap and add to FieldData
-        DataMap data = new DataMap();
+        DataMapList data = new DataMapList();
 		for ( Object item : listNoModel) {
 			com.ge.predix.entity.util.map.Map map = new com.ge.predix.entity.util.map.Map();
 			data.getMap().add(map);
