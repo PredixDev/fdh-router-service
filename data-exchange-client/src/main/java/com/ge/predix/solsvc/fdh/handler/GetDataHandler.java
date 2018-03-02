@@ -19,7 +19,6 @@ public interface GetDataHandler
      * @param headers -
      * @param request -
      * @param modelLookupMap -
-     * @param httpMethod - GET, PUT, POST, DELETE
      * @return -
      */
     GetFieldDataResult getData(GetFieldDataRequest request, Map<Integer, Object> modelLookupMap, List<Header> headers );

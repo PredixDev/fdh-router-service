@@ -28,6 +28,7 @@ import org.codehaus.jettison.json.JSONObject;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -390,7 +391,8 @@ public class AssetDataHandlerIT
         jetEnginePart.setsNo(22222);
         asset.setJetEnginePart(jetEnginePart);
 
-        String assetJson = this.jsonMapper.toJson(assets);
+        this.jsonMapper.resetSubtypes();
+		String assetJson = this.jsonMapper.toJson(assets);
         List<Object> listNoModel = this.jsonMapper.fromJsonArray(assetJson, Object.class);
         DataMapList data = new DataMapList();
         for (Object item : listNoModel)
@@ -418,6 +420,7 @@ public class AssetDataHandlerIT
 
         Assert.assertNotNull(resultingModelList);
         Assert.assertTrue(resultingModelList.size() > 0);
+        logger.debug("resultingModelList=" + resultingModelList.get(0));
         Assert.assertEquals(new Integer(12345),
                 ((LinkedHashMapModel) resultingModelList.get(0)).getMap().get("serialNo"));
 

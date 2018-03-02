@@ -53,6 +53,15 @@ public class EventHubPublishConfig extends DefaultOauthRestConfig implements IWe
     @Value("${predix.eventhub.publish.topic}")
     private String publishTopic;
 
+    @Value("${predix.rest.useProxyPropertiesFromFile:true}")
+	private boolean useProxyPropertiesFromFile;
+	
+    @Value("${predix.rest.useProxyPropertiesFromSystem:true}")
+	private boolean useProxyPropertiesFromSystem;
+    
+	@Value("${predix.rest.useProxyPropertiesFromEnvironment:true}")
+	private boolean useProxyPropertiesFromEnvironment;
+    
 	/**
 	 * @return -
 	 */
@@ -219,5 +228,29 @@ public class EventHubPublishConfig extends DefaultOauthRestConfig implements IWe
 	 */
 	public void setPublishTopic(String publishTopic) {
 		this.publishTopic = publishTopic;
+	}
+
+	public boolean isUseProxyPropertiesFromFile() {
+		return useProxyPropertiesFromFile;
+	}
+
+	public void setUseProxyPropertiesFromFile(boolean useProxyPropertiesFromFile) {
+		this.useProxyPropertiesFromFile = useProxyPropertiesFromFile;
+	}
+
+	public boolean isUseProxyPropertiesFromSystem() {
+		return useProxyPropertiesFromSystem;
+	}
+
+	public void setUseProxyPropertiesFromSystem(boolean useProxyPropertiesFromSystem) {
+		this.useProxyPropertiesFromSystem = useProxyPropertiesFromSystem;
+	}
+
+	public boolean isUseProxyPropertiesFromEnvironment() {
+		return useProxyPropertiesFromEnvironment;
+	}
+
+	public void setUseProxyPropertiesFromEnvironment(boolean useProxyPropertiesFromEnvironment) {
+		this.useProxyPropertiesFromEnvironment = useProxyPropertiesFromEnvironment;
 	}
 }

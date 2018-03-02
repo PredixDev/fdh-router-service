@@ -87,7 +87,7 @@ public class GetUomDataExchangeResult {
 
     /**
      * Gets the value of the capacity property.
-     * @return 
+     * @return -
      * 
      */
     public int getCapacity() {

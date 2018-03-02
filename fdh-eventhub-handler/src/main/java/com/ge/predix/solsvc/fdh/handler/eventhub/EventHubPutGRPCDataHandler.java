@@ -34,10 +34,9 @@ import com.ge.predix.entity.util.map.Entry;
 import com.ge.predix.eventhub.Ack;
 import com.ge.predix.eventhub.AckStatus;
 import com.ge.predix.eventhub.EventHubClientException;
-import com.ge.predix.eventhub.EventHubConstants.EnvironmentVariables;
 import com.ge.predix.eventhub.client.Client;
 import com.ge.predix.eventhub.configuration.EventHubConfiguration;
-import com.ge.predix.eventhub.configuration.PublishConfiguration;
+import com.ge.predix.eventhub.configuration.PublishSyncConfiguration;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 
 
@@ -152,27 +151,26 @@ public class EventHubPutGRPCDataHandler extends EventHubPutFieldDataHandler {
 			String[] client = this.eventHubPublishConfig.getOauthClientId().split(":");
 			log.info("ClientId:Secret : " + this.eventHubPublishConfig.getOauthClientId());
 			EventHubConfiguration eventHubConfiguration = null;
-			if (System.getenv().containsKey(EnvironmentVariables.VCAP_SERVICES)) {
-				eventHubConfiguration = new EventHubConfiguration.Builder()
-						.fromEnvironmentVariables(this.eventHubPublishConfig.getEventHubServiceName(),
-								this.eventHubPublishConfig.getEventHubUAAServiceName())
-						.clientID(client[0]).clientSecret(client[1])
-						.publishConfiguration(new PublishConfiguration.Builder()
-								.publisherType(PublishConfiguration.PublisherType.SYNC)
-								//.topic(this.eventHubPublishConfig.getPublishTopic())
-								.timeout(2000).build())
-						.automaticTokenRenew(true).build();
-			}else {
-				eventHubConfiguration = new EventHubConfiguration.Builder()
-						.host(this.eventHubPublishConfig.getEventHubHostName()).port(this.eventHubPublishConfig.getEventHubPort())
-						.clientID(client[0]).clientSecret(client[1]).zoneID(this.eventHubPublishConfig.getZoneId())
-						.authURL(this.eventHubPublishConfig.getOauthIssuerId())
-						.publishConfiguration(new PublishConfiguration.Builder()
-								.publisherType(PublishConfiguration.PublisherType.SYNC)
-								//.topic(this.eventHubPublishConfig.getPublishTopic())
-								.timeout(2000).build())
-						.automaticTokenRenew(true).build();
-			}
+			if ((eventHubPublishConfig.getEventHubServiceName() != null && !"".equals(eventHubPublishConfig.getEventHubServiceName()) || 
+	    			(eventHubPublishConfig.getEventHubUAAServiceName() != null && !"".equals(eventHubPublishConfig.getEventHubUAAServiceName())))) {
+	    		eventHubConfiguration = new EventHubConfiguration.Builder()
+	    		    .fromEnvironmentVariables(eventHubPublishConfig.getEventHubServiceName(), eventHubPublishConfig.getEventHubUAAServiceName())
+	    		    .clientID(client[0])
+	    		    .clientSecret(client[1])
+	    		    .publishConfiguration(new PublishSyncConfiguration.Builder().build())
+	    		    .automaticTokenRenew(true)
+	    		    .build();
+	    	}else {
+	    		eventHubConfiguration = new EventHubConfiguration.Builder()
+	    		    .host(eventHubPublishConfig.getEventHubHostName())
+	    		    .clientID(client[0])
+	    		    .clientSecret(client[1])
+	    		    .zoneID(eventHubPublishConfig.getZoneId())
+	    		    .authURL(eventHubPublishConfig.getOauthIssuerId())
+	    		    .publishConfiguration(new PublishSyncConfiguration.Builder().build())
+	    		    .automaticTokenRenew(true)
+	    		    .build();
+	    	}
 			/*if ((eventHubPublishConfig.getEventHubServiceName() != null
 					&& !"".equals(eventHubPublishConfig.getEventHubServiceName())
 					|| (eventHubPublishConfig.getEventHubUAAServiceName() != null

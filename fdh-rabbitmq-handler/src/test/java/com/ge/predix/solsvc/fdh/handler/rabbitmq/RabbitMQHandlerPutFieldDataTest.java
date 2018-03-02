@@ -48,6 +48,9 @@ public class RabbitMQHandlerPutFieldDataTest {
 
 	private static final Logger log = LoggerFactory.getLogger(RabbitMQHandlerPutFieldDataTest.class);
 	
+	/**
+	 * 
+	 */
 	@Autowired
 	TestData testData;
 
@@ -111,11 +114,12 @@ public class RabbitMQHandlerPutFieldDataTest {
 	@Test
 	public void testPutFieldDataUsingDataMap() throws IllegalStateException, IOException {
 		log.debug("================================");
+		@SuppressWarnings("unused")
 		ConnectionFactory mockConnectionFactory = mock(ConnectionFactory.class);
 		Connection mockConnection = mock(Connection.class);
 		Channel mockChannel = mock(Channel.class);
 
-		when(mockConnectionFactory.newConnection((ExecutorService) null)).thenReturn(mockConnection);
+		//when(mockConnectionFactory.newConnection( null)).thenReturn(mockConnection);
 		when(mockConnection.isOpen()).thenReturn(true);
 		when(mockConnection.createChannel()).thenReturn(mockChannel);
 
@@ -139,11 +143,12 @@ public class RabbitMQHandlerPutFieldDataTest {
 	@Test
 	public void testPutFieldDataUsingDataMapList() throws IllegalStateException, IOException {
 		log.debug("================================");
+		@SuppressWarnings("unused")
 		ConnectionFactory mockConnectionFactory = mock(ConnectionFactory.class);
 		Connection mockConnection = mock(Connection.class);
 		Channel mockChannel = mock(Channel.class);
 
-		when(mockConnectionFactory.newConnection((ExecutorService) null)).thenReturn(mockConnection);
+		//when(mockConnectionFactory.newConnection((ExecutorService) null)).thenReturn(mockConnection);
 		when(mockConnection.isOpen()).thenReturn(true);
 		when(mockConnection.createChannel()).thenReturn(mockChannel);
 
@@ -167,11 +172,12 @@ public class RabbitMQHandlerPutFieldDataTest {
 	@Test
 	public void testPutFieldDataUsingPredixString() throws IllegalStateException, IOException {
 		log.debug("================================");
+		@SuppressWarnings("unused")
 		ConnectionFactory mockConnectionFactory = mock(ConnectionFactory.class);
 		Connection mockConnection = mock(Connection.class);
 		Channel mockChannel = mock(Channel.class);
 
-		when(mockConnectionFactory.newConnection((ExecutorService) null)).thenReturn(mockConnection);
+		//when(mockConnectionFactory.newConnection((ExecutorService) null)).thenReturn(mockConnection);
 		when(mockConnection.isOpen()).thenReturn(true);
 		when(mockConnection.createChannel()).thenReturn(mockChannel);
 

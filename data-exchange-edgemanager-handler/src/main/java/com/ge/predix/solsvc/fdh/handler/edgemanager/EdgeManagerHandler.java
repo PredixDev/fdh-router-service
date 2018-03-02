@@ -49,7 +49,7 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
  * 
  * @author predix -
  */
-@Component
+@Component(value = "edgeManagerDataHandler")
 @ImportResource({ "classpath*:META-INF/spring/dx-edgemanager-handler-scan-context.xml" })
 public class EdgeManagerHandler implements GetDataHandler, PutDataHandler {
 

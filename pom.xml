@@ -5,22 +5,25 @@
 
 	<groupId>com.ge.predix.solsvc</groupId>
 	<artifactId>fdh-router-service</artifactId>
-	<version>2.0.35</version>
+	<version>2.0.44</version>
 	<packaging>pom</packaging>
 
 	<modules>
 	<module>data-exchange-client</module>
+	<module>fdh-custom-handler</module>
 	<module>fdh-adapter</module>
 	<module>fdh-asset-handler</module>
-	<module>fdh-eventhub-handler</module>
 	<module>fdh-timeseries-handler</module>
-	<module>fdh-custom-handler</module>
+	<module>fdh-eventhub-handler</module>
 	<module>fdh-rabbitmq-handler</module>
 	<module>fdh-websocket-handler</module>
 	<module>fdh-blobstore-handler</module>
-	<module>data-exchange-client-machine</module>
-	<module>data-exchange-machine</module>
+	<module>data-exchange-edgemanager-handler</module>
 	
+	
+	<!--<module>data-exchange-client-machine</module>
+	<module>data-exchange-machine</module>
+	-->
 	</modules>
 	<properties>
 
