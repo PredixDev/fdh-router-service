@@ -41,9 +41,9 @@ import com.ge.predix.solsvc.ext.util.JsonMapper;
 		"classpath*:META-INF/spring/ext-util-scan-context.xml",
 		"classpath*:META-INF/spring/TEST-dx-edgemanager-handler-properties-context.xml" })
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class EdgeManagerTest {
+public class EdgeManagerIT {
 
-	private static final Logger log = LoggerFactory.getLogger(EdgeManagerTest.class);
+	private static final Logger log = LoggerFactory.getLogger(EdgeManagerIT.class);
 
 	@Autowired
 	private EdgeManagerHandler edgeManagerHandler;

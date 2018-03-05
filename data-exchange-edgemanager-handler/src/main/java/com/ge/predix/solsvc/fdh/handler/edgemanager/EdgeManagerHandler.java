@@ -43,6 +43,7 @@ import com.ge.predix.entity.util.map.Entry;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
+import com.ge.predix.solsvc.restclient.config.DefaultOauthRestConfig;
 import com.ge.predix.solsvc.restclient.impl.RestClient;
 
 /**
@@ -55,8 +56,8 @@ public class EdgeManagerHandler implements GetDataHandler, PutDataHandler {
 
 	private static final Logger log = LoggerFactory.getLogger(EdgeManagerHandler.class.getName());
 
-	@Value("${predix.edgemanager.oauth.clientId}")
-	private String edgeManagerClient;
+	@Autowired
+	private DefaultOauthRestConfig restConfig;
 
 	@Value("${predix.edgemanager.api.baseurl}")
 	private String edgeManagerAPIBaseURL;
@@ -194,7 +195,7 @@ public class EdgeManagerHandler implements GetDataHandler, PutDataHandler {
 	 *            -
 	 */
 	private void addEdgeManagerHeaders(List<Header> headers) {
-		String token = this.restClient.requestToken(this.edgeManagerClient);
+		String token = this.restClient.requestToken(this.restConfig.getOauthClientId());
 		Header bearer = new BasicHeader("Authorization", token); //$NON-NLS-1$
 		headers.add(bearer);
 		Header zoneId = new BasicHeader("Predix-Zone-Id", this.tenantId); //$NON-NLS-1$
@@ -203,7 +204,6 @@ public class EdgeManagerHandler implements GetDataHandler, PutDataHandler {
 		headers.add(contentType);
 		Header accepts = new BasicHeader("Accept", "application/json"); //$NON-NLS-1$ //$NON-NLS-2$
 		headers.add(accepts);
-
 	}
 
 	/**
