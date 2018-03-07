@@ -37,7 +37,6 @@ import com.ge.predix.solsvc.fdh.handler.AsyncPutRequestHandler;
  * 
  * @author predix
  */
-@SuppressWarnings("nls")
 @Component(value = "blobstorePutDataHandler")
 @ImportResource(
 {
@@ -77,6 +76,7 @@ public class BlobstorePutDataHandler extends AsyncPutRequestHandler {
 	        for (PutFieldDataCriteria putFieldDataCriteria : fieldDataCriteria) {
 	        	if (putFieldDataCriteria.getFieldData().getData() instanceof DataFile) {
 	        		DataFile file = (DataFile)putFieldDataCriteria.getFieldData().getData();
+	        		
 	        		String uploadId = this.blobstoreClient.saveBlob(null);
 	        		Entry uploadIdEntry = new Entry();
 	        		uploadIdEntry.setKey("uploadId:"+file.getName());
