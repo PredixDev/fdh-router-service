@@ -4,14 +4,14 @@
 
 	<groupId>com.ge.predix.solsvc</groupId>
 	<artifactId>fdh-websocket-handler</artifactId>
-	<version>2.0.58</version>
+	<version>2.0.62</version>
 	<packaging>jar</packaging>
 
 	<properties>
-		<data-exchange-client.version>2.0.58</data-exchange-client.version>
-		<predix-websocket-client.version>2.1.50</predix-websocket-client.version>
-		<ext-model.version>2.3.51</ext-model.version>
-		<ext-util.version>2.3.51</ext-util.version>
+		<data-exchange-client.version>2.0.62</data-exchange-client.version>
+		<predix-websocket-client.version>2.1.51</predix-websocket-client.version>
+		<ext-model.version>2.3.56</ext-model.version>
+		<ext-util.version>2.3.56</ext-util.version>
 		
 		
 		<spring.version>4.1.6.RELEASE</spring.version>
@@ -37,17 +37,6 @@
 		<cxf.version>3.1.6</cxf.version>
 	</properties>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api -->
-		<dependency>
-		    <groupId>javax.websocket</groupId>
-		    <artifactId>javax.websocket-api</artifactId>
-		    <version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>${httpclient.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>com.ge.predix.solsvc</groupId>
 			<artifactId>ext-model</artifactId>
@@ -64,16 +53,28 @@
 			<version>${data-exchange-client.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>com.ge.predix.solsvc</groupId>
+			<artifactId>predix-websocket-client</artifactId>
+			<version>${predix-websocket-client.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api -->
+		<dependency>
+		    <groupId>javax.websocket</groupId>
+		    <artifactId>javax.websocket-api</artifactId>
+		    <version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.ge.predix.solsvc</groupId>
-			<artifactId>predix-websocket-client</artifactId>
-			<version>${predix-websocket-client.version}</version>
-		</dependency>
+		
 		<!-- Test Artifacts -->
 		<dependency>
 			<groupId>org.mockito</groupId>
