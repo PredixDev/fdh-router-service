@@ -136,6 +136,7 @@ public class TestData
         query.setEnd(endTime);
         com.ge.predix.entity.timeseries.datapoints.queryrequest.Tag tag = new com.ge.predix.entity.timeseries.datapoints.queryrequest.Tag();
         tag.setName(tagname);
+        tag.setLimit(3);
         List<com.ge.predix.entity.timeseries.datapoints.queryrequest.Tag> tags = new ArrayList<com.ge.predix.entity.timeseries.datapoints.queryrequest.Tag>();
         tags.add(tag);
         query.setTags(tags);
@@ -234,6 +235,7 @@ public class TestData
         tag.setName(tagName);
         List<com.ge.predix.entity.timeseries.datapoints.queryrequest.Tag> tags = new ArrayList<com.ge.predix.entity.timeseries.datapoints.queryrequest.Tag>();
         tags.add(tag);
+        tag.setLimit(10);
         query.setTags(tags);
         tsFilter.setDatapointsQuery(query);
         
