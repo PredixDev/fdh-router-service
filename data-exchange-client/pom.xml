@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ge.predix.solsvc</groupId>
-	<version>2.0.71</version>
+	<version>2.0.72</version>
 	<artifactId>data-exchange-client</artifactId>
 	<packaging>jar</packaging>
 
 	<properties>
-		<ext-model.version>2.4.3</ext-model.version>
+		<ext-model.version>2.4.4</ext-model.version>
 
 		<spring.version>4.1.6.RELEASE</spring.version>
 		<httpclient.version>4.5.2</httpclient.version>
