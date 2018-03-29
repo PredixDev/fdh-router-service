@@ -10,6 +10,7 @@
 
 package com.ge.predix.solsvc.fdh.handler.blobstore;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -22,6 +23,7 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import com.amazonaws.services.s3.model.S3Object;
 import com.ge.predix.entity.datafile.DataFile;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
@@ -76,8 +78,10 @@ public class BlobstorePutDataHandler extends AsyncPutRequestHandler {
 	        for (PutFieldDataCriteria putFieldDataCriteria : fieldDataCriteria) {
 	        	if (putFieldDataCriteria.getFieldData().getData() instanceof DataFile) {
 	        		DataFile file = (DataFile)putFieldDataCriteria.getFieldData().getData();
-	        		
-	        		String uploadId = this.blobstoreClient.saveBlob(null);
+	        		S3Object object = new S3Object();
+	        		object.setKey(file.getName());
+	        		object.setObjectContent((InputStream)file.getFile());
+	        		String uploadId = this.blobstoreClient.saveBlob(object);
 	        		Entry uploadIdEntry = new Entry();
 	        		uploadIdEntry.setKey("uploadId:"+file.getName());
 	        		uploadIdEntry.setValue(uploadId);
