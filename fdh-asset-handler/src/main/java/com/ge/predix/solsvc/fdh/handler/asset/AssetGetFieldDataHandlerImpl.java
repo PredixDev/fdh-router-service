@@ -176,7 +176,7 @@ public class AssetGetFieldDataHandlerImpl
             List<?> models = new ArrayList();
             // if the request is for PredixString bypass Transformation
             
-            log.info("fieldModel.getModelForUnMarshal()" + fieldModel.getModelForUnMarshal());
+            log.debug("fieldModel.getModelForUnMarshal()" + fieldModel.getModelForUnMarshal());
             if ( "PredixString".equalsIgnoreCase(fieldModel.getModelForUnMarshal()) )
             {
                 List<String> modelString = this.assetClient.getModels(assetQueryBuilder.build(), headers);
