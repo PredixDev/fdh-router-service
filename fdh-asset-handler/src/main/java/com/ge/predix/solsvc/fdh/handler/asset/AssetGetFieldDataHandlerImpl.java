@@ -38,6 +38,7 @@ import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.model.Model;
 import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.fdh.adapter.factory.AdapterFactory;
+import com.ge.predix.solsvc.fdh.handler.FDHUtil;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
 import com.ge.predix.solsvc.fdh.handler.asset.common.FieldModel;
@@ -103,6 +104,11 @@ public class AssetGetFieldDataHandlerImpl
             for (FieldDataCriteria criteria : request.getFieldDataCriteria())
             {
                 currentCriteria = criteria;
+                
+                // Use the override header or Set the header based on environment
+                boolean zoneIdFound = FDHUtil.setHeader(headers, criteria.getHeaders(), "Predix-Zone-Id");
+            	if ( !zoneIdFound )
+            		this.assetClient.setZoneIdInHeaders(headers);
 
                 // 2. Get data from Asset
                 List<Object> models = retrieveModels(criteria, modelLookupMap, headers);
@@ -153,8 +159,8 @@ public class AssetGetFieldDataHandlerImpl
      */
     protected List<?> retrieveModels(FieldDataCriteria fieldDataCriteria, List<Header> headers)
     {
-        // keeping it simple, assume the first Selection holds the type of model desired
-        this.assetClient.setZoneIdInHeaders(headers);
+    	
+		// keeping it simple, assume the first Selection holds the type of model desired
         List<FieldSelection> selections = fieldDataCriteria.getFieldSelection();
         FieldSelection firstSelection = selections.get(0);
         String field = firstSelection.getFieldIdentifier().getId().toString();

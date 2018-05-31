@@ -55,6 +55,7 @@ import com.ge.predix.entity.util.map.Entry;
 import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
+import com.ge.predix.solsvc.fdh.handler.FDHUtil;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
 import com.ge.predix.solsvc.fdh.handler.asset.common.FieldModel;
@@ -119,8 +120,6 @@ public class AssetPutDataHandlerImpl
 
             if ( !this.putFieldDataRequestValidator.validate(request, putFieldDataResult) ) return putFieldDataResult;
 
-            this.assetClient.setZoneIdInHeaders(headers);
-
             putFieldDataProcessor(request, putFieldDataResult, modelLookupMap, headers, httpMethod);
             return putFieldDataResult;
         }
@@ -157,16 +156,21 @@ public class AssetPutDataHandlerImpl
             throws JsonParseException, JsonMappingException, IOException
     {
         List<PutFieldDataCriteria> fieldCriteriaList = putFieldDataRequest.getPutFieldDataCriteria();
-        for (PutFieldDataCriteria fieldDataCriteria : fieldCriteriaList)
+        for (PutFieldDataCriteria criteria : fieldCriteriaList)
         {
-            if ( !this.putFieldDataCriteriaValidator.validate(fieldDataCriteria, putFieldDataResult) ) return;
+            if ( !this.putFieldDataCriteriaValidator.validate(criteria, putFieldDataResult) ) return;
 
-            for (Field field : fieldDataCriteria.getFieldData().getField())
+            // Use the override header or Set the header based on environment
+            boolean zoneIdFound = FDHUtil.setHeader(headers, criteria.getHeaders(), "Predix-Zone-Id");
+        	if ( !zoneIdFound )
+        		this.assetClient.setZoneIdInHeaders(headers);
+        	
+            for (Field field : criteria.getFieldData().getField())
             {
-                if ( fieldDataCriteria.getFilter() == null )
+                if ( criteria.getFilter() == null )
                 {
                     // no filter, let's just post the whole asset
-                    Data data = fieldDataCriteria.getFieldData().getData();
+                    Data data = criteria.getFieldData().getData();
                     // handle meta-data request first
 
                     if ( data instanceof DataMapList )
@@ -207,7 +211,7 @@ public class AssetPutDataHandlerImpl
                     {
                         // process file upload
                         this.assetPutDataFileExecutor.processDataFile(headers, Thread.currentThread().getName(),
-                                UUID.randomUUID(), fieldDataCriteria, putFieldDataResult, data);
+                                UUID.randomUUID(), criteria, putFieldDataResult, data);
                     }
                     else if ( data instanceof MetaData )
                     {
@@ -223,12 +227,12 @@ public class AssetPutDataHandlerImpl
                     // retrieve the entity and update something inside it
                     String fieldId = (String) field.getFieldIdentifier().getId();
                     FieldModel fieldModel = PaUtility.getFieldModel(fieldId);
-                    List<Object> models = retrieveModels(fieldDataCriteria, fieldModel, headers, httpMethod);
+                    List<Object> models = retrieveModels(criteria, fieldModel, headers, httpMethod);
                     if ( models != null )
                     {
                         for (Object model : models)
                         {
-                            processModel(fieldDataCriteria, model, fieldModel, modelLookupMap, headers, httpMethod);
+                            processModel(criteria, model, fieldModel, modelLookupMap, headers, httpMethod);
                         }
                     }
                 }

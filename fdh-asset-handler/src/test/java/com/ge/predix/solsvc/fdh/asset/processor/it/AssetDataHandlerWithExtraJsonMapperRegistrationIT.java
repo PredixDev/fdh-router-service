@@ -47,6 +47,7 @@ import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.util.map.DataMapList;
+import com.ge.predix.entity.util.map.Map;
 import com.ge.predix.solsvc.bootstrap.ams.common.AssetConfig;
 import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
@@ -217,11 +218,15 @@ public class AssetDataHandlerWithExtraJsonMapperRegistrationIT
      *            TODO
      * @return
      */
-    private GetFieldDataRequest createGetRequest(String filterFieldValue, String selection, String expectedDataType)
+    @SuppressWarnings("unchecked")
+	private GetFieldDataRequest createGetRequest(String filterFieldValue, String selection, String expectedDataType)
     {
         GetFieldDataRequest getFieldDataRequest = new GetFieldDataRequest();
 
         FieldDataCriteria fieldDataCriteria = new FieldDataCriteria();
+        fieldDataCriteria.setHeaders(new Map());
+        fieldDataCriteria.getHeaders().put("Predix-Zone-Id", this.assetClient.getAssetConfig().getZoneId());
+
 
         // SELECT
         FieldSelection fieldSelection = new FieldSelection();

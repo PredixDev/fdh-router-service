@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.http.Header;
+import org.apache.http.message.BasicHeader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ import com.ge.predix.entity.timeseries.datapoints.queryresponse.DatapointsRespon
 import com.ge.predix.entity.timeseriesfilter.AssetCriteriaAwareTimeseriesFilter;
 import com.ge.predix.entity.timeseriesfilter.TimeseriesFilter;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
+import com.ge.predix.solsvc.fdh.handler.FDHUtil;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.helper.OsaJavaDataTypeConversion;
 import com.ge.predix.solsvc.fdh.handler.asset.helper.OsaJavaDataTypeConversion.SupportedJavaTypes;
@@ -100,13 +102,18 @@ public class TimeseriesGetDataHandler
                 
                 // 2. Extract Input from GetFieldDataRequest
                 TimeseriesFilter tsFilter = getTimeseriesFilter(criteria, headers);
+                
+                // 3. Use the override header or Set the header based on environment
+                boolean zoneIdFound = FDHUtil.setHeader(headers, criteria.getHeaders(), "Predix-Zone-Id");
+                if ( !zoneIdFound )
+        			this.timeseriesClient.setZoneIdInHeaders(headers);
 
-                // 3. Get historical data from Time Series
+                // 4. Get historical data from Time Series
                 DatapointsResponse dataPoints = getTimeseriesData(tsFilter, headers);
                 adaptDataToExpectedDatatypeAndEngineeringUnits(result, criteria, dataPoints);
             }
 
-            // 4. Send Response
+            // 5. Send Response
             return result;
         }
         catch (Throwable t)
@@ -115,6 +122,8 @@ public class TimeseriesGetDataHandler
             throw new RuntimeException(message, t);
         }
     }
+
+
 
     private void validateRequest(GetFieldDataRequest request)
     {
@@ -159,7 +168,8 @@ public class TimeseriesGetDataHandler
             String json = this.jsonMapper.toJson(tsFilter);
             if ( json.contains("{{") || json.contains("}}"))
             {
-                Map<String, Object> responseMap = getAssetAttributesFromAssetCriteria(criteria, headers);
+            	List<Header> headersToUse = FDHUtil.copyHeaders(headers);
+                Map<String, Object> responseMap = getAssetAttributesFromAssetCriteria(criteria, headersToUse);
                 String replacedJson = json.replaceAll("<!-- -->", "");
                 
                 Template template = Mustache.compiler().compile(replacedJson);
@@ -182,8 +192,8 @@ public class TimeseriesGetDataHandler
         DatapointsResponse response = null;
 
         query = tsFilter.getDatapointsQuery();
-        // Invoke Time series Service using Time series SDK
-        this.timeseriesClient.setZoneIdInHeaders(headers);
+      
+    	
         if ( query == null )
         {
             // Try for getting latest data points query

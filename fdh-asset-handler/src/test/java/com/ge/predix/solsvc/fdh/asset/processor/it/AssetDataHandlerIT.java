@@ -28,7 +28,6 @@ import org.codehaus.jettison.json.JSONObject;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -626,11 +625,15 @@ public class AssetDataHandlerIT
      *            TODO
      * @return
      */
-    private GetFieldDataRequest createGetRequest(String filterFieldValue, String selection, String expectedDataType)
+    @SuppressWarnings("unchecked")
+	private GetFieldDataRequest createGetRequest(String filterFieldValue, String selection, String expectedDataType)
     {
         GetFieldDataRequest getFieldDataRequest = new GetFieldDataRequest();
 
         FieldDataCriteria fieldDataCriteria = new FieldDataCriteria();
+        fieldDataCriteria.setHeaders(new Map());
+        fieldDataCriteria.getHeaders().put("Predix-Zone-Id", this.assetClient.getAssetConfig().getZoneId());
+
 
         // SELECT
         FieldSelection fieldSelection = new FieldSelection();

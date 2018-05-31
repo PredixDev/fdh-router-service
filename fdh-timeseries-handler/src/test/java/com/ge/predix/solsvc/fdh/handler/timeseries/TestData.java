@@ -28,6 +28,8 @@ import com.ge.predix.entity.timeseries.datapoints.queryrequest.DatapointsQuery;
 import com.ge.predix.entity.timeseries.datapoints.queryrequest.latest.DatapointsLatestQuery;
 import com.ge.predix.entity.timeseriesfilter.AssetCriteriaAwareTimeseriesFilter;
 import com.ge.predix.entity.timeseriesfilter.TimeseriesFilter;
+import com.ge.predix.entity.util.map.Map;
+import com.ge.predix.solsvc.timeseries.bootstrap.client.TimeseriesClient;
 
 /**
  * 
@@ -110,13 +112,18 @@ public class TestData
      * @param tagname -
      * @param startTime -
      * @param endTime -
+     * @param timeseriesClient -
      * @return -
      */
-    public static GetFieldDataRequest getFieldDataRequestwithTs(String field, String fieldSource,
-            String expectedDataType, String tagname, Object startTime, Object endTime)
+    @SuppressWarnings({ "unchecked", "nls" })
+	public static GetFieldDataRequest getFieldDataRequestwithTs(String field, String fieldSource,
+            String expectedDataType, String tagname, Object startTime, Object endTime, TimeseriesClient timeseriesClient)
     {
         GetFieldDataRequest getFieldDataRequest = new GetFieldDataRequest();
         FieldDataCriteria fieldDataCriteria = new FieldDataCriteria();
+		fieldDataCriteria.setHeaders(new Map());
+		fieldDataCriteria.getHeaders().put("Predix-Zone-Id", timeseriesClient.getTimeseriesConfig().getZoneId());
+
 
         TimeseriesFilter tsFilter = new TimeseriesFilter();
 
@@ -154,15 +161,19 @@ public class TestData
      * @param uriField -
      * @param uriFieldValue -
      * @param tagName -
+     * @param timeseriesClient -
      * @param startTime -
      * @param endTime -
      * @return -
      */
-    public static GetFieldDataRequest getFieldDataRequestLatestDatapoint(String field, String fieldSource,
-            String expectedDataType, String tagName)
+    @SuppressWarnings({ "unchecked", "nls" })
+	public static GetFieldDataRequest getFieldDataRequestLatestDatapoint(String field, String fieldSource,
+            String expectedDataType, String tagName, TimeseriesClient timeseriesClient)
     {
         GetFieldDataRequest getFieldDataRequest = new GetFieldDataRequest();
         FieldDataCriteria fieldDataCriteria = new FieldDataCriteria();
+		fieldDataCriteria.setHeaders(new Map());
+		fieldDataCriteria.getHeaders().put("Predix-Zone-Id", timeseriesClient.getTimeseriesConfig().getZoneId());
 
         TimeseriesFilter tsFilter = new TimeseriesFilter();
 
@@ -204,15 +215,19 @@ public class TestData
      * @param assetSource -
      * @param assetExpectedDataType -
      * @param assetResultId -
+     * @param timeseriesClient -
      * @return -
      */
-    public static GetFieldDataRequest getFieldDataRequestwithAssetCriteriaAndTs(String timeseriesField,
+    @SuppressWarnings({ "unchecked", "nls" })
+	public static GetFieldDataRequest getFieldDataRequestwithAssetCriteriaAndTs(String timeseriesField,
             String timeseriesFieldSource,  String timeseriesExpectedDataType, String tagName, String startTime, String endTime,
-            String assetUri, String assetFilterQuery, String assetAttribute, String assetSource, String assetExpectedDataType, String assetResultId)
+            String assetUri, String assetFilterQuery, String assetAttribute, String assetSource, String assetExpectedDataType, String assetResultId, TimeseriesClient timeseriesClient)
     {
         GetFieldDataRequest getFieldDataRequest = new GetFieldDataRequest();
-        FieldDataCriteria timeseriesFieldDataCriteria = new FieldDataCriteria();
-    
+        FieldDataCriteria fieldDataCriteria = new FieldDataCriteria();
+		fieldDataCriteria.setHeaders(new Map());
+		fieldDataCriteria.getHeaders().put("Predix-Zone-Id", timeseriesClient.getTimeseriesConfig().getZoneId());
+
         AssetCriteriaAwareTimeseriesFilter assetCriteriaTSFilter = new AssetCriteriaAwareTimeseriesFilter();
       
         //add a timeseries filter
@@ -225,8 +240,8 @@ public class TestData
         timeseriesFieldIdentifier.setSource(timeseriesFieldSource);
         timeseriesFieldSelection.setFieldIdentifier(timeseriesFieldIdentifier);
         timeseriesFieldSelection.setExpectedDataType(timeseriesExpectedDataType);
-        timeseriesFieldDataCriteria.getFieldSelection().add(timeseriesFieldSelection);
-        timeseriesFieldDataCriteria.setFilter(assetCriteriaTSFilter);
+        fieldDataCriteria.getFieldSelection().add(timeseriesFieldSelection);
+        fieldDataCriteria.setFilter(assetCriteriaTSFilter);
         // SET Timeseries Filter
         DatapointsQuery query = new DatapointsQuery();
         query.setStart(startTime);
@@ -258,7 +273,7 @@ public class TestData
         assetFieldDataCriteria.setFilter(assetFilter);
     
     
-        getFieldDataRequest.getFieldDataCriteria().add(timeseriesFieldDataCriteria);
+        getFieldDataRequest.getFieldDataCriteria().add(fieldDataCriteria);
         return getFieldDataRequest;
     }
 }

@@ -2,18 +2,15 @@ package com.ge.predix.solsvc.fdh.handler.websocket;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.cxf.helpers.IOUtils;
-import org.apache.http.Header;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -21,7 +18,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
-import com.ge.predix.solsvc.restclient.impl.RestClient;
 
 /**
  * 
@@ -44,12 +40,6 @@ public class WebsocketHandlerPutIT {
 	@Autowired
 	private WebsocketHandler putHandler;
 
-	@Autowired
-	private RestClient restClient;
-
-	@Autowired
-	@Qualifier("webSocketClientConfig")
-	private WebSocketClientConfig webSocketClientConfig;
 	
     @Autowired
     private JsonMapper               mapper;
@@ -65,10 +55,8 @@ public class WebsocketHandlerPutIT {
 		log.info("request=" + this.mapper.toJson(request));
 
 		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
-		List<Header> headers = this.restClient.getSecureTokenForClientId();
-		this.restClient.addZoneToHeaders(headers, this.webSocketClientConfig.getZoneId());
 		String httpMethod = null;
-		PutFieldDataResult result = this.putHandler.putData(request, modelLookupMap, headers, httpMethod);
+		PutFieldDataResult result = this.putHandler.putData(request, modelLookupMap, null, httpMethod);
 		log.info("Result : "+result);
 		Assert.assertNotNull(result);
 		//Assert.assertTrue(result.getErrorEvent() == null || result.getErrorEvent().size()==0);
