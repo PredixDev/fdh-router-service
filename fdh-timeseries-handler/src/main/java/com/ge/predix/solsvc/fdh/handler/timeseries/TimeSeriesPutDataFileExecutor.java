@@ -23,6 +23,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.annotation.PostConstruct;
+
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -72,6 +74,14 @@ public class TimeSeriesPutDataFileExecutor {
     private TimeseriesClient timeseriesClient;
     
     /**
+     *  -
+     */
+    @PostConstruct 
+    public void init() {
+        this.timeseriesClient.createTimeseriesWebsocketConnectionPool();
+    }
+    
+    /**
      * @param headers -
      * @param threadName -
      * @param uuidId -
@@ -93,7 +103,6 @@ public class TimeSeriesPutDataFileExecutor {
             headers.add(new BasicHeader(this.timeseriesConfig.getZoneIdHeader(),
                     this.timeseriesConfig.getZoneId()));
 
-            this.timeseriesClient.createTimeseriesWebsocketConnectionPool();
             if (!StringUtils.isEmpty(datafile.getName())
                     && (datafile.getName().toLowerCase().endsWith("csv") || datafile.getName().toLowerCase().endsWith("xls"))) { //$NON-NLS-1$ //$NON-NLS-2$
                 // process csv file

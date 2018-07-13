@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.annotation.PostConstruct;
+
 import org.apache.http.Header;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,6 +62,14 @@ public class TimeseriesPutDataHandler extends AsyncPutRequestHandler {
     @Autowired
     private TimeseriesClient timeseriesClient;
 
+    /**
+     *  -
+     */
+    @PostConstruct
+    public void init() {
+        this.timeseriesClient.createTimeseriesWebsocketConnectionPool();
+    }
+    
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -72,32 +82,31 @@ public class TimeseriesPutDataHandler extends AsyncPutRequestHandler {
 			List<Header> headers, String httpMethod) {
 		try {
 		    UUID idOne = UUID.randomUUID();
-			PutFieldDataResult putFieldDataResult = getPutFieldDataResult(idOne);
+			PutFieldDataResult result = getPutFieldDataResult(idOne);
 		     
 			String threadName = Thread.currentThread().getName();
 		    String uuidId = ""; //$NON-NLS-1$
-		        List<Entry> entries = putFieldDataResult.getExternalAttributeMap().getEntry();
+		        List<Entry> entries = result.getExternalAttributeMap().getEntry();
 		        for (Entry entry : entries) {
 		            if (org.apache.commons.lang.StringUtils.endsWithIgnoreCase(entry.getKey().toString(), "UUID")) { //$NON-NLS-1$
 		                uuidId = entry.getValue().toString();
 		            }
-
 		        }
 
 		        log.info("UUID :" + uuidId + "   " + threadName + " has began working."); //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
 
-		        List<PutFieldDataCriteria> fieldDataCriteria = request.getPutFieldDataCriteria();
-		        for (PutFieldDataCriteria putFieldDataCriteria : fieldDataCriteria) {
-		            if (putFieldDataCriteria.getFieldData().getData() instanceof DataFile) {
-		                this.timeSeriesPutDataFileExecutor.processDataFile(headers, threadName, uuidId, putFieldDataCriteria,putFieldDataResult);
-		            } else if (putFieldDataCriteria.getFieldData().getData() instanceof DatapointsIngestion) {
-                        processDatapointsIngestion(putFieldDataCriteria);
+		        List<PutFieldDataCriteria> criterias = request.getPutFieldDataCriteria();
+		        for (PutFieldDataCriteria criteria : criterias) {
+		            if (criteria.getFieldData().getData() instanceof DataFile) {
+		                this.timeSeriesPutDataFileExecutor.processDataFile(headers, threadName, uuidId, criteria,result);
+		            } else if (criteria.getFieldData().getData() instanceof DatapointsIngestion) {
+                        processDatapointsIngestion(criteria);
                     }
 		            else
-		                throw new UnsupportedOperationException("unable to process data=" + putFieldDataCriteria.getFieldData().getData());
+		                throw new UnsupportedOperationException("unable to process field=" + criteria.getFieldData().getField() + " data=" + criteria.getFieldData().getData());
 		        }
 
-			return putFieldDataResult;
+			return result;
 		} catch (Throwable e) {
 			String msg = "unable to process request errorMsg=" + e.getMessage() + " request.correlationId="
 					+ request.getCorrelationId() + " request = " + request;
@@ -114,7 +123,6 @@ public class TimeseriesPutDataHandler extends AsyncPutRequestHandler {
     private void processDatapointsIngestion(PutFieldDataCriteria putFieldDataCriteria)
     {
         DatapointsIngestion datapointsIngestion = (DatapointsIngestion) putFieldDataCriteria.getFieldData().getData();
-        this.timeseriesClient.createTimeseriesWebsocketConnectionPool();
         this.timeseriesClient.postDataToTimeseriesWebsocket(datapointsIngestion);
     }
 

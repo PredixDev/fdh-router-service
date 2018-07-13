@@ -22,7 +22,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import com.ge.predix.entity.fielddata.FieldData;
@@ -44,97 +43,114 @@ import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
  * @author predix -
  */
 @Component(value = "webSocketHandler")
-@ImportResource({ "classpath*:META-INF/spring/fdh-websocket-handler-scan-context.xml"
+@ImportResource(
+{
+        "classpath*:META-INF/spring/fdh-websocket-handler-scan-context.xml"
 
 })
-public class WebsocketHandler implements GetDataHandler, PutDataHandler {
-	private static final Logger log = LoggerFactory.getLogger(WebsocketHandler.class);
+public class WebsocketHandler
+        implements GetDataHandler, PutDataHandler
+{
+    private static final Logger log = LoggerFactory.getLogger(WebsocketHandler.class);
 
-	
-	@Autowired
-	private JsonMapper mapper;
+    @Autowired
+    private JsonMapper          mapper;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.ge.predix.solsvc.fdhcontentbasedrouter.GetFieldDataInterface#
-	 * getFieldData(java.util.List,
-	 * com.ge.predix.entity.getfielddata.GetFieldDataRequest)
-	 */
-	@SuppressWarnings("nls")
-	@Override
-	public GetFieldDataResult getData(GetFieldDataRequest request, Map<Integer, Object> modelLookupMap,
-			List<Header> headers) {
-		throw new UnsupportedOperationException("unimplemented");
-	}
+    /*
+     * (non-Javadoc)
+     * @see com.ge.predix.solsvc.fdhcontentbasedrouter.GetFieldDataInterface#
+     * getFieldData(java.util.List,
+     * com.ge.predix.entity.getfielddata.GetFieldDataRequest)
+     */
+    @SuppressWarnings("nls")
+    @Override
+    public GetFieldDataResult getData(GetFieldDataRequest request, Map<Integer, Object> modelLookupMap,
+            List<Header> headers)
+    {
+        throw new UnsupportedOperationException("unimplemented");
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.ge.predix.solsvc.fdh.handler.PutFieldDataInterface#processRequest(com
-	 * .ge.predix.entity.putfielddata.PutFieldDataRequest, java.util.List)
-	 */
-	@SuppressWarnings({ "nls", "unchecked", "resource" })
-	@Override
-	public PutFieldDataResult putData(PutFieldDataRequest request, Map<Integer, Object> modelLookupMap,
-			List<Header> headers, String httpMethod) {
-	    PutFieldDataResult result = new PutFieldDataResult();
-		validate();
-		AttributeMap attrMap =  request.getExternalAttributeMap();
-		if (attrMap != null) {
-		List<Entry> entries = attrMap.getEntry();
-		List<Session> sessions = new ArrayList<Session>();
-		Session currentSession = null;
-		for (Entry entry : entries) {
-		    if ("SESSIONS".equals(entry.getKey().toString())) {
-		        sessions = (List<Session>)entry.getValue();
-		    }
-		    if ("SESSION".equals(entry.getKey().toString())) {
-		        currentSession = (Session)entry.getValue();
-		    }
-		}
-		if (currentSession == null || sessions == null || sessions.size() == 0) {
-		    result.getErrorEvent().add("ERROR: No sessions to process");
-		    return result;
-		}
-		for (PutFieldDataCriteria criteria : request.getPutFieldDataCriteria()) {
-			FieldData fieldData = criteria.getFieldData();
-			DatapointsIngestion dpIngestion = null;
-			if (fieldData.getData() instanceof DatapointsIngestion) {
-				dpIngestion = (DatapointsIngestion) fieldData.getData();
-				//String payload = this.mapper.toJson(dpIngestion);
-				//log.info("Payload : " + payload);
-				try {
-				    Iterator<Body> bodyList = dpIngestion.getBody().iterator();
-				    while (bodyList.hasNext()) {
-				        Body body = bodyList.next();
-				        if (currentSession.getPathParameters().get("nodeId").equals(body.getName())) {
-				            String msg = this.mapper.toJson(body);
-				            for (Session s : sessions) {
-				                if (s.isOpen() && !s.getPathParameters().get("nodeId").equals(body.getName())) {
-				                    log.info("Data sent to : "+body.getName());
-				                    s.getBasicRemote().sendText(msg);
-				                }
-				            }
-				        }
-				    }
-				} catch (IOException e) {
-					throw new RuntimeException("Exception when posting data to websocket", e);
-				}
-			}
-		}
-		
-		result.getErrorEvent().add("Data Sent to Websocket Server");
-		}
-		return result;
-	}
+    /*
+     * (non-Javadoc)
+     * @see
+     * com.ge.predix.solsvc.fdh.handler.PutFieldDataInterface#processRequest(com
+     * .ge.predix.entity.putfielddata.PutFieldDataRequest, java.util.List)
+     */
+    @SuppressWarnings(
+    {
+            "nls", "unchecked", "resource"
+    })
+    @Override
+    public PutFieldDataResult putData(PutFieldDataRequest request, Map<Integer, Object> modelLookupMap,
+            List<Header> headers, String httpMethod)
+    {
+        PutFieldDataResult result = new PutFieldDataResult();
+        validate();
+        AttributeMap attrMap = request.getExternalAttributeMap();
+        if ( attrMap != null )
+        {
+            List<Entry> entries = attrMap.getEntry();
+            List<Session> sessions = new ArrayList<Session>();
+            Session currentSession = null;
+            for (Entry entry : entries)
+            {
+                if ( "SESSIONS".equals(entry.getKey().toString()) )
+                {
+                    sessions = (List<Session>) entry.getValue();
+                }
+                if ( "SESSION".equals(entry.getKey().toString()) )
+                {
+                    currentSession = (Session) entry.getValue();
+                }
+            }
+            if ( currentSession == null || sessions == null || sessions.size() == 0 )
+            {
+                result.getErrorEvent().add("ERROR: No sessions to process");
+                return result;
+            }
+            for (PutFieldDataCriteria criteria : request.getPutFieldDataCriteria())
+            {
+                FieldData fieldData = criteria.getFieldData();
+                DatapointsIngestion dpIngestion = null;
+                if ( fieldData.getData() instanceof DatapointsIngestion )
+                {
+                    dpIngestion = (DatapointsIngestion) fieldData.getData();
+                    try
+                    {
+                        Iterator<Body> bodyList = dpIngestion.getBody().iterator();
+                        int i=0;
+                        while (bodyList.hasNext())
+                        {
+                            Body body = bodyList.next();
+                            String msg = this.mapper.toJson(body);
+                            for (Session s : sessions)
+                            {
+                                log.debug("Session is s" + s.getId() + " URL=" + s.getRequestURI().toString()
+                                        + "CurrentSession is c" + currentSession.getId() + " body Name =" + body.getName());
+                                if ( s.isOpen() && s.getRequestURI().toString().endsWith(body.getName()) )
+                                {
+                                    log.debug("sending data for Body[ " + i + "] " + s.getRequestURI().toString() + " message=" + msg);
+                                    s.getBasicRemote().sendText(msg);
+                                }
+                            }
+                        }
+                    }
+                    catch (IOException e)
+                    {
+                        throw new RuntimeException("Exception when posting data to websocket for criteria=" + criteria.toString(), e);
+                    }
+                }
+            }
+        }
+        return result;
+    }
 
-	/**
-	 * -
-	 */
-	private void validate() {
-		// TODO Auto-generated method stub
+    /**
+     * -
+     */
+    private void validate()
+    {
+        // TODO Auto-generated method stub
 
-	}
+    }
 }
