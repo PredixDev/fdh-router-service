@@ -126,7 +126,7 @@ public class WebsocketHandler
                             for (Session s : sessions)
                             {
                                 log.debug("Session is s" + s.getId() + " URL=" + s.getRequestURI().toString()
-                                        + "CurrentSession is c" + currentSession.getId() + " body Name =" + body.getName());
+                                        + " CurrentSession is c" + currentSession.getId() + " body Name =" + body.getName());
                                 if ( s.isOpen() && s.getRequestURI().toString().endsWith(body.getName()) )
                                 {
                                     log.debug("sending data for Body[ " + i + "] " + s.getRequestURI().toString() + " message=" + msg);
