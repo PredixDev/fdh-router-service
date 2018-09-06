@@ -36,7 +36,7 @@ import com.ge.predix.entity.fieldselection.FieldSelection;
 import com.ge.predix.entity.getfielddata.GetFieldDataRequest;
 import com.ge.predix.entity.getfielddata.GetFieldDataResult;
 import com.ge.predix.entity.model.Model;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
+import com.ge.predix.solsvc.bootstrap.ams.client.AssetClientImpl;
 import com.ge.predix.solsvc.fdh.adapter.factory.AdapterFactory;
 import com.ge.predix.solsvc.fdh.handler.FDHUtil;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
@@ -62,7 +62,6 @@ import com.ge.predix.solsvc.fdh.handler.asset.validator.GetFieldDataValidator;
 @ImportResource(
 {
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
-        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
         "classpath*:META-INF/spring/fdh-adapter-scan-context.xml"
 })
 @Profile("asset")
@@ -108,7 +107,7 @@ public class AssetGetFieldDataHandlerImpl
                 // Use the override header or Set the header based on environment
                 boolean zoneIdFound = FDHUtil.setHeader(headers, criteria.getHeaders(), "Predix-Zone-Id");
             	if ( !zoneIdFound )
-            		this.assetClient.setZoneIdInHeaders(headers);
+            		this.assetClient.addZoneIdToHeaders(headers);
 
                 // 2. Get data from Asset
                 List<Object> models = retrieveModels(criteria, modelLookupMap, headers);

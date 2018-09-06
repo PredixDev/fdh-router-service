@@ -21,7 +21,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
-import com.ge.predix.solsvc.restclient.impl.RestClient;
+import com.ge.predix.solsvc.timeseries.bootstrap.client.TimeseriesClient;
 import com.ge.predix.solsvc.timeseries.bootstrap.config.DefaultTimeseriesConfig;
 
 /**
@@ -34,12 +34,9 @@ import com.ge.predix.solsvc.timeseries.bootstrap.config.DefaultTimeseriesConfig;
 //@SpringApplicationConfiguration(classes = { TimeseriesPutDataHandler.class})
 @ContextConfiguration(locations =
 {
-		"classpath*:META-INF/spring/timeseries-bootstrap-scan-context.xml",
-        "classpath*:META-INF/spring/predix-websocket-client-scan-context.xml",
+//		"classpath*:META-INF/spring/timeseries-bootstrap-scan-context.xml",
         "classpath*:META-INF/spring/fdh-timeseries-handler-scan-context.xml",
         "classpath*:META-INF/spring/ext-util-scan-context.xml",
-        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
-        "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
         "classpath*:META-INF/spring/TEST-fdh-timeseries-handler-properties-context.xml"
 })
 @ActiveProfiles({"asset", "timeseries"})
@@ -51,7 +48,7 @@ public class TimeseriesHandlerPutIT {
 	private TimeseriesPutDataHandler putHandler;
 
 	@Autowired
-	private RestClient restClient;
+	private TimeseriesClient timeseriesClient;
 
 	@Autowired
 	@Qualifier("defaultTimeseriesConfig")
@@ -71,8 +68,8 @@ public class TimeseriesHandlerPutIT {
 		log.debug("request=" + this.mapper.toJson(request)); //$NON-NLS-1$
 
 		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
-		List<Header> headers = this.restClient.getSecureTokenForClientId();
-		this.restClient.addZoneToHeaders(headers, this.timseriesConfig.getZoneId());
+		List<Header> headers = this.timeseriesClient.getTimeseriesHeaders();
+		this.timeseriesClient.addZoneIdToHeaders(headers);
 		String httpMethod = null;
 		PutFieldDataResult result = this.putHandler.putData(request, modelLookupMap, headers, httpMethod);
 		

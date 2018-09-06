@@ -36,10 +36,7 @@ import com.ge.predix.solsvc.fdh.handler.asset.helper.IUomDataExchange;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations =
 {
-        "classpath*:META-INF/spring/predix-rest-client-scan-context.xml",
         "classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
-        "classpath*:META-INF/spring/ext-util-scan-context.xml",
-        "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 
 })

@@ -32,6 +32,7 @@ import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -42,12 +43,12 @@ import com.ge.predix.entity.field.fieldidentifier.FieldIdentifier;
 import com.ge.predix.entity.field.fieldidentifier.FieldSourceEnum;
 import com.ge.predix.entity.fielddata.FieldData;
 import com.ge.predix.entity.metadata.MetaData;
-import com.ge.predix.entity.model.Model;
 import com.ge.predix.entity.model.ModelList;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.DataMapList;
+import com.ge.predix.solsvc.bootstrap.ams.client.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel;
 import com.ge.predix.solsvc.fdh.handler.asset.AssetPutDataHandlerImpl;
@@ -66,9 +67,6 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
 @ContextConfiguration(locations =
 {
         "classpath*:META-INF/spring/MOCK-fdh-asset-handler-context.xml",
-        "classpath*:META-INF/spring/ext-util-scan-context.xml",
-        "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
-        "classpath*:META-INF/spring/predix-rest-client-scan-context.xml",
         "classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 

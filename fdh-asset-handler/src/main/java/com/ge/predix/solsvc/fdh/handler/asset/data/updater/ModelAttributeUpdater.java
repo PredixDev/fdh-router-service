@@ -32,6 +32,7 @@ import org.mimosa.osacbmv3_3.OsacbmTimeType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
 
 import com.ge.predix.entity.engunit.EngUnit;
@@ -59,6 +60,11 @@ import com.ge.predix.solsvc.fdh.handler.asset.helper.PaUtility;
  */
 @SuppressWarnings("nls")
 @Component
+@ImportResource(
+{
+    "classpath*:META-INF/spring/ext-util-scan-context.xml",
+
+})
 public class ModelAttributeUpdater
         implements AttributeUpdaterInterface
 {

@@ -26,9 +26,7 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations =
 {
-		"classpath*:META-INF/spring/predix-rest-client-scan-context.xml", 
 		"classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
-        "classpath*:META-INF/spring/ext-util-scan-context.xml",
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml"
 
@@ -36,12 +34,6 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
 @ActiveProfiles("local")
 public abstract class ServiceTestBase extends AbstractJUnit4SpringContextTests
 {
-
-    /**
-     * 
-     */
-    @Autowired
-    protected AssetConfig assetConfig;
 
     /**
      * 

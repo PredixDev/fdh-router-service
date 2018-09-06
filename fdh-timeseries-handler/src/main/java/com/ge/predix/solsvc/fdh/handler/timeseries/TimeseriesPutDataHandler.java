@@ -45,17 +45,13 @@ import com.ge.predix.solsvc.timeseries.bootstrap.client.TimeseriesClient;
 @Component(value = "timeseriesPutFieldDataHandler")
 @ImportResource(
 {
-        "classpath*:META-INF/spring/timeseries-bootstrap-scan-context.xml",
-        "classpath*:META-INF/spring/predix-websocket-client-scan-context.xml",
-        "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
-        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
-        "classpath*:META-INF/spring/fdh-timeseries-handler-scan-context.xml"
+        "classpath*:META-INF/spring/timeseries-bootstrap-scan-context.xml"
 })
 @Profile("timeseries")
 public class TimeseriesPutDataHandler extends AsyncPutRequestHandler {
 	private static final Logger log = LoggerFactory.getLogger(TimeseriesPutDataHandler.class);
 
-	@Autowired
+	@Autowired(required=false)
 	@Qualifier("timeSeriesPutDataFileExecutor")
 	private TimeSeriesPutDataFileExecutor timeSeriesPutDataFileExecutor;
 	

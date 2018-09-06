@@ -43,155 +43,161 @@ import com.ge.predix.solsvc.timeseries.bootstrap.client.TimeseriesClient;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:META-INF/spring/fdh-adapter-scan-context.xml",
-		"classpath*:META-INF/spring/fdh-timeseries-handler-scan-context.xml",
-		"classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
-		"classpath*:META-INF/spring/TEST-fdh-timeseries-handler-properties-context.xml",
-		"classpath*:META-INF/spring/ext-util-scan-context.xml",
-		"classpath*:META-INF/spring/predix-rest-client-scan-context.xml",
-		"classpath*:META-INF/spring/predix-websocket-client-scan-context.xml",
-		"classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
-		"classpath*:META-INF/spring/timeseries-bootstrap-scan-context.xml"
+@ContextConfiguration(locations =
+{
+        "classpath*:META-INF/spring/fdh-adapter-scan-context.xml",
+        "classpath*:META-INF/spring/fdh-timeseries-handler-scan-context.xml",
+        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
+        "classpath*:META-INF/spring/TEST-fdh-timeseries-handler-properties-context.xml",
+        "classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
+        "classpath*:META-INF/spring/timeseries-bootstrap-scan-context.xml"
 
 })
-@ActiveProfiles({ "asset", "timeseries" })
+@ActiveProfiles(
+{
+        "asset", "timeseries"
+})
 
-public class TimeseriesHandlerGetIT {
+public class TimeseriesHandlerGetIT
+{
 
-	private static Logger log = LoggerFactory.getLogger(TimeseriesHandlerGetIT.class);
+    private static Logger            log = LoggerFactory.getLogger(TimeseriesHandlerGetIT.class);
 
-	@Autowired
-	private TimeseriesGetDataHandler getHandler;
+    @Autowired
+    private TimeseriesGetDataHandler getHandler;
 
-	@Autowired
-	private TimeseriesClient timeseriesClient;
+    @Autowired
+    private TimeseriesClient         timeseriesClient;
 
-	@Autowired
-	private RestClient restClient;
+    @Autowired
+    private RestClient               restClient;
 
-	@Autowired
-	private JsonMapper mapper;
+    @Autowired
+    private JsonMapper               mapper;
 
-	/**
-	 * -
-	 */
-	@SuppressWarnings("nls")
-	@Test
-	public void testTSFilterWithTimeBoundedRequest() {
+    /**
+     * -
+     */
+    @SuppressWarnings("nls")
+    @Test
+    public void testTSFilterWithTimeBoundedRequest()
+    {
 
-		log.info("================================");
-		String timeseriesField = "/tags/datapoints";
-		String timeseriesFieldSource = FieldSourceEnum.PREDIX_TIMESERIES.name();
-		String timeseriesExpectedDataType = DatapointsResponse.class.getSimpleName();
-		String timeseriesTagname = "Compressor-2017:DischargePressure";
+        log.info("================================");
+        String timeseriesField = "/tags/datapoints";
+        String timeseriesFieldSource = FieldSourceEnum.PREDIX_TIMESERIES.name();
+        String timeseriesExpectedDataType = DatapointsResponse.class.getSimpleName();
+        String timeseriesTagname = "Compressor-2017:DischargePressure";
 
-		GetFieldDataRequest request = TestData.getFieldDataRequestwithTs(timeseriesField, timeseriesFieldSource,
-				timeseriesExpectedDataType, timeseriesTagname, "1d-ago", null, this.timeseriesClient);
+        GetFieldDataRequest request = TestData.getFieldDataRequestwithTs(timeseriesField, timeseriesFieldSource,
+                timeseriesExpectedDataType, timeseriesTagname, "1d-ago", null, this.timeseriesClient);
 
-		log.debug("request=" + this.mapper.toJson(request));
-		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
+        log.debug("request=" + this.mapper.toJson(request));
+        Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
 
-		List<Header> headers = new ArrayList<Header>();
-		headers.add(new BasicHeader("Content-Type", "application/json"));
-		this.restClient.addSecureTokenForHeaders(headers);
+        List<Header> headers = new ArrayList<Header>();
+        headers.add(new BasicHeader("Content-Type", "application/json"));
+        this.timeseriesClient.addSecureTokenToHeaders(headers);
 
-		GetFieldDataResult response = this.getHandler.getData(request, modelLookupMap, headers);
+        GetFieldDataResult response = this.getHandler.getData(request, modelLookupMap, headers);
 
-		log.info("Response =" + this.mapper.toJson(response));
-		log.info("Response = " + response.getFieldData().get(0).getData());
+        log.info("Response =" + this.mapper.toJson(response));
+        log.info("Response = " + response.getFieldData().get(0).getData());
 
-		Assert.assertNotNull(response);
-		Assert.assertNotNull(response.getFieldData().get(0).getData());
-		Assert.assertTrue(response.getFieldData().get(0).getData() instanceof DatapointsResponse);
-		DatapointsResponse dpResponse = (DatapointsResponse) response.getFieldData().get(0).getData();
+        Assert.assertNotNull(response);
+        Assert.assertNotNull(response.getFieldData().get(0).getData());
+        Assert.assertTrue(response.getFieldData().get(0).getData() instanceof DatapointsResponse);
+        DatapointsResponse dpResponse = (DatapointsResponse) response.getFieldData().get(0).getData();
 
-		log.info("DP Response tags size =" + dpResponse.getTags().size());
-		Assert.assertTrue(dpResponse.getTags().size() > 0);
+        log.info("DP Response tags size =" + dpResponse.getTags().size());
+        Assert.assertTrue(dpResponse.getTags().size() > 0);
 
-		log.info("DP Response stats  =" + dpResponse.getTags().get(0).getStats());
-		// Assert.assertTrue(dpResponse.getTags().get(0).getStats().getRawCount()
-		// > 0);
-	}
+        log.info("DP Response stats  =" + dpResponse.getTags().get(0).getStats());
+        // Assert.assertTrue(dpResponse.getTags().get(0).getStats().getRawCount()
+        // > 0);
+    }
 
-	/**
-	 * -
-	 */
-	@SuppressWarnings("nls")
-	@Test
-	public void testTSFilterWithGetLatestDataPoints() {
+    /**
+     * -
+     */
+    @SuppressWarnings("nls")
+    @Test
+    public void testTSFilterWithGetLatestDataPoints()
+    {
 
-		log.info("================================");
-		String timeseriesField = "/tags/datapoints/latest";
-		String timeseriesFieldSource = FieldSourceEnum.PREDIX_TIMESERIES.name();
-		String timeseriesExpectedDataType = DatapointsResponse.class.getSimpleName();
-		String timeseriesTagName = "RMD_metric2";
+        log.info("================================");
+        String timeseriesField = "/tags/datapoints/latest";
+        String timeseriesFieldSource = FieldSourceEnum.PREDIX_TIMESERIES.name();
+        String timeseriesExpectedDataType = DatapointsResponse.class.getSimpleName();
+        String timeseriesTagName = "RMD_metric2";
 
-		GetFieldDataRequest request = TestData.getFieldDataRequestLatestDatapoint(timeseriesField,
-				timeseriesFieldSource, timeseriesExpectedDataType, timeseriesTagName, this.timeseriesClient);
-		log.debug("request=" + this.mapper.toJson(request));
+        GetFieldDataRequest request = TestData.getFieldDataRequestLatestDatapoint(timeseriesField,
+                timeseriesFieldSource, timeseriesExpectedDataType, timeseriesTagName, this.timeseriesClient);
+        log.debug("request=" + this.mapper.toJson(request));
 
-		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
+        Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
 
-		List<Header> headers = new ArrayList<Header>();
-		headers.add(new BasicHeader("Content-Type", "application/json"));
-		this.restClient.addSecureTokenForHeaders(headers);
+        List<Header> headers = new ArrayList<Header>();
+        headers.add(new BasicHeader("Content-Type", "application/json"));
+        this.timeseriesClient.addSecureTokenToHeaders(headers);
 
-		GetFieldDataResult response = this.getHandler.getData(request, modelLookupMap, headers);
+        GetFieldDataResult response = this.getHandler.getData(request, modelLookupMap, headers);
 
-		log.info("Response =" + this.mapper.toJson(response));
-		log.info("Response = " + response.getFieldData().get(0).getData());
+        log.info("Response =" + this.mapper.toJson(response));
+        log.info("Response = " + response.getFieldData().get(0).getData());
 
-		Assert.assertNotNull(response);
-		Assert.assertNotNull(response.getFieldData().get(0).getData());
-		Assert.assertTrue(response.getFieldData().get(0).getData() instanceof DatapointsResponse);
-		Assert.assertTrue(response.getFieldData().get(0).getData() instanceof DatapointsResponse);
-		DatapointsResponse dpResponse = (DatapointsResponse) response.getFieldData().get(0).getData();
-		Assert.assertTrue(dpResponse.getTags().size() > 0);
-		Assert.assertTrue(dpResponse.getTags().get(0).getStats().getRawCount() > 0);
-	}
+        Assert.assertNotNull(response);
+        Assert.assertNotNull(response.getFieldData().get(0).getData());
+        Assert.assertTrue(response.getFieldData().get(0).getData() instanceof DatapointsResponse);
+        Assert.assertTrue(response.getFieldData().get(0).getData() instanceof DatapointsResponse);
+        DatapointsResponse dpResponse = (DatapointsResponse) response.getFieldData().get(0).getData();
+        Assert.assertTrue(dpResponse.getTags().size() > 0);
+        Assert.assertTrue(dpResponse.getTags().get(0).getStats().getRawCount() > 0);
+    }
 
-	/**
-	 */
-	@SuppressWarnings("nls")
-	@Test
-	public void testAssetCriteriaAwareTSFilter() {
+    /**
+     */
+    @SuppressWarnings("nls")
+    @Test
+    public void testAssetCriteriaAwareTSFilter()
+    {
 
-		log.info("================================");
-		String timeseriesField = "/timeseries/tag";
-		String timeseriesFieldSource = FieldSourceEnum.PREDIX_TIMESERIES.name();
-		String timeseriesExpectedDataType = DatapointsResponse.class.getSimpleName();
-		// String timeseriesTagname = "Compressor-2017:DischargePressure";
-		String assetResultId = "tag";
-		String timeseriesTagname = "{{" + assetResultId + "}}";
-		String assetUri = "/asset/compressor-2017";
-		String assetFilter = null;
-		String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/timeseriesDatasource/tag";
-		String assetSource = FieldSourceEnum.PREDIX_ASSET.name();
-		String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
+        log.info("================================");
+        String timeseriesField = "/timeseries/tag";
+        String timeseriesFieldSource = FieldSourceEnum.PREDIX_TIMESERIES.name();
+        String timeseriesExpectedDataType = DatapointsResponse.class.getSimpleName();
+        // String timeseriesTagname = "Compressor-2017:DischargePressure";
+        String assetResultId = "tag";
+        String timeseriesTagname = "{{" + assetResultId + "}}";
+        String assetUri = "/asset/compressor-2017";
+        String assetFilter = null;
+        String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/timeseriesDatasource/tag";
+        String assetSource = FieldSourceEnum.PREDIX_ASSET.name();
+        String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
-		GetFieldDataRequest request = TestData.getFieldDataRequestwithAssetCriteriaAndTs(timeseriesField,
-				timeseriesFieldSource, timeseriesExpectedDataType, timeseriesTagname, "1d-ago", null, assetUri,
-				assetFilter, assetAttribute, assetSource, assetExpectedDataType, assetResultId, this.timeseriesClient);
-		log.debug("request=" + this.mapper.toJson(request));
+        GetFieldDataRequest request = TestData.getFieldDataRequestwithAssetCriteriaAndTs(timeseriesField,
+                timeseriesFieldSource, timeseriesExpectedDataType, timeseriesTagname, "1d-ago", null, assetUri,
+                assetFilter, assetAttribute, assetSource, assetExpectedDataType, assetResultId, this.timeseriesClient);
+        log.debug("request=" + this.mapper.toJson(request));
 
-		Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
+        Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
 
-		List<Header> headers = new ArrayList<Header>();
-		headers.add(new BasicHeader("Content-Type", "application/json"));
-		this.restClient.addSecureTokenForHeaders(headers);
+        List<Header> headers = new ArrayList<Header>();
+        headers.add(new BasicHeader("Content-Type", "application/json"));
+        this.restClient.addSecureTokenToHeaders(headers);
 
-		GetFieldDataResult response = this.getHandler.getData(request, modelLookupMap, headers);
+        GetFieldDataResult response = this.getHandler.getData(request, modelLookupMap, headers);
 
-		log.debug("Response =" + this.mapper.toJson(response));
-		log.info("Response = " + response.getFieldData().get(0).getData());
+        log.debug("Response =" + this.mapper.toJson(response));
+        log.info("Response = " + response.getFieldData().get(0).getData());
 
-		Assert.assertNotNull(response);
-		Assert.assertNotNull(response.getFieldData().get(0).getData());
-		Assert.assertTrue(response.getFieldData().get(0).getData() instanceof DatapointsResponse);
-		DatapointsResponse dpResponse = (DatapointsResponse) response.getFieldData().get(0).getData();
-		Assert.assertTrue(dpResponse.getTags().size() > 0);
-		// Assert.assertTrue(dpResponse.getTags().get(0).getStats().getRawCount()
-		// > 0);
-	}
+        Assert.assertNotNull(response);
+        Assert.assertNotNull(response.getFieldData().get(0).getData());
+        Assert.assertTrue(response.getFieldData().get(0).getData() instanceof DatapointsResponse);
+        DatapointsResponse dpResponse = (DatapointsResponse) response.getFieldData().get(0).getData();
+        Assert.assertTrue(dpResponse.getTags().size() > 0);
+        // Assert.assertTrue(dpResponse.getTags().get(0).getStats().getRawCount()
+        // > 0);
+    }
 
 }

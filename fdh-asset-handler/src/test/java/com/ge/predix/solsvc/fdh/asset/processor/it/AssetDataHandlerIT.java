@@ -65,16 +65,14 @@ import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.DataMapList;
 import com.ge.predix.entity.util.map.Map;
-import com.ge.predix.solsvc.bootstrap.ams.common.AssetConfig;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
-import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
+import com.ge.predix.solsvc.bootstrap.ams.client.AssetClientImpl;
+import com.ge.predix.solsvc.bootstrap.ams.client.LinkedHashMapModel;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEnginePart;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
 import com.ge.predix.solsvc.fdh.handler.asset.common.AssetQueryBuilder;
-import com.ge.predix.solsvc.restclient.impl.RestClient;
 
 /**
  * 
@@ -87,8 +85,6 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations =
 {
-        "classpath*:META-INF/spring/ext-util-scan-context.xml",
-        "classpath*:META-INF/spring/predix-rest-client-scan-context.xml",
         "classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml"
@@ -108,15 +104,12 @@ public class AssetDataHandlerIT
     @Autowired
     @Qualifier(value = "assetPutFieldDataHandler")
     private PutDataHandler   putFieldDataProcessor;
-    @Autowired
-    private RestClient       restClient;
     /**
      * 
      */
     @Rule
     public ExpectedException thrown = ExpectedException.none();
-    @Autowired
-    private AssetConfig      assetConfig;
+ 
     
     @Autowired
     @Qualifier("AssetClient")
@@ -163,9 +156,9 @@ public class AssetDataHandlerIT
         String uri = "/" + model + "/engine23";
         String fieldId = "/" + model + "/averageSpeed";
         Double fieldValue = 22.6;
+        
 
-        List<Header> headers = this.restClient.getSecureTokenForClientId();
-        this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
+        List<Header> headers = this.assetClient.getAssetHeaders();
 
         // get rid of it
         this.assetClient.deleteModel(uri, headers);// $NON-NLS-1$
@@ -197,8 +190,7 @@ public class AssetDataHandlerIT
         String fieldId = "/" + model + "/averageSpeed";
         Double fieldValue = 22.6;
 
-        List<Header> headers = this.restClient.getSecureTokenForClientId();
-        this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
+        List<Header> headers = this.assetClient.getAssetHeaders();
 
         // get rid of it
         this.assetClient.deleteModel(uri, headers);// $NON-NLS-1$
@@ -249,8 +241,7 @@ public class AssetDataHandlerIT
        jsonObj.put("description", "test");
        String fieldValue = jsonObj.toString();
 
-       List<Header> headers = this.restClient.getSecureTokenForClientId();
-       this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
+       List<Header> headers = this.assetClient.getAssetHeaders();
 
        // get rid of it
        this.assetClient.deleteModel(uri, headers);// $NON-NLS-1$
@@ -284,8 +275,8 @@ public class AssetDataHandlerIT
    @Test
     public void testNoFilterClassThatExtendsModelGettingAChildEntityForPostOnPolymporphicClassThatExists()
     {
-        List<Header> headers = this.restClient.getSecureTokenForClientId();
-        this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
+        List<Header> headers = this.assetClient.getAssetHeaders();
+
 
         // get rid of it
         this.assetClient.deleteModel("/asset/1", headers);//$NON-NLS-1$
@@ -358,8 +349,7 @@ public class AssetDataHandlerIT
    @Test
     public void testClassThatDoesNotExtendModelOnNonPolymporphicClassThatExistsButUnregisteredWithJsonMapper()
     {
-        List<Header> headers = this.restClient.getSecureTokenForClientId();
-        this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
+        List<Header> headers = this.assetClient.getAssetHeaders();
 
         // get rid of it
         this.assetClient.deleteModel("/jetEngineNoModel/1", headers);//$NON-NLS-1$
@@ -457,7 +447,7 @@ public class AssetDataHandlerIT
 
         List<Header> headers = new ArrayList<Header>();
         headers.add(new BasicHeader("Content-Type", "application/json"));
-        this.restClient.addSecureTokenForHeaders(headers);
+        this.assetClient.addSecureTokenToHeaders(headers);
 
         GetFieldDataResult response = this.getFieldDataProcessor.getData(request, modelLookupMap, headers);
 
@@ -492,7 +482,7 @@ public class AssetDataHandlerIT
 
         List<Header> headers = new ArrayList<Header>();
         headers.add(new BasicHeader("Content-Type", "application/json"));
-        this.restClient.addSecureTokenForHeaders(headers);
+        this.assetClient.addSecureTokenToHeaders(headers);
 
         GetFieldDataResult response = this.getFieldDataProcessor.getData(request, modelLookupMap, headers);
 
@@ -527,7 +517,7 @@ public class AssetDataHandlerIT
 
         List<Header> headers = new ArrayList<Header>();
         headers.add(new BasicHeader("Content-Type", "application/json"));
-        this.restClient.addSecureTokenForHeaders(headers);
+        this.assetClient.addSecureTokenToHeaders(headers);
 
         GetFieldDataResult response = this.getFieldDataProcessor.getData(request, modelLookupMap, headers);
 
@@ -562,7 +552,7 @@ public class AssetDataHandlerIT
 
         List<Header> headers = new ArrayList<Header>();
         headers.add(new BasicHeader("Content-Type", "application/json"));
-        this.restClient.addSecureTokenForHeaders(headers);
+        this.assetClient.addSecureTokenToHeaders(headers);
 
         GetFieldDataResult response = this.getFieldDataProcessor.getData(request, modelLookupMap, headers);
 
@@ -598,7 +588,7 @@ public class AssetDataHandlerIT
 
         List<Header> headers = new ArrayList<Header>();
         headers.add(new BasicHeader("Content-Type", "application/json"));
-        this.restClient.addSecureTokenForHeaders(headers);
+        this.assetClient.addSecureTokenToHeaders(headers);
 
         GetFieldDataResult response = this.getFieldDataProcessor.getData(request, modelLookupMap, headers);
 
@@ -744,68 +734,6 @@ public class AssetDataHandlerIT
         AssetFilter assetFilter = new AssetFilter();
         assetFilter.setUri(uri);
         return assetFilter;
-    }
-
-    @SuppressWarnings({
-            "resource", "javadoc"
-    })
-    @Test
-    public void testWithFileUpload() throws IOException
-    {
-
-        String putFieldDataString = "{\"putFieldDataCriteria\":[{\"namespaces\":[],\"fieldData\":{\"field\":[{\"fieldIdentifier\":{\"complexType\":\"FieldIdentifier\",\"source\":\"PREDIX_ASSET\"},\"parents\":[]}],\"data\":{\"complexType\":\"DataFile\",\"source\":\"PREDIX_ASSET\"}}}]}";
-        List<Header> headers = this.restClient.getSecureTokenForClientId();
-        this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
-        headers.add(new BasicHeader("Content-type", "application/json"));
-        // get rid of it
-        this.assetClient.deleteModel("/classification/Locomotive-Test", headers);//$NON-NLS-1$
-
-        PutFieldDataRequest putFieldDataRequest = this.jsonMapper.fromJson(putFieldDataString,
-                PutFieldDataRequest.class);
-        File initialFile = new File("src/test/resources/testFiles/CarAndLocomotives.json");
-        InputStream targetStream;
-
-        targetStream = FileUtils.openInputStream(initialFile);
-        updatePutRequest(initialFile.getName(), targetStream, putFieldDataRequest);
-        // add it back
-        java.util.Map<Integer, Object> modelLookupMap = new HashMap<Integer, Object>();
-        PutFieldDataResult result = this.putFieldDataProcessor.putData(putFieldDataRequest, modelLookupMap, headers,
-                HttpPost.METHOD_NAME);
-        Assert.assertNotNull(result);
-        Assert.assertTrue(result.getErrorEvent() != null);
-    
-
-    }
-
-    private void updatePutRequest(String filename, InputStream file, PutFieldDataRequest putFieldDataRequest)
-    {
-
-        if ( putFieldDataRequest == null ) throw new RuntimeException("PutFieldDataRequest is missing "); //$NON-NLS-1$
-
-        PutFieldDataCriteria fieldDataCriteria = null;
-        if ( putFieldDataRequest != null && (putFieldDataRequest.getPutFieldDataCriteria() == null
-                || putFieldDataRequest.getPutFieldDataCriteria().size() == 0) )
-        {
-            fieldDataCriteria = new PutFieldDataCriteria();
-            Filter selectionFilter = new Filter();
-            fieldDataCriteria.setFilter(selectionFilter);
-            putFieldDataRequest.getPutFieldDataCriteria().add(fieldDataCriteria);
-        }
-        fieldDataCriteria = putFieldDataRequest.getPutFieldDataCriteria().get(0);
-        FieldData fieldData = fieldDataCriteria.getFieldData();
-
-        DataFile datafile = new DataFile();
-        datafile.setName(filename);
-        try
-        {
-            datafile.setFile(IOUtils.toByteArray(file));
-        }
-        catch (IOException e)
-        {
-            throw new RuntimeException(e);
-        }
-        fieldData.setData(datafile);
-        fieldDataCriteria.setFieldData(fieldData);
     }
 
 }

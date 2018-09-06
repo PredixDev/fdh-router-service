@@ -48,14 +48,12 @@ import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.util.map.DataMapList;
 import com.ge.predix.entity.util.map.Map;
-import com.ge.predix.solsvc.bootstrap.ams.common.AssetConfig;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
+import com.ge.predix.solsvc.bootstrap.ams.client.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEngineNoModel;
 import com.ge.predix.solsvc.fdh.asset.helper.JetEnginePart;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
-import com.ge.predix.solsvc.restclient.impl.RestClient;
 
 /**
  * 
@@ -68,11 +66,8 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations =
 {
-        "classpath*:META-INF/spring/ext-util-scan-context.xml",
-        "classpath*:META-INF/spring/predix-rest-client-scan-context.xml",
         "classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
-        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
-        "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml"
+        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 
 })
 @ActiveProfiles({"asset"})
@@ -90,15 +85,14 @@ public class AssetDataHandlerWithExtraJsonMapperRegistrationIT
     @Autowired
     @Qualifier(value = "assetPutFieldDataHandler")
     private PutDataHandler   putFieldDataProcessor;
-    @Autowired
-    private RestClient       restClient;
+    
+
     /**
      * 
      */
     @Rule
     public ExpectedException thrown = ExpectedException.none();
-    @Autowired
-    private AssetConfig      assetConfig;
+
     
     @Autowired
     @Qualifier("AssetClient")
@@ -134,8 +128,7 @@ public class AssetDataHandlerWithExtraJsonMapperRegistrationIT
     @Test
     public void testNoFilterClassThatExtendsModelGettingAChildEntityForPostOnNonPolymporphicClassThatExists()
     {
-        List<Header> headers = this.restClient.getSecureTokenForClientId();
-        this.restClient.addZoneToHeaders(headers, this.assetConfig.getZoneId());
+        List<Header> headers = this.assetClient.getAssetHeaders();
 
         // get rid of it
         this.assetClient.deleteModel("/jetEngineNoModel/1", headers);//$NON-NLS-1$

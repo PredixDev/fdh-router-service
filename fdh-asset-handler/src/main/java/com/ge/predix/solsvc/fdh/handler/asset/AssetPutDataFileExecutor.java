@@ -28,6 +28,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -40,7 +41,7 @@ import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.AttributeMap;
 import com.ge.predix.entity.util.map.Entry;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
+import com.ge.predix.solsvc.bootstrap.ams.client.AssetClientImpl;
 
 /**
  * PutFieldDataProcessor processes PutFieldDataRequest - Stores Asset Model from File
@@ -48,6 +49,7 @@ import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
  */
 @SuppressWarnings("nls")
 @Component(value = "assetPutDataFileExecutor")
+@Profile("asset-file")
 public class AssetPutDataFileExecutor  {
 	private static final Logger log = LoggerFactory.getLogger(AssetPutDataFileExecutor.class);
 

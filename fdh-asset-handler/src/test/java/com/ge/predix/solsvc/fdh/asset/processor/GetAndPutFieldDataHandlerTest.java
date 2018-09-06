@@ -57,7 +57,7 @@ import com.ge.predix.entity.model.SampleEngine;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataRequest;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
+import com.ge.predix.solsvc.bootstrap.ams.client.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
@@ -75,9 +75,7 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
 @ContextConfiguration(locations =
 {
         "classpath*:META-INF/spring/MOCK-fdh-asset-handler-context.xml",
-        "classpath*:META-INF/spring/predix-rest-client-scan-context.xml",
         "classpath*:META-INF/spring/predix-rest-client-sb-properties-context.xml",
-        "classpath*:META-INF/spring/ext-util-scan-context.xml",
         "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 

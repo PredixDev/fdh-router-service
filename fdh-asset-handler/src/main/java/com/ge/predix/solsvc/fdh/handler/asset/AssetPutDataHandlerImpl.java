@@ -52,8 +52,8 @@ import com.ge.predix.entity.putfielddata.PutFieldDataResult;
 import com.ge.predix.entity.util.map.AttributeMap;
 import com.ge.predix.entity.util.map.DataMapList;
 import com.ge.predix.entity.util.map.Entry;
-import com.ge.predix.solsvc.bootstrap.ams.factories.AssetClientImpl;
-import com.ge.predix.solsvc.bootstrap.ams.factories.LinkedHashMapModel;
+import com.ge.predix.solsvc.bootstrap.ams.client.AssetClient;
+import com.ge.predix.solsvc.bootstrap.ams.client.LinkedHashMapModel;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.FDHUtil;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
@@ -76,7 +76,8 @@ import com.ge.predix.solsvc.fdh.handler.asset.validator.PutFieldDataRequestValid
 @Component(value = "assetPutFieldDataHandler")
 @ImportResource(
 {
-        "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
+    "classpath*:META-INF/spring/ext-util-scan-context.xml",
+    "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
         "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 })
 @Profile("asset")
@@ -93,7 +94,7 @@ public class AssetPutDataHandlerImpl
 
     @Autowired
 	@Qualifier("AssetClient")
-	private AssetClientImpl assetClient;
+	private AssetClient assetClient;
 
     @Autowired
     private JsonMapper                    jsonMapper;
@@ -101,7 +102,7 @@ public class AssetPutDataHandlerImpl
     @Autowired
     private AttributeHandlerFactory       attributeHandlerFactory;
 
-    @Autowired
+    @Autowired(required=false)
     private AssetPutDataFileExecutor      assetPutDataFileExecutor;
 
     /*
@@ -163,7 +164,10 @@ public class AssetPutDataHandlerImpl
             // Use the override header or Set the header based on environment
             boolean zoneIdFound = FDHUtil.setHeader(headers, criteria.getHeaders(), "Predix-Zone-Id");
         	if ( !zoneIdFound )
-        		this.assetClient.setZoneIdInHeaders(headers);
+        		this.assetClient.addZoneIdToHeaders(headers);
+        	boolean authTokenFound = FDHUtil.setHeader(headers, criteria.getHeaders(), "Authorization");
+            if ( !authTokenFound )
+                this.assetClient.addSecureTokenToHeaders(headers);
         	
             for (Field field : criteria.getFieldData().getField())
             {

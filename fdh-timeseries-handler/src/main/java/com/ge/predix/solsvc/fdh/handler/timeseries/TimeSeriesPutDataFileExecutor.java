@@ -56,7 +56,7 @@ import com.ge.predix.solsvc.timeseries.bootstrap.config.DefaultTimeseriesConfig;
  * 
  * @author 212421693
  */
-@Profile("timeseries")
+@Profile("timeseries-file")
 @Component("timeSeriesPutDataFileExecutor")
 public class TimeSeriesPutDataFileExecutor {
 

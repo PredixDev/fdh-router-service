@@ -52,13 +52,9 @@ import com.samskivert.mustache.Template;
 @SuppressWarnings("nls")
 @ImportResource(
 {
-        "classpath*:META-INF/spring/predix-rest-client-scan-context.xml",
         "classpath*:META-INF/spring/timeseries-bootstrap-scan-context.xml",
-        "classpath*:META-INF/spring/predix-websocket-client-scan-context.xml",
-        "classpath*:META-INF/spring/asset-bootstrap-client-scan-context.xml",
         "classpath*:META-INF/spring/fdh-adapter-scan-context",
-        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml",
-        "classpath*:META-INF/spring/fdh-timeseries-handler-scan-context.xml"
+        "classpath*:META-INF/spring/fdh-asset-handler-scan-context.xml"
 })
 @Profile("timeseries")
 public class TimeseriesGetDataHandler
@@ -106,7 +102,7 @@ public class TimeseriesGetDataHandler
                 // 3. Use the override header or Set the header based on environment
                 boolean zoneIdFound = FDHUtil.setHeader(headers, criteria.getHeaders(), "Predix-Zone-Id");
                 if ( !zoneIdFound )
-        			this.timeseriesClient.setZoneIdInHeaders(headers);
+        			this.timeseriesClient.addZoneIdToHeaders(headers);
 
                 // 4. Get historical data from Time Series
                 DatapointsResponse dataPoints = getTimeseriesData(tsFilter, headers);

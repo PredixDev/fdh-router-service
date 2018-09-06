@@ -4,13 +4,13 @@
 
 	<groupId>com.ge.predix.solsvc</groupId>
 	<artifactId>fdh-websocket-handler</artifactId>
-	<version>2.0.78</version>
+	<version>2.0.79</version>
 	<packaging>jar</packaging>
 
 	<properties>
-		<data-exchange-client.version>2.0.78</data-exchange-client.version>
-		<ext-model.version>2.4.9</ext-model.version>
-		<ext-util.version>2.4.9</ext-util.version>
+		<data-exchange-client.version>2.0.79</data-exchange-client.version>
+		<ext-model.version>2.4.10</ext-model.version>
+		<ext-util.version>2.4.10</ext-util.version>
 		
 		
 		<spring.version>4.1.6.RELEASE</spring.version>

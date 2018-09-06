@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -28,7 +28,7 @@ import com.ge.predix.solsvc.ext.util.JsonMapper;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = { EventHubPutFieldDataHandler.class})
+@Import(value={ EventHubPutFieldDataHandler.class})
 @ContextConfiguration(locations =
 {
         "classpath*:META-INF/spring/fdh-eventhub-handler-scan-context.xml",
