@@ -60,7 +60,7 @@ public class TestData {
 		assetIdFieldIdentifier.setId("/asset/assetId");
 		// assetIdFieldIdentifier.setSource(FieldSourceEnum.PREDIX_ASSET.name());
 		fieldIdentifierValue.setFieldIdentifier(assetIdFieldIdentifier);
-		fieldIdentifierValue.setValue("/asset/compressor-2017");
+		fieldIdentifierValue.setValue("/asset/Compressor-CMMS-Compressor-2018");
 		fieldFilter.getFieldIdentifierValue().add(fieldIdentifierValue);
 
 		// add FieldIdValue pair for time
@@ -100,7 +100,7 @@ public class TestData {
 		field.setFieldIdentifier(fieldIdentifier);
 		fieldData.getField().add(field);
 
-		String testMessage1 = "{\"fieldChangedList\":{\"fieldChanged\":[{\"assetList\":{\"asset\":[{\"uri\":\"/asset/compressor-2017\",\"assetType\":\"asset\",\"fieldList\":{\"field\":[{\"fieldKey\":\"/asset/assetTag/crank-frame-dischargepressure\",\"fieldValue\":\"\",\"fieldType\":\"assetTag\",\"timeChanged\":\"2012-09-11T07:16:13.000Z\"}]}}]},\"externalAttributeMap\":{\"entry\":[{\"key\":\"\",\"value\":\"\"}]}}]}}"; // $$ //$NON-NLS-1$
+		String testMessage1 = "{\"fieldChangedList\":{\"fieldChanged\":[{\"assetList\":{\"asset\":[{\"uri\":\"/asset/Compressor-CMMS-Compressor-2018\",\"assetType\":\"asset\",\"fieldList\":{\"field\":[{\"fieldKey\":\"/asset/assetTag/crank-frame-dischargepressure\",\"fieldValue\":\"\",\"fieldType\":\"assetTag\",\"timeChanged\":\"2012-09-11T07:16:13.000Z\"}]}}]},\"externalAttributeMap\":{\"entry\":[{\"key\":\"\",\"value\":\"\"}]}}]}}"; // $$ //$NON-NLS-1$
 		DataMap data = new DataMap();
 		Map map = this.jsonMapper.fromJson(testMessage1,Map.class);
 		data.setMap(map);
@@ -128,7 +128,7 @@ public class TestData {
 		field.setFieldIdentifier(fieldIdentifier);
 		fieldData.getField().add(field);
 
-		String testMessage1 = "{\"fieldChangedList\":{\"fieldChanged\":[{\"assetList\":{\"asset\":[{\"uri\":\"/asset/compressor-2017\",\"assetType\":\"asset\",\"fieldList\":{\"field\":[{\"fieldKey\":\"/asset/assetTag/crank-frame-dischargepressure\",\"fieldValue\":\"\",\"fieldType\":\"assetTag\",\"timeChanged\":\"2012-09-11T07:16:13.000Z\"}]}}]},\"externalAttributeMap\":{\"entry\":[{\"key\":\"\",\"value\":\"\"}]}}]}}"; // $$ //$NON-NLS-1$
+		String testMessage1 = "{\"fieldChangedList\":{\"fieldChanged\":[{\"assetList\":{\"asset\":[{\"uri\":\"/asset/Compressor-CMMS-Compressor-2018\",\"assetType\":\"asset\",\"fieldList\":{\"field\":[{\"fieldKey\":\"/asset/assetTag/crank-frame-dischargepressure\",\"fieldValue\":\"\",\"fieldType\":\"assetTag\",\"timeChanged\":\"2012-09-11T07:16:13.000Z\"}]}}]},\"externalAttributeMap\":{\"entry\":[{\"key\":\"\",\"value\":\"\"}]}}]}}"; // $$ //$NON-NLS-1$
 		DataMapList data = new DataMapList();
 		List<Map> maps = new ArrayList<Map>();
 		Map map = this.jsonMapper.fromJson(testMessage1,Map.class);

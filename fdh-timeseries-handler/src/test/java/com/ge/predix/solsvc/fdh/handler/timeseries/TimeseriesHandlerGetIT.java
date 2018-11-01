@@ -87,7 +87,7 @@ public class TimeseriesHandlerGetIT
         String timeseriesField = "/tags/datapoints";
         String timeseriesFieldSource = FieldSourceEnum.PREDIX_TIMESERIES.name();
         String timeseriesExpectedDataType = DatapointsResponse.class.getSimpleName();
-        String timeseriesTagname = "Compressor-2017:DischargePressure";
+        String timeseriesTagname = "Compressor-CMMS-Compressor-2018:DischargePressure";
 
         GetFieldDataRequest request = TestData.getFieldDataRequestwithTs(timeseriesField, timeseriesFieldSource,
                 timeseriesExpectedDataType, timeseriesTagname, "1d-ago", null, this.timeseriesClient);
@@ -166,10 +166,10 @@ public class TimeseriesHandlerGetIT
         String timeseriesField = "/timeseries/tag";
         String timeseriesFieldSource = FieldSourceEnum.PREDIX_TIMESERIES.name();
         String timeseriesExpectedDataType = DatapointsResponse.class.getSimpleName();
-        // String timeseriesTagname = "Compressor-2017:DischargePressure";
+        // String timeseriesTagname = "Compressor-CMMS-Compressor-2018:DischargePressure";
         String assetResultId = "tag";
         String timeseriesTagname = "{{" + assetResultId + "}}";
-        String assetUri = "/asset/compressor-2017";
+        String assetUri = "/asset/Compressor-CMMS-Compressor-2018";
         String assetFilter = null;
         String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/timeseriesDatasource/tag";
         String assetSource = FieldSourceEnum.PREDIX_ASSET.name();

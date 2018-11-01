@@ -435,7 +435,7 @@ public class AssetDataHandlerIT
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2017";
+        String assetUri = "/asset/Compressor-CMMS-Compressor-2018";
         String assetAttribute = "/asset/*";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
@@ -470,7 +470,7 @@ public class AssetDataHandlerIT
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2017";
+        String assetUri = "/asset/Compressor-CMMS-Compressor-2018";
         String assetAttribute = "/description";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
@@ -505,7 +505,7 @@ public class AssetDataHandlerIT
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2017";
+        String assetUri = "/asset/Compressor-CMMS-Compressor-2018";
         String assetAttribute = "/asset/assetTag/*";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
@@ -540,7 +540,7 @@ public class AssetDataHandlerIT
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2017";
+        String assetUri = "/asset/Compressor-CMMS-Compressor-2018";
         String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/*";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();
 
@@ -575,7 +575,7 @@ public class AssetDataHandlerIT
     {
 
         logger.info("================================");
-        String assetUri = "/asset/compressor-2017";
+        String assetUri = "/asset/Compressor-CMMS-Compressor-2018";
         // String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/timeseriesDatasource/tag";
         String assetAttribute = "/asset/assetTag/crank-frame-dischargepressure/timeseriesDatasource/tag*";
         String assetExpectedDataType = OsacbmDataType.DA_STRING.value();

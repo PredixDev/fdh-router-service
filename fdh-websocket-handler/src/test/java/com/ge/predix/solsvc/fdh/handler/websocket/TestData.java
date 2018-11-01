@@ -45,7 +45,7 @@ public class TestData {
         assetIdFieldIdentifier.setId("/asset/assetId");
         //assetIdFieldIdentifier.setSource(FieldSourceEnum.PREDIX_ASSET.name());
         fieldIdentifierValue.setFieldIdentifier(assetIdFieldIdentifier );
-        fieldIdentifierValue.setValue("/asset/compressor-2017");
+        fieldIdentifierValue.setValue("/asset/Compressor-CMMS-Compressor-2018");
         fieldFilter.getFieldIdentifierValue().add(fieldIdentifierValue );
         
         //add FieldIdValue pair for time        
