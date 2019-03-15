@@ -38,6 +38,8 @@ import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ActiveProfiles;
@@ -61,6 +63,7 @@ import com.ge.predix.solsvc.bootstrap.ams.client.AssetClientImpl;
 import com.ge.predix.solsvc.ext.util.JsonMapper;
 import com.ge.predix.solsvc.fdh.handler.GetDataHandler;
 import com.ge.predix.solsvc.fdh.handler.PutDataHandler;
+import com.ge.predix.solsvc.fdh.handler.asset.AssetPutDataFileExecutor;
 import com.ge.predix.solsvc.restclient.impl.RestClient;
 
 /**
@@ -83,6 +86,8 @@ import com.ge.predix.solsvc.restclient.impl.RestClient;
 @ActiveProfiles({"asset"})
 public class GetAndPutFieldDataHandlerTest 
 {
+
+	private static final Logger log = LoggerFactory.getLogger(GetAndPutFieldDataHandlerTest.class);
 
     /**
      * Processor for GetFieldData request
@@ -556,11 +561,14 @@ public class GetAndPutFieldDataHandlerTest
         ModelList list = new ModelList();
         String json = this.jsonMapper.toJson(list);
         SampleEngine model2 =new SampleEngine();
+        log.debug("here" + model2);
         model2.setAdditionalAttributes(new com.ge.predix.entity.util.map.Map());
         model2.getAdditionalAttributes().put("key", "value");
         json = this.jsonMapper.toJson(model2);
         list.getModel().add(model2);
         json = this.jsonMapper.toJson(list);
+       ModelList list2 = new ModelList();
+		log.debug(list2.toString());
 		Object obj = this.jsonMapper.fromJson(json, ModelList.class);
         
         fieldData.setData(list);

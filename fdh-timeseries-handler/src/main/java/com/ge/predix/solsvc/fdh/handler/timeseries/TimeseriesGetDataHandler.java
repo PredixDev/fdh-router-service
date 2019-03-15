@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.http.Header;
-import org.apache.http.message.BasicHeader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +13,8 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import com.ge.predix.entity.data.Data;
 import com.ge.predix.entity.field.Field;
-import com.ge.predix.entity.fielddata.Data;
 import com.ge.predix.entity.fielddata.FieldData;
 import com.ge.predix.entity.fielddata.OsaData;
 import com.ge.predix.entity.fielddatacriteria.AssetFieldDataCriteria;

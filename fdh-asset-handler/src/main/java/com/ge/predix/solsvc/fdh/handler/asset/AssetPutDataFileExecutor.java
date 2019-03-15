@@ -34,8 +34,8 @@ import org.springframework.util.StringUtils;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.ge.predix.entity.data.Data;
 import com.ge.predix.entity.datafile.DataFile;
-import com.ge.predix.entity.fielddata.Data;
 import com.ge.predix.entity.model.Model;
 import com.ge.predix.entity.putfielddata.PutFieldDataCriteria;
 import com.ge.predix.entity.putfielddata.PutFieldDataResult;
